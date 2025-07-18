@@ -5,12 +5,12 @@
   font-style: normal;
 }
 
-.body {
-  margin: 0;
+.background {
+  margin: 0px;
   font-family: 'THSarabunPSK', sans-serif;
-  background: url('../assets/Landing.png');
+  background: url('../assets/landing.png')no-repeat center center;
   background-size: cover;       /* ยืดให้เต็มจอโดยรักษาสัดส่วน */
-  overflow: hidden; 
+  /* overflow: hidden;  */
   height: 100vh; /* ความสูงเต็มจอ */
 }
 
