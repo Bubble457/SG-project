@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'THSarabunPSK';
+  src: url('../fonts/THSarabunPSK.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.question-container {
+  text-align: left;
+  padding: 1rem;
+}
+
+.question-text {
+  font-weight: 600;
+  font-family: 'THSarabunPSK', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.choice-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.select-box {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button-next {
+  margin-top: 1rem;
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button-next:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

@@ -1,0 +1,174 @@
+@font-face {
+  font-family: 'THSarabunPSK';
+  src: url('../fonts/THSarabunPSK.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.body {
+  font-family: 'THSarabunPSK', sans-serif;
+  background: url('../assets/2.png') no-repeat center center;
+  background-size: cover;       /* ยืดให้เต็มจอโดยรักษาสัดส่วน */
+  overflow-y: auto;
+  margin: 0px;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  align-items: center;
+
+}
+
+.back-btn {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.log {
+  font-family: 'THSarabunPSK', sans-serif;
+  font-size: 80px;
+  margin-top: 150px;
+  font-weight: bold;
+  color: #0067ef;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.in {
+  font-family: 'THSarabunPSK', sans-serif;
+  color: #ffd700;
+  margin-left: 10px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.formbox {
+  background-color: white;
+  padding: 30px 50px;
+  margin: 50px auto;
+  max-width: 600px ;
+  max-height:1000px ;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  font-family: 'THSarabunPSK', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.date-select {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.date-select select {
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #b2ebf2;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  justify-content: center;
+}
+
+input[type='text'],
+input[type='email'] {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #b2ebf2;
+  border-color: #000000;
+}
+
+.gender button {
+  font-family: 'THSarabunPSK', sans-serif;
+  font-size: 20px;
+  background-color: #b2ebf2;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.gender .selected {
+  background-color: #ff80ab;
+}
+
+.submit-btn {
+  display: grid;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.date{
+  text-align: left; 
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  background-color: #5da3e6;
+  color: white;
+  font-family: 'THSarabunPSK', sans-serif;
+  font-size: 20px;
+  height: 45px;
+}
+
+.header1 {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.header2 {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.i{
+  text-decoration: none;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.text{
+  font-family: 'THSarabunPSK', sans-serif;
+  font-size: 20px;
+  text-align: start;
+  margin: 0px;
+}
+
+.birth-select-group {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.birth-select-group select {
+  padding: 10px;
+  width: 100px;
+  border-color: #000000;
+  border-radius: 10px;
+  background-color: #b2ebf2;
+}
+
