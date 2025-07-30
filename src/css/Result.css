@@ -1,45 +1,42 @@
-@font-face {
-  font-family: 'THSarabunPSK';
-  src: url('../fonts/THSarabunPSK.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+.bg-result {
+  margin: 0px;
+  background-size: cover;
+  height: 100vh; 
+  width: 100%;
 }
 
-.question-container {
-  text-align: left;
-  padding: 1rem;
+.text-personality{
+  font-size: 24px;
 }
 
-.question-text {
-  font-weight: 600;
-  font-family: 'THSarabunPSK', sans-serif;
-  margin-bottom: 1rem;
+.speech-bubble {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  width: 300px;
+  margin: 60px auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: absolute;
+  top: 20px;
 }
 
-.choice-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 0.75rem;
+/* สามเหลี่ยมด้านบนที่ชี้ลง */
+.speech-bubble::before {
+  content: "";
+  position: absolute;
+  top: -20px; /* ขยับขึ้นเหนือกล่อง */
+  left: 40px; /* ปรับให้ชี้ไปตรงไหนก็ได้ */
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid white; /* สีเดียวกับกล่อง */
 }
 
-.select-box {
-  padding: 4px 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.button-next {
-  margin-top: 1rem;
-  background-color: #007bff;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.button-next:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+.img-per1{
+  position: absolute;
+  bottom: 5000px;
+  left: 100px;
+  z-index: 1000;
 }

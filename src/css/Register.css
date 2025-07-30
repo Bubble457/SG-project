@@ -1,17 +1,10 @@
-@font-face {
-  font-family: 'THSarabunPSK';
-  src: url('../fonts/THSarabunPSK.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.body {
+.bg-singup {
   font-family: 'THSarabunPSK', sans-serif;
-  background: url('../assets/2.png') no-repeat center center;
-  background-size: cover;       /* ยืดให้เต็มจอโดยรักษาสัดส่วน */
-  overflow-y: auto;
+  background: url('../assets/lab.png ') no-repeat center center;
+  background-size: cover;
   margin: 0px;
   height: 100vh;
+  width: 100%;
 }
 
 .container {
@@ -29,14 +22,11 @@
   cursor: pointer;
 }
 
-.sign {
-  font-size: 80px;
-  margin-top: 70px;
-  font-family: 'THSarabunPSK', sans-serif;
-  font-weight: bold;
-  color: #0067ef;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  text-align: center;
+.signup {
+  width: 400px;
+  height: auto;
+  position: absolute;
+  left: 550px;
 }
 
 .up {
@@ -49,12 +39,14 @@
 
 .formbox {
   background-color: white;
-  padding: 30px 50px;
-  margin: 50px auto;
+  padding: 30px 50px; 
   max-width: 600px ;
   max-height:1000px ;
   border-radius: 20px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 460px;
+  top: 240px;
 }
 
 .subtitle {
@@ -88,8 +80,23 @@
   justify-content: center;
 }
 
-input[type='text'],
 input[type='email'] {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #b2ebf2;
+  border-color: #000000;
+}
+
+input[type='password'] {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #b2ebf2;
+  border-color: #000000;
+}
+
+input[type='text'] {
   padding: 10px;
   width: 100%;
   border-radius: 10px;
@@ -153,11 +160,12 @@ input[type='email'] {
   gap: 20px;
 }
 
-.text{
+.textform{
   font-size: 20px;
   font-family: 'THSarabunPSK', sans-serif;
   text-align: start;
   margin: 0px;
+  color: #000000;
 }
 
 .birth-select-group {
@@ -174,3 +182,18 @@ input[type='email'] {
   background-color: #b2ebf2;
 }
 
+.signup{
+  width: 600px;
+  height: auto;
+  position: absolute;
+  left: 440px;
+  padding-top: 5px;
+}
+
+.text-text{
+  font-size: 20px;
+  font-family: 'THSarabunPSK', sans-serif;
+  display: flex;
+  justify-content: center;
+  color: #000000;
+}

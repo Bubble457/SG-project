@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: 'Prompt', sans-serif;
+  background: #e0f7fa;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.left-panel {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-box {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 12px solid red;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+}
+
+.task-label {
+  font-size: 1.5rem;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.right-panel {
+  width: 60%;
+  position: relative;
+}
+
+#video, #canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+#canvas {
+  z-index: 2;
+  pointer-events: none;
+}
+#video {
+  z-index: 1;
+}
+
+.prompt-box {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #ffffffdd;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+}
+
+.prompt-box img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}

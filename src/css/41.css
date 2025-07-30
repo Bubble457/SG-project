@@ -1,0 +1,124 @@
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5); /* สีดำโปร่งใส */
+  pointer-events: none; /* ให้คลิกทะลุได้ */
+  z-index: 0;
+}
+
+body {
+  background-image: url("/asset/background/image.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
+  background-size: cover;           /* ขยายให้เต็มจอ */
+  background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
+  background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
+  height: 100vh;                    /* ให้ body สูงเท่าจอ */
+  margin: 0;                        /* ลบช่องว่างรอบหน้าเว็บ */
+}
+
+.btnback {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-block;           
+  background-color: #ffffff;       
+  color: rgb(0, 0, 0);                   
+  padding: 15px 30px;              
+  border-radius: 30px;              
+  text-decoration: none;           
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;  
+  z-index: 2;
+}
+
+.btnback:hover {
+  background-color: #ffdcfa;      
+  z-index: 2; 
+}
+
+.btnnext {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: inline-block;           
+  background-color: #11eeea;       
+  color: rgb(255, 255, 255);                   
+  padding: 15px 30px;              
+  border-radius: 30px;              
+  text-decoration: none;           
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;  
+  z-index: 2;
+}
+
+.btnnext:hover {
+  background-color: #10c3c0;  
+  z-index: 2;     
+}
+
+.center {
+  display: flex;
+  justify-content: center;      /* จัดกลางแนวนอน */
+  align-items: center;          /* จัดกลางแนวตั้ง */
+  height: 100vh;                /* สูงเท่าจอ */
+  position: relative;
+  z-index: 1;
+}
+
+.center h2 {
+  transform: translate(120px, 180px); /* เลื่อนลง 180px */ 
+  align-items: center;
+  font-size: 24px;
+  color: #333;
+  z-index: 1;
+  background-color:rgb(255, 255, 255);
+  padding: 40px 70px;
+  border-radius: 40px;
+  box-shadow: 0 4px 10px
+}
+
+.center img{
+  width: 252px;
+  height: 356.4px;
+  z-index: 1;
+  transform: translateY(230px);
+  
+}
+
+.center h1 {
+  transform: translateY(230px); /* เลื่อนลง 180px */ 
+  font-size: 50px;
+  color: #333;
+  z-index: 1;
+  border-radius: 40px;
+}
+
+.carder{
+  justify-content:center;
+  align-items: center;
+  position:relative;
+  z-index: 0;
+}
+
+.buntook{
+  position:absolute;
+  width: 450px;
+  height: 450px;
+  top: -800px;
+  left: 50%;
+  transform: translateX(-59%);
+  z-index: 0;
+}
+
+.morsai{
+  position:absolute;
+  width: 300px;
+  height: 300px;
+  top: -635px;
+  left: 50%;
+  transform: translateX(-145%);
+  z-index: 0;
+}

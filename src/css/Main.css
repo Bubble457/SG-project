@@ -1,0 +1,145 @@
+.start-main {
+  position: absolute;
+  top: 75%;
+  align-self: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #ff0000;
+  padding: 10px;
+  border-radius: 20pc;
+}
+
+.back-main {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 20pc;
+  letter-spacing: 1px;
+}
+
+.back-img-main {
+  display: block;
+}
+
+.label1-main {
+  position: absolute;
+  align-self: center;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 2pc;
+}
+
+.label1-img-main {
+  display: block;
+}
+
+.label2-main {
+  position: absolute;
+  top: 10%;
+  align-self: center;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 10pc;
+}
+
+.label2-main {
+  position: absolute;
+  top: 10%;
+  align-self: center;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 10pc;
+}
+
+.label3-main {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  align-self: center;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #d9f8ff;
+  padding: 5px;
+  padding-left: 5%;
+  padding-right: 2%;
+  border-radius: 10pc 0 0 10pc;
+}
+
+.label3-img-main {
+  display: block;
+}
+
+.hat1-main {
+  position: absolute;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: rgb(54, 108, 162);
+  border-radius: 2pc 2pc 0pc 0pc;
+  padding-left: 20%;
+  padding-right: 20%;
+  font-size: 15px;
+}
+
+.imgbox1-main {
+  position: absolute;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imgbox1-img-main {
+  border-radius: 2pc;
+  display: block;
+}
+
+.imgbox2-main {
+  position: absolute;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.imgbox2-img-main {
+  display: block;
+}

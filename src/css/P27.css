@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  color: #fff;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  background: center url(../../../Assets/Background/2.png);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  min-height: 100vh;
+  line-height: 1.1;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 20pc;
+  letter-spacing: 1px;
+}
+
+.back img {
+  display: block;
+}
+
+.start {
+  position: absolute;
+  top: 75%;
+  align-self: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #ff0000;
+  padding: 10px;
+  border-radius: 20pc;
+}
+
+.label {
+  position: absolute;
+  width: 25%;
+  height: 50%;
+  right: 0;
+  bottom: 0;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 2pc 2pc 0 0;
+}
+
+.label img {
+  display: block;
+}
+
+.imgbox {
+  position: relative;
+  width: 80%;
+  height: 60%;
+  top: -15%;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  align-items: center;
+  background-color: rgb(105, 207, 255);
+  border-radius: 2pc; 
+  font-size: 15px;
+  margin: auto;
+}
+
+.number {
+  position: relative;
+  top: -30%;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 10pc;
+  margin: 0 auto;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 70;
+  height: 10%;
+  background-color: rgb(185, 224, 255);
+}
+
+.title {
+  position: absolute;
+  top: 2%;
+  text-decoration: none;
+  height: 50;
+  align-self: center;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding-left: 10pc;
+  padding-right: 10pc;
+  border-radius: 10pc;
+}

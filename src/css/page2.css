@@ -1,0 +1,153 @@
+.bg-p2 {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/มีกระดาน.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden
+}
+
+.next-btn{
+  background-color: #0075bd;
+  width: 190px ;
+  height: 60px;
+  text-align: center;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  gap: 5px;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.next-i4{
+  color: #ffffff;
+  font-size: 24px;
+  font-family: 'THSarabunPSK', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+  margin-right: 35px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+
+.next-next-1{
+  width: 60px;
+  padding: 0px;
+  margin-right: 0px;
+  margin-top: 5px;
+  text-decoration: none;
+  position: absolute;
+  bottom: 50px;
+  right: 65px;
+}
+
+.back-btn-p2{
+  background-color: #ffffff;
+  width: 190px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  margin-left: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);  
+}
+
+.img-back-p2{
+  width: auto;
+  height: 60px;
+  margin-top: 4px;
+}
+
+.text-back-p2{
+  color: black;
+  font-size: 20px;
+  font-weight: 900;
+  padding-top: 20px;
+  font-family: 'THSarabunPSK', sans-serif;
+}
+.all-new{
+    display: flex;
+    position: absolute;
+    left: 500px;
+    z-index: 10;
+}
+
+.hero-p2 {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    z-index: 2;
+}
+.text-p2 {
+    font-size: 30px;
+    position: absolute;
+    top: 85%;
+    left: 25%;
+    display: inline-flex;
+    color : white; 
+    z-index: 2;
+}
+
+.mybox-p2 {
+    font-size: 28px;
+    position: absolute ;
+    top:80%;
+    left: 0%;
+    display: inline-flex;
+    background-color: black;
+    padding: 155px 100px 18px 2204px;
+    opacity: 0.7;
+    z-index: 1;
+}
+.next-p2 {
+    font-size:30px;
+    position: fixed;
+    top: 87%;
+    right: 3%;
+    display: inline-flex;
+    justify-content: center;
+    color: white;
+    z-index: 2;
+    background-color:#0066CC;
+    padding: 0px 30px;
+    border-radius: 50px;
+    align-items: center;
+    text-decoration: none;
+    gap: 00px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.next-p2:hover {
+    background-color: #004080;
+    cursor: pointer;
+}
+.news3-p2 {
+  position: absolute;
+  left:21%;
+  top: 15%;
+}
+.news2-p2 {
+  position: absolute;
+  left: 46%;
+  top: 15%;
+}
+.news1-p2 {
+  position: absolute;
+  left: 46%;
+  top: 41%;
+}
+.news4-p2 {
+  position: absolute;
+  left: 67%;
+  top: 15%;
+}

@@ -1,17 +1,11 @@
-@font-face {
-  font-family: 'THSarabunPSK';
-  src: url('../fonts/THSarabunPSK.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .background {
   margin: 0px;
-  font-family: 'THSarabunPSK', sans-serif;
+  font-family: "Sarabun", sans-serif;
+  font-style: normal;
   background: url('../assets/landing.png')no-repeat center center;
-  background-size: cover;       /* ยืดให้เต็มจอโดยรักษาสัดส่วน */
-  /* overflow: hidden;  */
-  height: 100vh; /* ความสูงเต็มจอ */
+  background-size: cover;
+  height: 100vh; 
+  width: 100%;
 }
 
 .head {
@@ -26,7 +20,7 @@
 .buttongroup {
   position: absolute;
   bottom: 200px;   
-  left: 230px;     
+  left: 190px;     
   display: flex;
   gap: 20px;
 }

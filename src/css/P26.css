@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  color: #fff;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  background: center url(../../../Assets/Background/2.png);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  min-height: 100vh;
+  line-height: 1.1;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 20pc;
+  letter-spacing: 1px;
+}
+
+.back img {
+  display: block;
+}
+
+.title {
+  position: absolute;
+  top: 2%;
+  text-decoration: none;
+  height: 50;
+  align-self: center;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding-left: 10pc;
+  padding-right: 10pc;
+  border-radius: 10pc;
+}
+
+.number {
+  position: absolute;
+  top: 1%;
+  text-decoration: none;
+  align-self: auto;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 5px;
+  border-radius: 10pc;
+  left: -7.5%
+}
+
+.BlackCover {
+  position: absolute;
+  background-color: #00000090;
+  width: 100%;
+  height: 100%;
+}
+
+.character {
+  position: absolute;
+  bottom: -25%;
+  right: 0%;
+  width: 25%;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+.dialogTr {
+  position: absolute;
+  top: 45%;
+  right: 30%;
+  width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 70px solid #ffffff;
+  rotate: 350deg;
+}
+
+.dialogSq {
+  position: absolute;
+  top: 17.5%;
+  right: 25%;
+  width: 25%;
+	height: 30%;
+  background: #fff;
+  border-radius: 1pc;
+}
+
+.imgSq {
+  position: absolute;
+  top: 37.5%;
+  left: 25%;
+  width: 15%;
+	height: 40%;
+  background: #ffffff90;
+  border-radius: 1pc;
+}
+
+.jpimg {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+	height: 50%;
+}
+
+.next {
+  position: absolute;
+  bottom: 15%;
+  align-self: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: rgb(0, 116, 189);
+  padding: 15px;
+  border-radius: 20pc;
+}

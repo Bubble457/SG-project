@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traffic Sign Catcher Game</title>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #6e757d);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+    }
+    
+    header {
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+    }
+    
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .game-area {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+    
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      z-index: 1000;
+    }
+    
+    button {
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      border: none;
+      border-radius: 50px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+    
+    button:active {
+      transform: translateY(1px);
+    }
+    
+    #start-btn {
+      background: linear-gradient(to right, #56ab2f, #a8e063);
+    }
+    
+    #reset-btn {
+      background: linear-gradient(to right, #2193b0, #6dd5ed);
+    }
+    
+    .falling-object {
+      position: absolute;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      transition: transform 0.2s;
+      overflow: hidden;
+      background-color: white;
+      border: 2px solid #333;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .falling-object:hover {
+      transform: scale(1.1);
+    }
+    
+    .falling-object img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    
+    .catcher {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 3px dashed rgba(255, 204, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      pointer-events: none;
+      z-index: 100;
+      transition: transform 0.2s;
+      backdrop-filter: blur(5px);
+    }
+    
+    .catcher img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+    }
+    
+    .game-over {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s;
+    }
+    
+    .game-over.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    
+    .game-over-content {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transform: scale(0.8);
+      animation: popIn 0.5s forwards;
+      max-width: 90%;
+    }
+    
+    @keyframes popIn {
+      to { transform: scale(1); }
+    }
+    
+    .game-over h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #ff5555;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .game-over p {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #ffcc00;
+    }
+    
+    .notification {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      z-index: 2000;
+      opacity: 0;
+      transition: opacity 0.3s, top 0.3s;
+    }
+    
+    .notification.show {
+      opacity: 1;
+      top: 30px;
+    }
+    
+    .camera-guide {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 50;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.2rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 90%;
+    }
+    
+    .timer-display {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    
+    .score-display {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    
+    .target-display {
+      position: absolute;
+      bottom: 1%;
+      right: 1%;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+    }
+    
+    .target-label {
+      font-size: 24px;
+    }
+    
+    .target-sign {
+      width: 180px;
+      height: 180px;
+      border-radius: 8px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 2px solid #ffcc00;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .target-sign img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    
+    
+    .instructions h3 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+    
+    .instructions p {
+      margin: 5px 0;
+      font-size: 1.1rem;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .timer-display, .score-display {
+        font-size: 1.5rem;
+        padding: 8px 15px;
+      }
+      
+      button {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+      
+      .target-display {
+        padding: 10px;
+        top: 80px;
+      }
+      
+      .target-label {
+        font-size: 1rem;
+      }
+      
+      .target-sign {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .instructions {
+        bottom: 80px;
+        font-size: 0.9rem;
+      }
+      
+      .catcher {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="timer-display">Time: <span id="timer">15</span>s</div>
+  <div class="score-display">Score: <span id="score">0</span></div>
+  
+  <div class="target-display" id="target-display">
+    <div class="target-sign" id="target-sign">
+      <img id="target-image" src="" alt="Target Sign">
+    </div>
+    <div class="target-label">ประเภท:<span id = "target-name"></div>
+  </div>
+  
+  <div class="game-area">
+    <video class="input_video" autoplay muted playsinline style="display: none;"></video>
+    <canvas class="output_canvas"></canvas>
+    <div class="camera-guide" id="camera-guide">Position your hand in front of the camera to start playing</div>
+    <div class="catcher">🖐️</div>
+    <div class="game-over" id="game-over">
+      <div class="game-over-content">
+        <h2>Game Over!</h2>
+        <p>Your Score: <span id="final-score">0</span></p>
+        <button id="restart-btn">Play Again</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="controls">
+    <button id="start-btn">Start Game</button>
+    <button id="reset-btn">Reset</button>
+  </div>
+  
+  <div class="notification" id="notification">+10 points!</div>
+
+  <script>
+    // Game state
+    const gameState = {
+      score: 0,
+      timeLeft: 15,
+      isRunning: false,
+      objects: [],
+      catcherPosition: { x: 0, y: 0 },
+      lastObjectTime: 0,
+      objectInterval: 800,
+      imagesLoaded: 0,
+      timerId: null,
+      currentTarget: null
+    };
+    
+    // DOM Elements
+    const videoElement = document.querySelector('.input_video');
+    const canvasElement = document.querySelector('.output_canvas');
+    const canvasCtx = canvasElement.getContext('2d');
+    const scoreElement = document.getElementById('score');
+    const timerElement = document.getElementById('timer');
+    const startBtn = document.getElementById('start-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const restartBtn = document.getElementById('restart-btn');
+    const gameOverScreen = document.getElementById('game-over');
+    const finalScoreElement = document.getElementById('final-score');
+    const catcherElement = document.querySelector('.catcher');
+    const notification = document.getElementById('notification');
+    const cameraGuide = document.getElementById('camera-guide');
+    const targetDisplay = document.getElementById('target-display');
+    const targetImage = document.getElementById('target-image');
+    
+    // Traffic sign types with base64 encoded images
+    const objectTypes = [
+      { 
+        id: 'dont',
+        name: 'dont', 
+        image: '../../../assets/dont.png',
+        points: 10, 
+        // color: '#ff6b6b', 
+        size: 80 
+      },
+      { 
+        id: 'dontright',
+        name: 'dontright', 
+        image: '../../../assets/dontleawright.png',
+        points: 5, 
+        // color: '#ffa502', 
+        size: 80 
+      },
+      { 
+        id: 'dontturn',
+        name: 'dontturn', 
+        image: '../../../assets/dontUturn.png',
+        points: 5, 
+        // color: '#6a89cc', 
+        size: 80 
+      },
+      { 
+        id: 'hampai',
+        name: 'hampai', 
+        image: '../../../assets/hampai.png',
+        points: 5, 
+        // color: '#e55039', 
+        size: 80 
+      },
+      { 
+        id: 'jakkayan',
+        name: 'jakkayan', 
+        image: '../../../assets/jakkayan.png',
+        points: 5, 
+        // color: '#f6b93b', 
+        size: 80 
+      },
+      { 
+        id: 'kon2',
+        name: 'kon2', 
+        image: '../../../assets/kon2.png',
+        points: 5, 
+        // color: '#f6b93b', 
+        size: 80 
+      },
+      { 
+        id: 'kon2',
+        name: 'kon2', 
+        image: '../../../assets/kon2.png',
+        points: 5, 
+        // color: '#f6b93b', 
+        size: 80 
+      },
+      { 
+        id: 'leawleft',
+        name: 'leawleft', 
+        image: '../../../assets/leawleft.png',
+        points: 5, 
+        // color: '#f6b93b', 
+        size: 80 
+      },
+      { 
+        id: 'paikrab',
+        name: 'paikrab', 
+        image: '../../../assets/paikrab.png',
+        points: 5, 
+        // color: '#f6b93b', 
+        size: 80 
+      },
+      { 
+        id: 'rod',
+        name: 'rod', 
+        image: '../../../assets/rod.png',
+        points: 5, 
+        // color: '#f6b93b', 
+        size: 80 
+      },
+      { 
+        id: 'tang',
+        name: 'tang', 
+        image: '../../../assets/tang.png',
+        points: 5, 
+        // color: '#f6b93b', 
+        size: 80 
+      },
+      { 
+        id: 'wong',
+        name: 'wong', 
+        image: '../../../assets/wong.png',
+        points: 5, 
+        // color: '#f6b93b', 
+        size: 80 
+      },
+    ];
+    
+    // Set random target sign
+    function setRandomTarget() {
+      const randomIndex = Math.floor(Math.random() * objectTypes.length);
+      gameState.currentTarget = objectTypes[randomIndex];
+      targetImage.src = gameState.currentTarget.image;
+      targetImage.alt = gameState.currentTarget.name;
+      targetDisplay.style.display = 'flex';
+    }
+    
+    // Initialize MediaPipe Hands
+    const hands = new self.Hands({
+      locateFile: (file) => {
+        return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
+      }
+    });
+    
+    hands.setOptions({
+      maxNumHands: 1,
+      modelComplexity: 1,
+      minDetectionConfidence: 0.5,
+      minTrackingConfidence: 0.5
+    });
+    
+    // Initialize camera
+    const camera = new self.Camera(videoElement, {
+      onFrame: async () => {
+        if (gameState.isRunning) {
+          await hands.send({ image: videoElement });
+        }
+      },
+      maxWidth: '100%',
+      height: '480'
+    });
+    
+    // Start camera when page loads
+    camera.start();
+    
+    // Handle hand detection results
+    hands.onResults((results) => {
+  canvasCtx.save();
+  canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+  canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
+
+  if (results.multiHandLandmarks) {
+    for (const landmarks of results.multiHandLandmarks) {
+      self.drawConnectors(canvasCtx, landmarks, self.HAND_CONNECTIONS, {
+      color: '#ffffff', // สีขาว (255, 255, 255)
+      lineWidth: 2
+    });
+
+    self.drawLandmarks(canvasCtx, landmarks, {
+      color: '#000000', // สีดำ (0, 0, 0)
+      lineWidth: 2,
+      radius: 1  // เทียบเท่า circle_radius
+    });
+
+      cameraGuide.style.display = 'none';
+
+      // 👉 ย้ายเคอร์เซอร์ไปที่ปลายนิ้วชี้ (landmark[8])
+      const fingerTip = landmarks[8];
+
+      gameState.catcherPosition = {
+        x: fingerTip.x * window.innerWidth,
+        y: fingerTip.y * window.innerHeight
+      };
+
+      catcherElement.style.left = `${gameState.catcherPosition.x - 50}px`; // ปรับ offset ตามขนาด catcher
+      catcherElement.style.top = `${gameState.catcherPosition.y - 50}px`;
+    }
+  } else {
+    cameraGuide.style.display = 'block';
+  }
+
+  canvasCtx.restore();
+});
+
+    
+    // Create a new falling object
+    function createFallingObject() {
+      const type = objectTypes[Math.floor(Math.random() * objectTypes.length)];
+      
+      const object = {
+        type: type,
+        x: Math.random() * (window.innerWidth - type.size),
+        y: -type.size,
+        speed: 3 + (Math.random() * 3),
+        element: document.createElement('div'),
+        caught: false
+      };
+      
+      object.element.className = 'falling-object';
+      object.element.style.width = `${type.size}px`;
+      object.element.style.height = `${type.size}px`;
+      object.element.style.backgroundColor = type.color;
+      object.element.style.left = `${object.x}px`;
+      object.element.style.top = `${object.y}px`;
+      
+      const img = document.createElement('img');
+      img.src = type.image;
+      img.alt = type.name;
+      img.style.borderRadius = '10px';
+      object.element.appendChild(img);
+      
+      document.querySelector('.game-area').appendChild(object.element);
+      gameState.objects.push(object);
+    }
+    
+    // Update falling objects
+    function updateFallingObjects() {
+      for (let i = gameState.objects.length - 1; i >= 0; i--) {
+        const obj = gameState.objects[i];
+        
+        if (obj.caught) {
+          // Animate caught objects
+          obj.element.style.transform = `translateY(${obj.y}px) scale(${1 - (Date.now() - obj.caughtTime) / 500})`;
+          
+          if (Date.now() - obj.caughtTime > 500) {
+            obj.element.remove();
+            gameState.objects.splice(i, 1);
+          }
+          continue;
+        }
+        
+        // Update position
+        obj.y += obj.speed;
+        obj.element.style.top = `${obj.y}px`;
+        
+        // Check if caught
+        const catcherRect = {
+          x: gameState.catcherPosition.x - 80,
+          y: gameState.catcherPosition.y - 80,
+          width: 160,
+          height: 160
+        };
+        
+        const objRect = {
+          x: obj.x,
+          y: obj.y,
+          width: obj.type.size,
+          height: obj.type.size
+        };
+        
+        if (isColliding(catcherRect, objRect)) {
+          // Catch the object
+          obj.caught = true;
+          obj.caughtTime = Date.now();
+          
+          // Check if it's the target sign
+          if (obj.type.id === gameState.currentTarget.id) {
+            gameState.score += obj.type.points;
+            scoreElement.textContent = gameState.score;
+            
+            // Show notification
+            showNotification(`+${obj.type.points} points!`);
+            
+            // Change target
+            setRandomTarget();
+          } else {
+            // Penalty for wrong sign
+            gameState.score = Math.max(0, gameState.score - 5);
+            scoreElement.textContent = gameState.score;
+            showNotification(`Wrong sign! -5 points`);
+          }
+          
+          // Add animation class
+          obj.element.classList.add('caught');
+          
+          // Update catcher animation
+          catcherElement.style.transform = 'scale(1.2)';
+          setTimeout(() => {
+            catcherElement.style.transform = 'scale(1)';
+          }, 200);
+        }
+        
+        // Check if missed (off screen)
+        if (obj.y > window.innerHeight) {
+          obj.element.remove();
+          gameState.objects.splice(i, 1);
+        }
+      }
+    }
+    
+    // Update timer
+    function updateTimer() {
+      if (gameState.timeLeft > 0) {
+        gameState.timeLeft--;
+        timerElement.textContent = gameState.timeLeft;
+      } else {
+        endGame();
+      }
+    }
+    
+    // Show notification
+    function showNotification(text) {
+      notification.textContent = text;
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 1500);
+    }
+    
+    // Collision detection
+    function isColliding(rect1, rect2) {
+      return rect1.x < rect2.x + rect2.width &&
+             rect1.x + rect1.width > rect2.x &&
+             rect1.y < rect2.y + rect2.height &&
+             rect1.y + rect1.height > rect2.y;
+    }
+    
+    // Game loop
+    function gameLoop() {
+      if (!gameState.isRunning) return;
+      
+      updateFallingObjects();
+      
+      // Create new objects
+      const now = Date.now();
+      if (now - gameState.lastObjectTime > gameState.objectInterval) {
+        createFallingObject();
+        gameState.lastObjectTime = now;
+      }
+      
+      requestAnimationFrame(gameLoop);
+    }
+    
+    // Start the game
+    function startGame() {
+      if (gameState.isRunning) return;
+      
+      resetGame();
+      gameState.isRunning = true;
+      startBtn.textContent = "Pause";
+      
+      // Set initial target
+      setRandomTarget();
+      
+      // Start timer
+      gameState.timerId = setInterval(updateTimer, 1000);
+      
+      gameLoop();
+    }
+    
+    // Pause the game
+    function pauseGame() {
+      gameState.isRunning = false;
+      startBtn.textContent = "Resume";
+      
+      // Pause timer
+      clearInterval(gameState.timerId);
+    }
+    
+    // End the game
+    function endGame() {
+      gameState.isRunning = false;
+      startBtn.textContent = "Start Game";
+      finalScoreElement.textContent = gameState.score;
+      gameOverScreen.classList.add('active');
+      
+      // Stop timer
+      clearInterval(gameState.timerId);
+    }
+    
+    // Reset the game
+    function resetGame() {
+      // Remove all falling objects
+      gameState.objects.forEach(obj => obj.element.remove());
+      gameState.objects = [];
+      
+      // Reset game state
+      gameState.score = 0;
+      gameState.timeLeft = 30;
+      
+      // Update UI
+      scoreElement.textContent = gameState.score;
+      timerElement.textContent = gameState.timeLeft;
+      
+      // Stop timer if running
+      if (gameState.timerId) {
+        clearInterval(gameState.timerId);
+      }
+      
+      // Hide game over screen
+      gameOverScreen.classList.remove('active');
+    }
+    
+    // Event listeners
+    startBtn.addEventListener('click', () => {
+      if (gameState.isRunning) {
+        pauseGame();
+      } else {
+        startGame();
+      }
+    });
+    
+    resetBtn.addEventListener('click', resetGame);
+    restartBtn.addEventListener('click', () => {
+      gameOverScreen.classList.remove('active');
+      startGame();
+    });
+    
+    // Initialize canvas size
+    videoElement.onloadedmetadata = () => {
+      canvasElement.width = videoElement.videoWidth;
+      canvasElement.height = videoElement.videoHeight;
+    };
+    
+    // Set initial catcher position
+    window.addEventListener('load', () => {
+      catcherElement.style.left = `${window.innerWidth/2 - 80}px`;
+      catcherElement.style.top = `${window.innerHeight/2 - 80}px`;
+    });
+    
+    window.addEventListener('resize', () => {
+      catcherElement.style.left = `${window.innerWidth/2 - 80}px`;
+      catcherElement.style.top = `${window.innerHeight/2 - 80}px`;
+    });
+  </script>
+</body>
+</html>

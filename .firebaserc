@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "safeguard-auth-web"
+  },
+  "targets": {},
+  "etags": {}
+}

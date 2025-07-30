@@ -1,0 +1,48 @@
+/* TrafficSignGame.css */
+.traffic-game-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Kanit', sans-serif;
+  text-align: center;
+}
+
+.video-feed {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+}
+
+.target-display {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #1d3557;
+  font-weight: bold;
+}
+
+.sign {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.sign:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.score-display {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #2a9d8f;
+}
+
+.timer-display {
+  font-size: 1rem;
+  margin-top: 6px;
+  color: #e76f51;
+}

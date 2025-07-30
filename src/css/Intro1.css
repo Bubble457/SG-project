@@ -1,0 +1,262 @@
+.bg-intro1{
+  background-size:cover;
+  background-repeat: no-repeat;
+  height : 100vh;
+  width: 100%;
+  margin: 0;
+  overflow: hidden
+}
+
+.box-intro1{
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 170px;
+  padding-top: 50px;
+  padding-bottom: 40px ;
+  margin-left: 0px;
+  position: absolute;
+  bottom: 0px;
+  
+}
+
+.text-t{
+  color: #ffffff;
+  font-size: 24px;
+  font-family: 'THSarabunPSK', sans-serif;
+  text-align: center;
+}
+
+.next-btn-in1{
+  background-color: #0075bd;
+  width: 190px ;
+  height: 60px;
+  text-align: center;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  gap: 5px;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.next-in1{
+  color: #ffffff;
+  font-size: 24px;
+  font-family: 'THSarabunPSK', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+  margin-right: 35px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+.next-next-1{
+  width: 60px;
+  padding: 0px;
+  margin-right: 0px;
+  margin-top: 5px;
+  text-decoration: none;
+  position: absolute;
+  bottom: 50px;
+  right: 65px;
+}
+
+.back-btn{
+  background-color: #ffffff;
+  width: 190px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  margin-left: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);  
+}
+
+.img-back{
+  width: auto;
+  height: 60px;
+  margin-top: 4px;
+}
+
+.text-back{
+  color: black;
+  font-size: 20px;
+  font-weight: 900;
+  padding-top: 20px;
+  font-family: 'THSarabunPSK', sans-serif;
+}
+
+.img-intro1{
+  position: absolute;
+  left: 640px;
+  top: 130px
+}
+
+.img-intro2{
+  position: absolute;
+  left: 80px;
+  bottom: 10px;
+  z-index: 100;
+}
+.dot-brain-1 {
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: 190px;
+  right: 430px;
+  z-index: 100;
+}
+
+.dot-brain-2 {
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: 230px;
+  right: 670px;
+  z-index: 100;
+}
+
+.dot-body-1 {
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: 470px;
+  right: 753px;
+  z-index: 10;
+}
+
+.dot-body-2 {
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  bottom: 290px;
+  right: 475px;
+  z-index: 10;
+}
+
+.dot-house-1 {
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: 445px;
+  left: 420px;
+  z-index: 10;
+}
+
+.dot-house-2 {
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  bottom: 190px;
+  left: 690px;
+  z-index: 10;
+}
+
+.brain{
+  background-color: #004aad;
+  width: 270px;
+  height: 200px; 
+  border-radius: 20px;
+  position: absolute;
+  right: 200px;
+  top: 100px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.body{
+  background-color: #004aad;
+  width: 270px;
+  height: 200px;
+  border-radius: 20px;
+  position: absolute;
+  right: 250px;
+  bottom: 200px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.house{
+  background-color: #004aad;
+  width: 270px;
+  height: 200px;
+  border-radius: 20px;
+  position: absolute;
+  top: 350px;
+  left: 200px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.img-brain{
+  position: absolute;
+  right: 170px;
+  top: 125px;
+}
+
+.img-body{
+  position: absolute;
+  right: 175px;
+  bottom: 199px;
+}
+
+.img-house{
+  position: absolute;
+  top: 357px;
+  left: 145px;
+  
+}
+
+.line-brain{
+  position: absolute;
+  right: 440px;
+  top: 110px;
+  z-index: 100;
+}
+
+.line-body{
+  position: absolute;
+  right: 470px;
+  bottom: 170px;
+  z-index: 100;
+}
+
+.line-house{
+  position: absolute;
+  bottom: 110px;
+  left: 430px;
+  z-index: 100;
+}
+
+a{
+  text-decoration: none;
+  display: flex;
+}

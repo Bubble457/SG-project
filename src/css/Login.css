@@ -1,17 +1,11 @@
-@font-face {
-  font-family: 'THSarabunPSK';
-  src: url('../fonts/THSarabunPSK.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.body {
-  font-family: 'THSarabunPSK', sans-serif;
+.body-login {
   background: url('../assets/2.png') no-repeat center center;
-  background-size: cover;       /* ยืดให้เต็มจอโดยรักษาสัดส่วน */
-  overflow-y: auto;
+  background-size: cover;
   margin: 0px;
   height: 100vh;
+  width: 100%;
+  overflow: hidden; 
+  font-family: 'TH Sarabun', sans-serif;
 }
 
 .container {
@@ -46,14 +40,16 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.formbox {
+.loginform {
   background-color: white;
   padding: 30px 50px;
   margin: 50px auto;
-  max-width: 600px ;
-  max-height:1000px ;
+  width: 600px ;
+  height: 450px ;
   border-radius: 20px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 280px;
 }
 
 .subtitle {
@@ -86,13 +82,22 @@
   justify-content: center;
 }
 
-input[type='text'],
 input[type='email'] {
   padding: 10px;
   width: 100%;
   border-radius: 10px;
   background-color: #b2ebf2;
   border-color: #000000;
+  color: black;
+}
+
+input[type='password'] {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #b2ebf2;
+  border-color: #000000;
+  color: black;
 }
 
 .gender button {
@@ -151,11 +156,31 @@ input[type='email'] {
   gap: 20px;
 }
 
-.text{
+.text-email{
   font-family: 'THSarabunPSK', sans-serif;
   font-size: 20px;
   text-align: start;
   margin: 0px;
+  color: #000000;
+}
+
+.text-password{
+  font-family: 'THSarabunPSK', sans-serif;
+  font-size: 20px;
+  text-align: start;
+  margin: 0px;
+  color: #000000;
+}
+
+.text-register{
+  font-family: 'THSarabunPSK', sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  color: #000000;
+  text-align: center;
+  margin-top: 20px
 }
 
 .birth-select-group {
@@ -172,3 +197,10 @@ input[type='email'] {
   background-color: #b2ebf2;
 }
 
+.login{   
+  width: 600px;
+  height: auto;
+  position: absolute;
+  left: 440px;
+  padding-top: 50px;
+}

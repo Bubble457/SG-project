@@ -2,11 +2,22 @@ import React, { useState } from 'react';
 import '../css/Question.css';
 import { questions } from '../question';
 import Result from '../components/Result';
+import eye from '../assets/eye.png'
+import like from '../assets/like.png'
+import rain from '../assets/rain.png'
+import run from '../assets/run.png'
+import annoy from '../assets/annoying.png'
+import bg from '../assets/pretest.png'
+import choice1 from '../assets/chioce1.png'
+import choice2 from '../assets/chioce2.png'
+import choice3 from '../assets/chioce3.png'
+import choice4 from '../assets/chioce4.png'
+import choice5 from '../assets/chioce5.png'
 
 function Question() {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState([]);
-  const [ranks, setRanks] = useState(Array(5).fill(""));
+  const [ranks, setRanks] = useState(Array(5).fill(''));
 
   const handleChange = (index, value) => {
     const newRanks = [...ranks];
@@ -26,7 +37,7 @@ function Question() {
   const handleSubmit = () => {
     const ranked = ranks.map(r => parseInt(r));
     setAnswers(prev => [...prev, ranked]);
-    setRanks(Array(5).fill(""));
+    setRanks(Array(5).fill(''));
     setCurrent(current + 1);
   };
 
@@ -37,26 +48,67 @@ function Question() {
   const data = questions[current];
 
   return (
-    <div className="question-container">
-      <h2 className="question-title">ข้อที่ {current + 1} จาก {questions.length}</h2>
-      <p className="question-text">{data.text}</p>
-      {data.choices.map((choice, index) => (
-        <div key={index} className="choice-row">
-          <select
-            value={ranks[index]}
-            onChange={e => handleChange(index, e.target.value)}
-            className="select-box"
-          >
-            <option value="">เลือกลำดับ</option>
-            {[1, 2, 3, 4, 5].map(num => (
-              <option key={num} value={num}>{num}</option>
-            ))}
-          </select>
-          <span>{choice.text}</span>
-        </div>
-      ))}
+    <div className='question-container'>
+      <div className='box-pretest'>
+        <p className='text-pretest'>แบบทดสอบทัศนคติ</p>
+      </div>
+
+      <h2 className='question-title'>ข้อที่ {current + 1} / {questions.length}</h2>
+
+      <div className='question-box'>
+        <p className='question-text'>{data.text}</p>
+      </div>
+
+      <div className='choice'>
+        {data.choices.map((choice, index) => (
+          <div key={index} className={`${choice.className}`}>
+            <p className='choice-text'>{choice.text}</p>
+          </div>
+          ))}
+      </div>
+
+      <div className='scale-container'>
+        
+        {data.choices.map((choice, index) => (
+        <select
+          value={ranks[index]}
+          onChange={e => handleChange(index, e.target.value)}
+          className='select-box'
+        >
+          <option value=''>เลือกลำดับ</option>
+          {[1, 2, 3, 4, 5].map(num => (
+            <option key={num} value={num}>{num}</option>
+          ))}
+        </select>
+        ))}
+      </div>
+
+      <img src={ eye } width='200px' height='auto' className='eye' />
+
+      <img src={ like } width='150px' height='auto' className='like' />
+
+      <img src={ rain } width='200px' height='auto' className='rain' />
+
+      <img src={ run } width='250px' height='auto' className='run' />
+
+      <img src={ annoy } width='200px' height='auto' className='annoy' />
+      
+      <div className='circle1'>1</div>
+
+      <div className='circle2'>2</div>
+
+      <div className='circle3'>3</div>
+
+      <div className='circle4'>4</div>
+
+      <div className='circle5'>5</div>
+
+      <div className='label-red-q'>น้อยที่สุด</div>
+
+      <div className='label-green-q'>มากที่สุด</div>
+
       <button
-        className="button-next"
+        className='button-next'
         onClick={handleSubmit}
         disabled={!isValid()}
       >

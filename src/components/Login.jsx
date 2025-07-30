@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Form, Alert, Button } from 'react-bootstrap'
 import { useUserAuth } from '../context/UserAuthContext.jsx'
 import '../css/Login.css'
+import login from '../assets/log in.png'
 
 
 function Login() {
@@ -28,25 +29,26 @@ function Login() {
 
 
   return (
-    <div className='body'>
-      {/* <header className='head'>
-        <img src={logo} alt='Logo' width='300px' height='200px' />
-        <Link to='/setting' className='header2'>
-          <img src={setting} alt='Settings' width='auto' height='50px' />
-        </Link>
-      </header> */}
-      <h1 className='log'>
-            <span>LOG</span>
-            <span className='in'>IN</span>
-          </h1>
-      <div className='container'>
-        <div className='formbox'>
+    <div className='body-login'>
+      <img src={login} className='login' />
+      <div>
+        <div className='loginform'>
           {error && <Alert variant='danger'>{error}</Alert>}
           <Form onSubmit={handleSubmit} className='form-content'>
-            <p className='text'>อีเมล</p>
-            <input type="email" />
-            <p className='text'>รหัสผ่าน</p>
-            <input type="email" />
+            <p className='text-email'>อีเมล</p>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <p className='text-password'>รหัสผ่าน</p>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
             {/* <Form.Group className='mb-3' controlId='formBasicEmail'>
               <Form.Control
                 type='email'
@@ -60,15 +62,15 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group> */}
-
             <div className='submit-btn'>
               <Button variant='primary' type='submit'>
                   เข้าสู่ระบบ
               </Button>
             </div>
           </Form>
-          <div className='text text-center margin-top 20px'>มีบัญชีอยู่แล้วใช่ไหม?
-            <Link to='/login'>เข้าสู่ระบบ</Link>
+          <br />
+          <div className='text-register'>ยังไม่มีบัญชี
+            <Link to='/register'>ลงทะเบียน</Link>
           </div>
         </div>
       </div>

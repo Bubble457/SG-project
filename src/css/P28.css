@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  color: #fff;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  background: center url(../../../Assets/Background/2.png);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  min-height: 100vh;
+  line-height: 1.1;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 20pc;
+  letter-spacing: 1px;
+}
+
+.back img {
+  display: block;
+}
+
+.next {
+  position: absolute;
+  bottom: 15%;
+  align-self: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: rgb(0, 116, 189);
+  padding: 15px;
+  border-radius: 20pc;
+}
+
+.label {
+  position: absolute;
+  align-self: center;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 2pc;
+}
+
+.label img {
+  display: block;
+}
+
+.hat {
+  position: absolute;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: rgb(54, 108, 162);
+  border-radius: 2pc 2pc 0pc 0pc;
+  padding-left: 20%;
+  padding-right: 20%;
+  font-size: 15px;
+}

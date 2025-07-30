@@ -1,0 +1,95 @@
+.bg-mission {
+  background-size:cover;
+  background-repeat: no-repeat;
+  height : 100vh;
+  width: 100%;
+  margin: 0;
+  overflow: hidden
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  background-color: #b7e1ff;
+  padding: 10px;
+}
+
+.nav-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 24px;
+  font-family: 'Kanit', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid transparent;
+  border-radius: 0px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.home {
+  background-color: #c1e3db;
+  border-color: #629589;
+  border-radius: 30px 30px;
+}
+
+.book {
+  background-color: #fff4cf;
+  border-color: #ffc107;
+  border-radius: 30px 30px;
+}
+
+.report {
+  background-color: #f0e4fa;
+  border-color: #b545ba;
+  border-radius: 30px 30px;
+}
+
+.home-text {
+  color: #347571;
+}
+
+.book-text {
+  color: #f4900c;
+}
+
+.report-text {
+  color: #5f2870; 
+}
+
+.btn{
+  text-decoration: none;
+}
+
+.location{
+  position: absolute;
+  top: 210px;
+  left: 420px;
+}
+
+.zoom{
+  position: absolute;
+  top: 450px;
+  left: 480px;
+}
+
+.eyee{
+  position: absolute;
+  bottom: 190px;
+  left: 780px;
+}
+
+.warning{
+  position: absolute;
+  top: 165px;
+  right: 230px;
+}
+
+.text-mission{
+  font-size: 30px;
+  position: absolute;
+  bottom: 190px;
+  left: 138px;
+}
+

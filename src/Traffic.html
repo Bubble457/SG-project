@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>เกมป้ายจราจร</title>
+  <link rel="stylesheet" href="Traffic.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+  <div class="left-panel">
+    <div class="sign-box"></div>
+    <div class="task-label">เลือกสีกรอบป้าย</div>
+  </div>
+  <div class="right-panel">
+    <video id="video" playsinline></video>
+    <canvas id="canvas"></canvas>
+    <div class="prompt-box">
+      <img id="target-img" src="./assets/dontleawright.png" />
+      <p id="target-desc">ห้ามเลี้ยวขวา</p>
+    </div>
+  </div>
+</div>
+
+  <script src="Traffic.js"></script>
+</body>
+</html>
