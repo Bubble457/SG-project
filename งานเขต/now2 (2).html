@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Traffic Sign Catcher Game</title>
+  <title>จับป้ายจราจร</title>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
   <style>
@@ -15,7 +15,7 @@
     }
     
     body {
-      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+      background: linear-gradient(135deg, #ffffff);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -124,7 +124,7 @@
     }
     
     .game-over-content {
-      background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+      background: linear-gradient(135deg, #ffffff);
       padding: 40px;
       border-radius: 20px;
       text-align: center;
@@ -170,7 +170,7 @@
     }
     
     .next-page-content {
-      background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+      background: linear-gradient(135deg, #ffffff);
       padding: 40px;
       border-radius: 20px;
       text-align: center;
@@ -347,7 +347,7 @@
     const objectTypes = [
       { 
         id: 'dont',
-        name: 'dont', 
+        name: 'ห้าม', 
         image: './assets/dont.png',
         points: 1, 
         color: '#ff6b6b', 
@@ -355,7 +355,7 @@
       },
       { 
         id: 'dontright',
-        name: 'dontright', 
+        name: 'ห้ามเลี่ยวขวา', 
         image: './assets/dontleawright.png',
         points: 1, 
         color: '#ffa502', 
@@ -363,7 +363,7 @@
       },
       { 
         id: 'dontturn',
-        name: 'dontturn', 
+        name: 'ห้ามกลับรถ', 
         image: './assets/dontUturn.png',
         points: 1, 
         color: '#6a89cc', 
@@ -371,7 +371,7 @@
       },
       { 
         id: 'hampai',
-        name: 'hampai', 
+        name: 'ห้ามตรงไป', 
         image: './assets/hampai.png',
         points: 1, 
         color: '#e55039', 
@@ -379,7 +379,7 @@
       },
       { 
         id: 'jakkayan',
-        name: 'jakkayan', 
+        name: 'ทางจักรยาน', 
         image: './assets/jakkayan.png',
         points: 1, 
         color: '#e55039', 
@@ -387,7 +387,7 @@
       },
       { 
         id: 'jrajon',
-        name: 'jrajon', 
+        name: 'ไฟจราจร', 
         image: './assets/jrajon.png',
         points: 1, 
         color: '#e55039', 
@@ -395,7 +395,7 @@
       },
       { 
         id: 'kon',
-        name: 'kon', 
+        name: 'คนข้ามถนน', 
         image: './assets/kon.png',
         points: 1, 
         color: '#e55039', 
@@ -403,7 +403,7 @@
       },
       { 
         id: 'kon2',
-        name: 'kon2', 
+        name: 'คนข้ามถนน', 
         image: './assets/kon2.png',
         points: 1, 
         color: '#e55039', 
@@ -411,7 +411,7 @@
       },
       { 
         id: 'leawleft',
-        name: 'leawleft', 
+        name: 'เลี้ยวซ้าย', 
         image: './assets/leawleft.png',
         points: 1, 
         color: '#e55039', 
@@ -419,7 +419,7 @@
       },
       { 
         id: 'wong',
-        name: 'wong', 
+        name: 'วงเวียน', 
         image: './assets/wong.png',
         points: 1, 
         color: '#e55039', 
@@ -427,7 +427,7 @@
       },
       { 
         id: 'paikrab',
-        name: 'paikrab', 
+        name: 'ถนนสองทาง', 
         image: './assets/paikrab.png',
         points: 1, 
         color: '#e55039', 
@@ -435,7 +435,7 @@
       },
       { 
         id: 'rod',
-        name: 'rod', 
+        name: 'ถนนอันตราย', 
         image: './assets/rod.png',
         points: 1, 
         color: '#e55039', 
@@ -443,7 +443,7 @@
       },
       { 
         id: 'tang',
-        name: 'tang', 
+        name: 'สะพานแคบ', 
         image: './assets/tang.png',
         points: 1, 
         color: '#e55039', 
