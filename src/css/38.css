@@ -1,5 +1,5 @@
-body {
-  background-image: url("/asset/background/1st.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
+body.page-bg38 {
+  background-image: url("../asset3/background/1st.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
   background-size: cover;           /* ขยายให้เต็มจอ */
   background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
   background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
@@ -7,7 +7,7 @@ body {
   margin: 0;                        /* ลบช่องว่างรอบหน้าเว็บ */
 }
 
-.btnback {
+.btnback38 {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -23,16 +23,16 @@ body {
     transition: background-color 0.3s ease;  
 }
 
-.btnback:hover {
+.btnback38:hover {
     background-color: #ffdcfa;       
 }
-.picbtnback {
+.picbtnback38 {
     position:absolute;
     
 }
 
 
-.btnnext {
+.btnnext38 {
     position: absolute;
     bottom: 175px;
     left: 50%;
@@ -48,17 +48,17 @@ body {
     transition: background-color 0.3s ease;  
 }
 
-.btnnext:hover {
+.btnnext38:hover {
     background-color: #b50000;       
 }
 
-.center {
+.center38 {
     position:fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.center h3{
+.center38 h3{
   position: absolute;
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -72,12 +72,12 @@ body {
   transform:translate(175px, -55px)
 }
 
-.center img{
+.center38 img{
     height:100px;
     width: auto;
 }
 
-.caution {
+.caution38 {
     display: inline-flex;
     color:black;
     background-color: white;

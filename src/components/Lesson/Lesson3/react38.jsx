@@ -1,20 +1,32 @@
 import '../../../css/38.css';
 import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
-const cautionImg = require('../asset/icon/caution.png');
+import cautionImg from '../../../asset3/icon/caution.png';
+
 
 
 
 const App = () => {
+
+    useEffect(() => {
+    document.body.className = 'page-bg38';
+
+    // ล้าง class เมื่อ component นี้ออก (optional แต่ดีมาก)
+    return () => {
+      document.body.className = '';
+    };
+  }, []);
+
   return (
     <div>
       <div>
-        <a className="btnnext" href="./react39.jsx" data-discover="true">เริ่ม</a>
-        <a className="btnback" href="#" data-discover="true">ย้อนกลับ</a>
+        <Link to="/p39" className="btnnext38" >เริ่ม</Link>
+        <Link className="btnback38" to="#" >ย้อนกลับ</Link>
       </div>
-      <div className="center">
+      <div className="center38">
         <h3>บทที่ 3</h3>
-        <div className="caution">
+        <div className="caution38">
           <img src={cautionImg} alt="caution" />
           <h1>จุดบอดรอบตัว</h1>
         </div>

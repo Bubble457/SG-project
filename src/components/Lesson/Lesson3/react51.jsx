@@ -1,39 +1,28 @@
 import '../../../css/51.css';
+import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
-const character = require('../asset/Misc/halfcharacter.PNG');
-const buntook = require('../asset/Misc/รถบรรทุกสุดหล่อ.png');
-const morsai = require('../asset/Misc/มอไซ.png');
-const eyebutton = require('../asset/icon/eye.png')
-const korb = require('../asset/Misc/เทส.png')
-const kajog = require('../asset/Misc/กระจกรถ.png')
-const wrong = require('../asset/icon/wrong.webp')
-const news = require('../asset/background/news.jpg')
-const check = require('../asset/icon/ถูก.png')
-const arrow = require('../asset/Misc/ลูกษร.png')
-const number1 = require('../asset/Misc/1.png')
-const number2 = require('../asset/Misc/2.png')
-const number3 = require('../asset/Misc/3.png')
-const number4 = require('../asset/Misc/4.png')
-const buntookbon = require('../asset/Misc/รถบรรทุก.png')
-const term = require('../asset/Misc/เติม.png')
-const muang = require('../asset/icon/ม่วง.png')
-const eye = require('../asset/Misc/eye.png')
-const book = require('../asset/Misc/11.png')
-const mouse = require('../asset/Misc/เมาส์.png')
-const car = require('../asset/Misc/รถ.png')
-const pencil = require('../asset/icon/ดินสอ.png')
+import pencil from'../../../asset3/icon/ดินสอ.png';
 
 const App = () => {
+      useEffect(() => {
+      document.body.className = 'page-bg51';
+  
+      // ล้าง class เมื่อ component นี้ออก (optional แต่ดีมาก)
+      return () => {
+        document.body.className = '';
+      };
+    }, []);
   return (
     <div>
-      <div className="background">
-        <div className="buttongroup">
-            <a className="btnnext" href="/html/storyboard_number_52.html" data-discover="true">เริ่ม</a>
-            <a className="btnback" href="/html/storyboard_number_50.html" data-discover="true">ย้อนกลับ</a>
+      <div className="background51">
+        <div className="buttongroup51">
+            <Link className="btnnext51" to="/p52" data-discover="true">เริ่ม</Link>
+            <Link className="btnback51" to="/p50_4" data-discover="true">ย้อนกลับ</Link>
         </div>
-        <img className="pencil" src={pencil} />
-        <div className="center">
-            <div className="caution">
+        <img className="pencil51" src={pencil} />
+        <div className="center51">
+            <div className="caution51">
                 <h1>แบบทดสอบหลังเรียน</h1>
             </div>
         </div>

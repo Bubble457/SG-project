@@ -1,5 +1,7 @@
-body {
-  background-image: url("/asset/background/12.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
+
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+body.page-bg54 {
+  background-image: url("../asset3/background/12.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
   background-size: cover;           /* ขยายให้เต็มจอ */
   background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
   background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
@@ -7,7 +9,7 @@ body {
   margin: 0;                        /* ลบช่องว่างรอบหน้าเว็บ */
 }
 
-.btnback {
+.btnback54 {
     position: absolute;
     top: 120px;
     left: 20px;
@@ -23,16 +25,16 @@ body {
     transition: background-color 0.3s ease;  
 }
 
-.btnback:hover {
+.btnback54:hover {
     background-color: #ffdcfa;       
 }
-.picbtnback {
+.picbtnback54 {
     position:absolute;
     
 }
 
 
-.btnnext {
+.btnnext54 {
     position: absolute;
     bottom: 175px;
     left: 50%;
@@ -48,11 +50,11 @@ body {
     transition: background-color 0.3s ease;  
 }
 
-.btnnext:hover {
+.btnnext54:hover {
     background-color: #b50000;       
 }
 
-.center {
+.center54 {
     position:absolute;
     top: 50%;
     left: 50%;
@@ -60,7 +62,7 @@ body {
     
 }
 
-.center h1{
+.center54 h1{
     text-align: center;
     font-size: 35px;
     background-color: rgb(255, 238, 125);
@@ -69,7 +71,7 @@ body {
     transform: translateY(-320px);
 }
 
-.center img{
+.center54 img{
     position:absolute;
     height:700px;
     width: auto;
@@ -78,7 +80,7 @@ body {
     transform: translate(-50%, -40%);
 }
 
-.block {
+.block54 {
   position: absolute;
   top:-10px;
   left:-29px;
@@ -89,7 +91,8 @@ body {
   z-index: 1;
 }
 
-.btngreen{
+.btngreen54{
+    font-family: 'Mitr', sans-serif;
     font-size: 12px;
     text-align: center;
     text-decoration: none;
@@ -101,22 +104,23 @@ body {
     border-radius: 50px;
     position:absolute;
     top:15px;
-    left: 27vw;
+    left: 26vw;
     z-index: 2;
     transition: background-color 0.3s ease;
 }
 
-.btngreen img{
+.btngreen54 img{
     width: 50px;
     height:50px;
 }
 
-.btngreen:hover{
+.btngreen54:hover{
     background-color: rgb(90, 179, 90);
 }
 
 
-.btnyellow{
+.btnyellow54{
+    font-family: 'Mitr', sans-serif;
     font-size: 12px;
     text-align: center;
     text-decoration: none;
@@ -133,16 +137,17 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.btnyellow img{
+.btnyellow54 img{
     width: 50px;
     height:50px;
 }
 
-.btnyellow:hover{
+.btnyellow54:hover{
     background-color:rgb(255, 248, 152) ;
 }
 
-.btnpurple{
+.btnpurple54{
+    font-family: 'Mitr', sans-serif;
     font-size: 12px;
     text-align: center;
     text-decoration: none;
@@ -154,22 +159,22 @@ body {
     border-radius: 50px;
     position:absolute;
     top:15px;
-    left: 53vw;
+    left: 54vw;
     z-index: 2;
     transition: background-color 0.3s ease;
     transform:translateX(3vw)
 }
 
-.btnpurple img{
+.btnpurple54 img{
     width: 50px;
     height:50px;
 }
 
-.btnpurple:hover{
+.btnpurple54:hover{
     background-color: rgb(177, 94, 177);
 }
 
-.graph img{
+.graph54 img{
     width:850px;
     height: auto;
     border-radius: 50px;
@@ -177,8 +182,8 @@ body {
     box-shadow: 5px 5px 15px rgba(0,0,0,0.3); /* x-offset, y-offset, blur, color */
 }
 
-.information {
-    width: 250px;
+.information54 {
+    width: 500px;
     position:absolute;
     transform: translate(-700px, -250px);
     background-color: rgb(255, 255, 255);
@@ -188,29 +193,29 @@ body {
     box-shadow: 5px 5px 15px rgba(0,0,0,0.3); /* x-offset, y-offset, blur, color */
 }
 
-.information h3{
+.information54 h3{
     background-color: rgb(186, 186, 186);
     padding:5px 20px;
     border-radius: 20px;
 }
 
-.indent {
+.indent54 {
     text-indent: 2em;
 }
 
-.profile img{
+.profile54 img{
     height:100px;
     width:auto;
     transform: translate(-390px, -300px);
     z-index: 5;
 }
 
-.score img{
+.score54 img{
     height:70px;
     transform: translateY(45px);
 }
 
-.score{
+.score54{
     position: absolute;
     align-items: center;
     gap: 10px;

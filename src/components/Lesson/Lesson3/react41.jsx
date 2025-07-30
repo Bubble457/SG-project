@@ -1,27 +1,35 @@
 import '../../../css/41.css';
 import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
-const character = require('../asset/Misc/halfcharacter.PNG');
-const buntook = require('../asset/Misc/รถบรรทุกสุดหล่อ.png');
-const morsai = require('../asset/Misc/มอไซ.png');
+import buntook from '../../../asset3/Misc/รถบรรทุกสุดหล่อ.png';
+import morsai from '../../../asset3/Misc/มอไซ.png';
 
 
 
 const App = () => {
+      useEffect(() => {
+      document.body.className = 'page-bg41';
+  
+      // ล้าง class เมื่อ component นี้ออก (optional แต่ดีมาก)
+      return () => {
+        document.body.className = '';
+      };
+    }, []);
   return (
     <div>
-      <a className="btnnext" href="../html/storyboard_number_42.html" data-discover="true">ต่อไป &gt;&gt;</a>
-      <a className="btnback" href="../html/storyboard_number_40.html" data-discover="true">ย้อนกลับ</a>
-      <div className="center">
+      <Link className="btnnext41" to="/p42" data-discover="true">ต่อไป &gt;&gt;</Link>
+      <Link className="btnback41" to="/p40" data-discover="true">ย้อนกลับ</Link>
+      <div className="center41">
         <h1>
           <span style={{ color: 'rgb(255, 255, 255)' }}>แต่จะ</span>
           <span style={{ color: 'rgb(223, 16, 16)' }}>ปลอดภัย</span>
           <span style={{ color: 'rgb(255, 255, 255)' }}>รึเปล่านะ</span>
         </h1>
       </div>
-      <div className="carder">
-        <img className="buntook" src={buntook} />
-        <img className="morsai" src={morsai} />
+      <div className="carder41">
+        <img className="buntook41" src={buntook} />
+        <img className="morsai41" src={morsai} />
       </div>
     </div>
   );

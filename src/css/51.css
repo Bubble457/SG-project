@@ -1,80 +1,79 @@
-body {
-  background-image: url("/asset/background/1st.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
-  background-size: cover;           /* ขยายให้เต็มจอ */
-  background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
-  background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
-  height: 100vh;                    /* ให้ body สูงเท่าจอ */
-  margin: 0;                        /* ลบช่องว่างรอบหน้าเว็บ */
+body.page-bg51 {
+  background-image: url("../asset3/background/1st.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.btnback {
+.btnback51 {
     position: absolute;
     top: 20px;
     left: 20px;
-    display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
-    background-color: #ffffff;       /* สีพื้นหลัง */
-    color: rgb(0, 0, 0);                    /* ตัวหนังสือสี */
-    padding: 15px 30px;              /* ช่องว่างรอบตัวหนังสือ */
-    border-radius: 30px;              /* มุมโค้งมน */
-    text-decoration: none;           /* ลบเส้นขีดใต้ */
+    display: inline-block;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
     font-weight: bold;
     font-size: 16px;
     gap: 10px;
     transition: background-color 0.3s ease;  
 }
 
-.btnback:hover {
+.btnback51:hover {
     background-color: #ffdcfa;       
 }
-.picbtnback {
-    position:absolute;
-    
+
+.picbtnback51 {
+    position: absolute;
 }
 
-
-.btnnext {
+.btnnext51 {
     position: absolute;
     bottom: 175px;
     left: 50%;
-    transform:translate(-50%, 50%);
-    display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
-    background-color: #dc0000;       /* สีพื้นหลัง */
-    color: rgb(255, 255, 255);                    /* ตัวหนังสือสี */
-    padding: 25px 50px;              /* ช่องว่างรอบตัวหนังสือ */
-    border-radius: 30px;              /* มุมโค้งมน */
-    text-decoration: none;           /* ลบเส้นขีดใต้ */
+    transform: translate(-50%, 50%);
+    display: inline-block;
+    background-color: #dc0000;
+    color: rgb(255, 255, 255);
+    padding: 25px 50px;
+    border-radius: 30px;
+    text-decoration: none;
     font-weight: bold;
     font-size: 25px;
     transition: background-color 0.3s ease;  
 }
 
-.btnnext:hover {
+.btnnext51:hover {
     background-color: #b50000;       
 }
 
-.center {
-    position:fixed;
+.center51 {
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.center h1{
+.center51 h1 {
     background-color: white;
     padding: 70px 50px;
     border-radius: 20px;
 }
 
-.center img{
-    height:100px;
+.center51 img {
+    height: 100px;
     width: auto;
 }
 
-.pencil{
+.pencil51 {
     height: 140px;
-    width:auto;
-    position:absolute;
+    width: auto;
+    position: absolute;
     bottom: 460px;
-    left:700px;
+    left: 700px;
     z-index: 2;
 }
