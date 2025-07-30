@@ -1,5 +1,5 @@
 body.page-bg500 {
-  background-image: url("../../../asset3/background/ถนนแก้.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
+  background-image: url("../asset3/background/ถนนแก้.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
   background-size: cover;           /* ขยายให้เต็มจอ */
   background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
   background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
@@ -100,7 +100,7 @@ body.page-bg500 {
   z-index: 0;
 }
 
-.maipodpai1dad2 img{
+.car6dad2 img{
   width:250px;
   height:auto;
   position:absolute;
@@ -110,7 +110,19 @@ body.page-bg500 {
   cursor: pointer;
 }
 
-.maipodpai2dad2 img{
+.car6dad2.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid red;
+  background-color: rgba(255, 0, 0, 0.2); /* ช่วยให้เห็นง่าย */
+  pointer-events: none;
+}
+
+.car1dad2 img{
   width:250px;
   height:auto;
   position:absolute;
@@ -120,7 +132,19 @@ body.page-bg500 {
   cursor: pointer;
 }
 
-.morsaibon1dad2 img{
+.car1dad2.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid red;
+  background-color: rgba(255, 0, 0, 0.2); /* ช่วยให้เห็นง่าย */
+  pointer-events: none;
+}
+
+.car4dad2 img{
   width:250px;
   height:auto;
   position:absolute;
@@ -130,7 +154,19 @@ body.page-bg500 {
   cursor: pointer;
 }
 
-.rod3dad2 img{
+.car4dad2.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid red;
+  background-color: rgba(255, 0, 0, 0.2); /* ช่วยให้เห็นง่าย */
+  pointer-events: none;
+}
+
+.car5dad2 img{
     width:200px;
     height:auto;
     position:absolute;
@@ -140,17 +176,41 @@ body.page-bg500 {
     cursor: pointer;
 }
 
-.rod1dad2 img{
+.car5dad2.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid red;
+  background-color: rgba(255, 0, 0, 0.2); /* ช่วยให้เห็นง่าย */
+  pointer-events: none;
+}
+
+.car2dad2 img{
     width:200px;
     height:auto;
-    position:absolute;
+    position:relative;
     top: -720px;
     left:35.5%;
     z-index:20;
     cursor: pointer;
 }
 
-.rod2dad2 img{
+.car2dad2.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid red;
+  background-color: rgba(255, 0, 0, 0.2); /* ช่วยให้เห็นง่าย */
+  pointer-events: none;
+}
+
+.car3dad2 img{
     width:200px;
     height:auto;
     position:absolute;
@@ -161,6 +221,17 @@ body.page-bg500 {
     
 }
 
+.car3dad2.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid red;
+  background-color: rgba(255, 0, 0, 0.2); /* ช่วยให้เห็นง่าย */
+  pointer-events: none;
+}
 
 .selected-block {
   border: 5px solid gray;
