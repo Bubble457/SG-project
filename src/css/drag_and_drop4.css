@@ -8,7 +8,7 @@ body.page-bg500 {
   overflow: hidden;
 }
 
-.btnbackdad2 {
+.btnbackdad4 {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -24,12 +24,12 @@ body.page-bg500 {
   z-index: 2;
 }
 
-.btnbackdad2:hover {
+.btnbackdad4:hover {
   background-color: #ffdcfa;      
   z-index: 2; 
 }
 
-.btnnextdad2 {
+.btnnextdad4 {
   position: absolute;
   bottom: 20px;
   right: 20px;
@@ -45,12 +45,12 @@ body.page-bg500 {
   z-index: 2;
 }
 
-.btnnextdad2:hover {
+.btnnextdad4:hover {
   background-color: #044e7b;  
   z-index: 2;     
 }
 
-.centerdad2 {
+.centerdad4 {
   display: flex;
   justify-content: center;      /* จัดกลางแนวนอน */
   align-items: center;          /* จัดกลางแนวตั้ง */
@@ -59,19 +59,19 @@ body.page-bg500 {
   z-index: 1;
 }
 
-.centerdad2 h2 {
-  transform: translate(500px, -300px); /* เลื่อนลง 180px */ 
+.centerdad4 h2 {
+  transform: translate(0px, -400px); /* เลื่อนลง 180px */ 
   align-items: center;
-  font-size: 24px;
+  font-size: 30px;
   color: #333;
   z-index: 1;
   background-color:rgb(255, 255, 255);
-  padding: 25px 70px;
-  border-radius: 40px;
-  box-shadow: 0 4px 10px
+  padding: 40px 70px;
+  border-radius: 1pc 1pc 3pc 3pc;
+  box-shadow: 0 4px 10px black;
 }
 
-.centerdad2 img{
+.centerdad4 img{
   width: auto;
   height: 250px;
   z-index: 1;
@@ -79,18 +79,18 @@ body.page-bg500 {
   
 }
 
-.centerdad2, .centerdad2 * {
+.centerdad4, .centerdad4 * {
   pointer-events: none;
 }
 
-.carderdad2{
+.carderdad4{
   justify-content:center;
   align-items: center;
   position:relative;
   z-index: 0;
 }
 
-.buntookbondad2{
+.buntookbondad4{
   position:absolute;
   width: 350px;
   height: 350px;
@@ -100,7 +100,7 @@ body.page-bg500 {
   z-index: 0;
 }
 
-.car6dad2 img{
+.car6dad4 img{
   width:250px;
   height:auto;
   position:absolute;
@@ -110,7 +110,7 @@ body.page-bg500 {
   cursor: pointer;
 }
 
-.car6dad2.active::after {
+.car6dad4.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -122,7 +122,7 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car1dad2 img{
+.car1dad4 img{
   width:250px;
   height:auto;
   position:absolute;
@@ -132,7 +132,7 @@ body.page-bg500 {
   cursor: pointer;
 }
 
-.car1dad2.active::after {
+.car1dad4.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -142,10 +142,9 @@ body.page-bg500 {
   border: 5px solid red;
   background-color: rgba(255, 0, 0, 0.2); /* ช่วยให้เห็นง่าย */
   pointer-events: none;
-  display: show;
 }
 
-.car4dad2 img{
+.car4dad4 img{
   width:250px;
   height:auto;
   position:absolute;
@@ -155,7 +154,7 @@ body.page-bg500 {
   cursor: pointer;
 }
 
-.car4dad2.active::after {
+.car4dad4.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -167,7 +166,7 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car5dad2 img{
+.car5dad4 img{
     width:200px;
     height:auto;
     position:absolute;
@@ -177,7 +176,7 @@ body.page-bg500 {
     cursor: pointer;
 }
 
-.car5dad2.active::after {
+.car5dad4.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -189,7 +188,7 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car2dad2 img{
+.car2dad4 img{
     width:200px;
     height:auto;
     position:relative;
@@ -199,7 +198,7 @@ body.page-bg500 {
     cursor: pointer;
 }
 
-.car2dad2.active::after {
+.car2dad4.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -211,7 +210,7 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car3dad2 img{
+.car3dad4 img{
     width:200px;
     height:auto;
     position:absolute;
@@ -222,7 +221,7 @@ body.page-bg500 {
     
 }
 
-.car3dad2.active::after {
+.car3dad4.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -234,4 +233,50 @@ body.page-bg500 {
   pointer-events: none;
 }
 
+.bottom-triangledad4 {
+  position:absolute;
+  left:44.5%;
+  bottom:7%;
+  width: 0;
+  height: 0;
+  border-top: 80px solid transparent;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 130px solid red;
+  margin: 10px;
+  opacity: 0.5;
+  z-index:0;
+}
 
+.left-triangledad4 {
+  position:absolute;
+  left: 38.2%;
+  bottom: 12%;
+  width: 0;
+  height: 0;
+  border-top: 350px solid red;     /* ฐาน */
+  border-right: 150px solid transparent; /* ด้านตั้ง */
+  opacity:0.5;
+}
+
+.right-triangledad4 {
+  position:absolute;
+  right: 38.2%;
+  bottom: 12%;
+  width: 0;
+  height: 0;
+  border-top: 350px solid red;     /* ฐาน */
+  border-left: 150px solid transparent; /* ด้านตั้ง */
+  opacity: 0.5;
+}
+
+.top-squaredad4 {
+  position: absolute;
+  left:46.5%;
+  bottom:55%;
+  width: 100px;
+  height: 60px;
+  background-color: red;
+  margin: 10px;
+  opacity: 0.5;
+}

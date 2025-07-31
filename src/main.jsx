@@ -29,6 +29,8 @@ import Page8 from './components/Lesson/Lesson2/P29.jsx'
 //lesson3
 import DAD from './components/Lesson/Lesson3/drag_and_drop.jsx'
 import DAD2 from './components/Lesson/Lesson3/drag_and_drop2.jsx'
+import DAD3 from './components/Lesson/Lesson3/drag_and_drop3.jsx'
+import DAD4 from './components/Lesson/Lesson3/drag_and_drop4.jsx'
 import P38 from './components/Lesson/Lesson3/react38.jsx'
 import P39 from './components/Lesson/Lesson3/react39.jsx'
 import P40 from './components/Lesson/Lesson3/react40.jsx'
@@ -166,10 +168,14 @@ const router = createBrowserRouter([
     path: "/page9",
     element: <Page8 />
   },
-  // {
-  //   path: "/dad",
-  //   element: <DAD />
-  // },
+   {
+    path: "/pdad4",
+    element: <DAD4 />
+   },
+   {
+     path: "/pdad3",
+     element: <DAD3 />
+   },
    {
     path: '/pdad2',
     element: <DAD2 />

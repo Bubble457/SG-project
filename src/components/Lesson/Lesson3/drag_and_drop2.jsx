@@ -1,6 +1,7 @@
 import '../../../css/drag_and_drop2.css';
 import { Link } from 'react-router-dom';
-import React, { useEffect, useState, useNavigate } from 'react';
+import React, { useEffect, useState, } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import morsaibon from '../../../asset3/Misc/morsaibon.png';
 import character from '../../../asset3/Misc/คิดว่าตัวเองดวงดีครึ่ง.png';
@@ -39,10 +40,13 @@ const App = () => {
     }
   };
 
+
+  
+
   return (
     <div>
       {selectedIds.length === 3 && (
-        <Link className="btnnextdad2" to="/p51" /*state={{ selectedCars: selectedIds }}*/> ตรวจคำตอบ</Link>
+        <Link className="btnnextdad2" to="/pdad3" state={{ selectedCars: selectedIds}}> ตรวจคำตอบ</Link>
       )}
       <Link className="btnbackdad2" to="/pdad" data-discover="true">ย้อนกลับ</Link>
       <div className="centerdad2">
