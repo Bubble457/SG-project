@@ -9,8 +9,8 @@ body.page-bg38 {
 
 .btnback38 {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 3%;
+    left: 3%;
     display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
     background-color: #ffffff;       /* สีพื้นหลัง */
     color: rgb(0, 0, 0);                    /* ตัวหนังสือสี */
@@ -34,7 +34,7 @@ body.page-bg38 {
 
 .btnnext38 {
     position: absolute;
-    bottom: 175px;
+    bottom: 20%;
     left: 50%;
     transform:translate(-50%, 50%);
     display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
@@ -69,7 +69,7 @@ body.page-bg38 {
   border-radius: 1pc 1pc 0pc 0pc;
   padding: 10px 80px;
   font-size: 15px;
-  transform:translate(175px, -55px)
+  transform:translate(100%, -100%)
 }
 
 .center38 img{
@@ -84,7 +84,7 @@ body.page-bg38 {
     justify-content: center;
     align-items: center;
     border-radius: 30px;
-    padding: 20px 60px;
+    padding: 5% 60px;
     font-size: 15px;
     transform: ()
 }

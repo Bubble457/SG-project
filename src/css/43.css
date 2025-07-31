@@ -10,8 +10,8 @@ body.page-bg43 {
 
 .btnback43 {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 3%;
+  left: 3%;
   display: inline-block;           
   background-color: #ffffff;       
   color: rgb(0, 0, 0);                   
@@ -32,8 +32,8 @@ body.page-bg43 {
 
 .btnpink43 {
   position: absolute;
-  top: 300px;
-  left: 400px;
+  top: 35%;
+  left: 26%;
   display: inline-block;           
   background-color: #f3b5e5;       
   color: rgb(0, 0, 0);                   
@@ -53,8 +53,8 @@ body.page-bg43 {
 
 .btnblue43 {
   position: absolute;
-  top: 450px;
-  left: 400px;
+  top: 55%;
+  left: 26%;
   display: inline-block;           
   background-color: #85a9f0;       
   color: rgb(0, 0, 0);                   
@@ -82,7 +82,7 @@ body.page-bg43 {
 }
 
 .center43 h2 {
-  transform: translate(20px, -300px); /* เลื่อนลง 180px */ 
+  transform: translate(5%, -450%); /* เลื่อนลง 180px */ 
   align-items: center;
   font-size: 24px;
   color: #333;
@@ -97,7 +97,7 @@ body.page-bg43 {
   width: auto;
   height: 250px;
   z-index: 1;
-  transform: translate(-600px ,-315px);
+  transform: translate(-180% ,-130%);
 }
 
 .carder43{
