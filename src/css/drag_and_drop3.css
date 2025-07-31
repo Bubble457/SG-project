@@ -1,0 +1,282 @@
+body.page-bg500 {
+  background-image: url("../asset3/background/ถนนแก้.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
+  background-size: cover;           /* ขยายให้เต็มจอ */
+  background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
+  background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
+  height: 100vh;                    /* ให้ body สูงเท่าจอ */
+  margin: 0;                        /* ลบช่องว่างรอบหน้าเว็บ */
+  overflow: hidden;
+}
+
+.btnbackdad3 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-block;           
+  background-color: #ffffff;       
+  color: rgb(0, 0, 0);                   
+  padding: 15px 30px;              
+  border-radius: 30px;              
+  text-decoration: none;           
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;  
+  z-index: 2;
+}
+
+.btnbackdad3:hover {
+  background-color: #ffdcfa;      
+  z-index: 2; 
+}
+
+.btnnextdad3 {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: inline-block;           
+  background-color: #0075bd;       
+  color: rgb(255, 255, 255);                   
+  padding: 15px 30px;              
+  border-radius: 30px;              
+  text-decoration: none;           
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;  
+  z-index: 2;
+}
+
+.btnnextdad3:hover {
+  background-color: #044e7b;  
+  z-index: 2;     
+}
+
+.centerdad3 {
+  display: flex;
+  justify-content: center;      /* จัดกลางแนวนอน */
+  align-items: center;          /* จัดกลางแนวตั้ง */
+  height: 100vh;                /* สูงเท่าจอ */
+  position: relative;
+  z-index: 1;
+}
+
+.centerdad3 h2 {
+  transform: translate(0px, -400px); /* เลื่อนลง 180px */ 
+  align-items: center;
+  font-size: 30px;
+  color: #333;
+  z-index: 1;
+  background-color:rgb(255, 255, 255);
+  padding: 40px 70px;
+  border-radius: 1pc 1pc 3pc 3pc;
+  box-shadow: 0 4px 10px black;
+}
+
+.centerdad3 img{
+  width: auto;
+  height: 250px;
+  z-index: 1;
+  transform: translate(420px, -300px);
+  
+}
+
+.centerdad3, .centerdad3 * {
+  pointer-events: none;
+}
+
+.carderdad3{
+  justify-content:center;
+  align-items: center;
+  position:relative;
+  z-index: 0;
+}
+
+.buntookbondad3{
+  position:absolute;
+  width: 350px;
+  height: 350px;
+  top: -500px;
+  left: 52.6%;
+  transform: translateX(-59%);
+  z-index: 0;
+}
+
+.car6dad3 img{
+  width:250px;
+  height:auto;
+  position:absolute;
+  top: -620px;
+  left:51%;
+  z-index:20;
+  cursor: pointer;
+}
+
+.car6dad3.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid red;
+  background-color: rgba(255, 0, 0, 0.2); /* ช่วยให้เห็นง่าย */
+  pointer-events: none;
+}
+
+.car1dad3 img{
+  width:250px;
+  height:auto;
+  position:absolute;
+  top: -460px;
+  left:34%;
+  z-index:20;
+  cursor: pointer;
+}
+
+.car1dad3.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid red;
+  background-color: rgba(255, 0, 0, 0.2); /* ช่วยให้เห็นง่าย */
+  pointer-events: none;
+}
+
+.car4dad3 img{
+  width:250px;
+  height:auto;
+  position:absolute;
+  top: -120px;
+  left:42.2%;
+  z-index:20;
+  cursor: pointer;
+}
+
+.car4dad3.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid red;
+  background-color: rgba(255, 0, 0, 0.2); /* ช่วยให้เห็นง่าย */
+  pointer-events: none;
+}
+
+.car5dad3 img{
+    width:200px;
+    height:auto;
+    position:absolute;
+    top: -150px;
+    left:35.5%;
+    z-index:20;
+    cursor: pointer;
+}
+
+.car5dad3.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid red;
+  background-color: rgba(255, 0, 0, 0.2); /* ช่วยให้เห็นง่าย */
+  pointer-events: none;
+}
+
+.car2dad3 img{
+    width:200px;
+    height:auto;
+    position:relative;
+    top: -720px;
+    left:35.5%;
+    z-index:20;
+    cursor: pointer;
+}
+
+.car2dad3.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid red;
+  background-color: rgba(255, 0, 0, 0.2); /* ช่วยให้เห็นง่าย */
+  pointer-events: none;
+}
+
+.car3dad3 img{
+    width:200px;
+    height:auto;
+    position:absolute;
+    top: -400px;
+    left:52.5%;
+    z-index:20;
+    cursor: pointer;
+    
+}
+
+.car3dad3.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid red;
+  background-color: rgba(255, 0, 0, 0.2); /* ช่วยให้เห็นง่าย */
+  pointer-events: none;
+}
+
+.bottom-triangledad3 {
+  position:absolute;
+  left:44.5%;
+  bottom:7%;
+  width: 0;
+  height: 0;
+  border-top: 80px solid transparent;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 130px solid red;
+  margin: 10px;
+  opacity: 0.5;
+  z-index:0;
+}
+
+.left-triangledad3 {
+  position:absolute;
+  left: 38.2%;
+  bottom: 12%;
+  width: 0;
+  height: 0;
+  border-top: 350px solid red;     /* ฐาน */
+  border-right: 150px solid transparent; /* ด้านตั้ง */
+  opacity:0.5;
+}
+
+.right-triangledad3 {
+  position:absolute;
+  right: 38.2%;
+  bottom: 12%;
+  width: 0;
+  height: 0;
+  border-top: 350px solid red;     /* ฐาน */
+  border-left: 150px solid transparent; /* ด้านตั้ง */
+  opacity: 0.5;
+}
+
+.top-squaredad3 {
+  position: absolute;
+  left:46.5%;
+  bottom:55%;
+  width: 100px;
+  height: 60px;
+  background-color: red;
+  margin: 10px;
+  opacity: 0.5;
+}

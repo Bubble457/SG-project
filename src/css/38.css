@@ -1,5 +1,5 @@
-body {
-  background-image: url("/asset/background/1st.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
+body.page-bg38 {
+  background-image: url("../asset3/background/1st.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
   background-size: cover;           /* ขยายให้เต็มจอ */
   background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
   background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
@@ -7,10 +7,10 @@ body {
   margin: 0;                        /* ลบช่องว่างรอบหน้าเว็บ */
 }
 
-.btnback {
+.btnback38 {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 3%;
+    left: 3%;
     display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
     background-color: #ffffff;       /* สีพื้นหลัง */
     color: rgb(0, 0, 0);                    /* ตัวหนังสือสี */
@@ -23,18 +23,18 @@ body {
     transition: background-color 0.3s ease;  
 }
 
-.btnback:hover {
+.btnback38:hover {
     background-color: #ffdcfa;       
 }
-.picbtnback {
+.picbtnback38 {
     position:absolute;
     
 }
 
 
-.btnnext {
+.btnnext38 {
     position: absolute;
-    bottom: 175px;
+    bottom: 20%;
     left: 50%;
     transform:translate(-50%, 50%);
     display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
@@ -48,17 +48,17 @@ body {
     transition: background-color 0.3s ease;  
 }
 
-.btnnext:hover {
+.btnnext38:hover {
     background-color: #b50000;       
 }
 
-.center {
+.center38 {
     position:fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.center h3{
+.center38 h3{
   position: absolute;
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -69,22 +69,22 @@ body {
   border-radius: 1pc 1pc 0pc 0pc;
   padding: 10px 80px;
   font-size: 15px;
-  transform:translate(175px, -55px)
+  transform:translate(100%, -100%)
 }
 
-.center img{
+.center38 img{
     height:100px;
     width: auto;
 }
 
-.caution {
+.caution38 {
     display: inline-flex;
     color:black;
     background-color: white;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
-    padding: 20px 60px;
+    padding: 5% 60px;
     font-size: 15px;
     transform: ()
 }

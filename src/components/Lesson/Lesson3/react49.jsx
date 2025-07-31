@@ -1,57 +1,53 @@
 import '../../../css/49.css';
+import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
-const character = require('../asset/Misc/halfcharacter.PNG');
-const buntook = require('../asset/Misc/รถบรรทุกสุดหล่อ.png');
-const morsai = require('../asset/Misc/มอไซ.png');
-const eyebutton = require('../asset/icon/eye.png')
-const korb = require('../asset/Misc/เทส.png')
-const kajog = require('../asset/Misc/กระจกรถ.png')
-const wrong = require('../asset/icon/wrong.webp')
-const news = require('../asset/background/news.jpg')
-const check = require('../asset/icon/ถูก.png')
-const arrow = require('../asset/Misc/ลูกษร.png')
-const number1 = require('../asset/Misc/1.png')
-const number2 = require('../asset/Misc/2.png')
-const number3 = require('../asset/Misc/3.png')
-const number4 = require('../asset/Misc/4.png')
-const buntookbon = require('../asset/Misc/รถบรรทุก.png')
-const term = require('../asset/Misc/เติม.png')
-const muang = require('../asset/icon/ม่วง.png')
-const eye = require('../asset/Misc/eye.png')
-const book = require('../asset/Misc/11.png')
-const mouse = require('../asset/Misc/เมาส์.png')
+import number1 from '../../../asset3/Misc/1.png';
+import number2 from '../../../asset3/Misc/2.png';
+import number3 from '../../../asset3/Misc/3.png';
+import eye from '../../../asset3/Misc/eye.png';
+import book from '../../../asset3/Misc/11.png';
+import mouse from '../../../asset3/Misc/เมาส์.png';
 
 const App = () => {
+      useEffect(() => {
+      document.body.className = 'page-bg49';
+  
+      // ล้าง class เมื่อ component นี้ออก (optional แต่ดีมาก)
+      return () => {
+        document.body.className = '';
+      };
+    }, []);
   return (
     <div>
-      <div class="background">
-        <div class="buttongroup">
-            <a class="btnnext" href="/html/storyboard_number_50.html" data-discover="true">เริ่ม</a>
-            <a class="btnback" href="/html/storyboard_number_48.html" data-discover="true">ย้อนกลับ</a>
+      <div className="background49">
+        <div className="buttongroup49">
+          <Link className="btnnext49" to="/p50_0" data-discover="true">เริ่ม</Link>
+          <Link className="btnback49" to="/p48" data-discover="true">ย้อนกลับ</Link>
         </div>
-        <div class="number">
-            <img class="number1" src={number1} />
-            <img class="number2" src={number2} />
-            <img class="number3" src={number3} />
+        <div className="number49">
+          <img className="number149" src={number1} />
+          <img className="number249" src={number2} />
+          <img className="number349" src={number3} />
         </div>
-        <div class="center">
-            <h1>วิธีการเล่น</h1>
-            <h2 class="first">
-                <p>สังเกตตำแหน่ง</p>
-                <p>ของรถคันสีขาว</p>
-                <img src={eye} />
-            </h2>
-            <h2 class="second">
-                <p>วิเคราะห์รถที่คิด</p>
-                <p>ว่าอยู่ตรงจุดบอด</p>
-                <img src={book} />
-            </h2>
-            <h2 class="third">
-                <p>ใช้เมาส์คลิก</p>
-                <p>เลือกรูปรถ</p>
-                <p>ที่ต้องการ</p>
-                <img src={mouse} />
-            </h2>
+        <div className="center49">
+          <h1>วิธีการเล่น</h1>
+          <h2 className="first49">
+            <p>สังเกตตำแหน่ง</p>
+            <p>ของรถคันสีขาว</p>
+            <img src={eye} />
+          </h2>
+          <h2 className="second49">
+            <p>วิเคราะห์รถที่คิด</p>
+            <p>ว่าอยู่ตรงจุดบอด</p>
+            <img src={book} />
+          </h2>
+          <h2 className="third49">
+            <p>ใช้เมาส์คลิก</p>
+            <p>เลือกรูปรถ</p>
+            <p>ที่ต้องการ</p>
+            <img src={mouse} />
+          </h2>
         </div>
       </div>
     </div>

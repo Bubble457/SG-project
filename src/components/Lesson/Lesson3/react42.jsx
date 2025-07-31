@@ -1,27 +1,35 @@
 import '../../../css/42.css';
 import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
-const character = require('../asset/Misc/halfcharacter.PNG');
-const buntook = require('../asset/Misc/รถบรรทุกสุดหล่อ.png');
-const morsai = require('../asset/Misc/มอไซ.png');
-const eyebutton = require('../asset/icon/eye.png')
-
+import character from '../../../asset3/Misc/คิดว่าตัวเองดวงดีครึ่ง.png';
+import buntook from '../../../asset3/Misc/รถบรรทุกสุดหล่อ.png';
+import morsai from '../../../asset3/Misc/มอไซ.png';
+import eyebutton from '../../../asset3/icon/ตาไฟนอล.png';
 
 
 const App = () => {
+      useEffect(() => {
+      document.body.className = 'page-bg42';
+  
+      // ล้าง class เมื่อ component นี้ออก (optional แต่ดีมาก)
+      return () => {
+        document.body.className = '';
+      };
+    }, []);
   return (
     <div>
-      <a className="btneye" href="/html/storyboard_number_43.html" data-discover="true">
+      <Link className="btneye42" to="/p43" data-discover="true">
         <img src={eyebutton} alt="ปุ่มรูปตา"/>
-      </a>
-      <a className="btnback" href="../html/storyboard_number_41.html" data-discover="true">ย้อนกลับ</a>
-      <div className="center">
+      </Link>
+      <Link className="btnback42" to="/p41" data-discover="true">ย้อนกลับ</Link>
+      <div className="center42">
         <h2>กดรูปตาเพื่อดูในมุมมองของคนขับรถบรรทุก</h2>
         <img src={character} />
       </div>
-      <div className="carder">
-        <img className="buntook" src={buntook} />
-        <img className="morsai" src={morsai} />
+      <div className="carder42">
+        <img className="buntook42" src={buntook} />
+        <img className="morsai42" src={morsai} />
       </div>
     </div>
   );

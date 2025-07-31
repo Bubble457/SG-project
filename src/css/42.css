@@ -1,5 +1,5 @@
-body {
-  background-image: url("/asset/background/image.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
+body.page-bg42 {
+  background-image: url("../asset3/background/image.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
   background-size: cover;           /* ขยายให้เต็มจอ */
   background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
   background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
@@ -7,10 +7,10 @@ body {
   margin: 0;                        /* ลบช่องว่างรอบหน้าเว็บ */
 }
 
-.btnback {
+.btnback42 {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 3%;
+  left: 3%;
   display: inline-block;           
   background-color: #ffffff;       
   color: rgb(0, 0, 0);                   
@@ -23,17 +23,17 @@ body {
   z-index: 2;
 }
 
-.btnback:hover {
+.btnback42:hover {
   background-color: #ffdcfa;      
   z-index: 2; 
 }
 
-.btnnext {
+.btnnext42 {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 3%;
+  right: 3%;
   display: inline-block;           
-  background-color: #11eeea;       
+  background-color: #0075bd;       
   color: rgb(255, 255, 255);                   
   padding: 15px 30px;              
   border-radius: 30px;              
@@ -44,12 +44,12 @@ body {
   z-index: 2;
 }
 
-.btnnext:hover {
-  background-color: #10c3c0;  
+.btnnext42:hover {
+  background-color: #044e7b;  
   z-index: 2;     
 }
 
-.center {
+.center42 {
   display: flex;
   justify-content: center;      /* จัดกลางแนวนอน */
   align-items: center;          /* จัดกลางแนวตั้ง */
@@ -58,8 +58,8 @@ body {
   z-index: 1;
 }
 
-.center h2 {
-  transform: translate(100px, 260px); /* เลื่อนลง 180px */ 
+.center42 h2 {
+  transform: translate(10%, 240%); /* เลื่อนลง 180px */ 
   align-items: center;
   font-size: 24px;
   color: #333;
@@ -70,22 +70,22 @@ body {
   box-shadow: 0 4px 10px
 }
 
-.center img{
-  width: 200px;
-  height: 200px;
+.center42 img{
+  width: auto;
+  height: 300px;
   z-index: 1;
-  transform: translateY(215px);
+  transform: translate(-25%, 75%);
   
 }
 
-.carder{
+.carder42{
   justify-content:center;
   align-items: center;
   position:relative;
   z-index: 0;
 }
 
-.buntook{
+.buntook42{
   position:absolute;
   width: 450px;
   height: 450px;
@@ -95,7 +95,7 @@ body {
   z-index: 0;
 }
 
-.morsai{
+.morsai42{
   position:absolute;
   width: 300px;
   height: 300px;
@@ -105,21 +105,21 @@ body {
   z-index: 0;
 }
 
-.btneye img{
+.btneye42 img{
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: auto;
+  height: 170px;
   top: 50%;
   left: 50%;
-  transform: translate(100px, -350px);
+  transform: translate(70%, -150%);
   z-index: 2;
 }
 
-.wrong{
+.wrong42{
   opacity: 0.5;
 }
 
-.show {
+.show42 {
   display: flex;
   justify-content: center;      /* จัดกลางแนวนอน */
   align-items: center;          /* จัดกลางแนวตั้ง */
@@ -129,14 +129,14 @@ body {
   top: -110%
 }
 
-.show img{
+.show42 img{
   width: 700px;
   height: auto;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.show img:hover {
+.show42 img:hover {
   transform: scale(1.02);
 }
 

@@ -1,5 +1,5 @@
-body {
-  background-image: url("/asset/background/ถนนแก้.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
+body.page-bg502 {
+  background-image: url("../asset3/background/ถนนแก้.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
   background-size: cover;           /* ขยายให้เต็มจอ */
   background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
   background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
@@ -8,7 +8,7 @@ body {
   overflow: hidden;
 }
 
-.btnback {
+.btnback502 {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -24,17 +24,17 @@ body {
   z-index: 2;
 }
 
-.btnback:hover {
+.btnback502:hover {
   background-color: #ffdcfa;      
   z-index: 2; 
 }
 
-.btnnext {
+.btnnext502 {
   position: absolute;
   bottom: 20px;
   right: 20px;
   display: inline-block;           
-  background-color: #11eeea;       
+  background-color: #0075bd;       
   color: rgb(255, 255, 255);                   
   padding: 15px 30px;              
   border-radius: 30px;              
@@ -45,12 +45,12 @@ body {
   z-index: 2;
 }
 
-.btnnext:hover {
-  background-color: #10c3c0;  
+.btnnext502:hover {
+  background-color: #044e7b;  
   z-index: 2;     
 }
 
-.center {
+.center502 {
   display: flex;
   justify-content: center;      /* จัดกลางแนวนอน */
   align-items: center;          /* จัดกลางแนวตั้ง */
@@ -59,7 +59,7 @@ body {
   z-index: 1;
 }
 
-.center h2 {
+.center502 h2 {
   transform: translate(500px, -300px); /* เลื่อนลง 180px */ 
   align-items: center;
   font-size: 24px;
@@ -71,80 +71,80 @@ body {
   box-shadow: 0 4px 10px
 }
 
-.center img{
-  width: 180px;
-  height: 180px;
+.center502 img{
+  width: auto;
+  height: 250px;
   z-index: 1;
-  transform: translate(500px, -350px); 
+  transform: translate(420px, -300px);
 }
 
-.center, .center * {
+.center502, .center502 * {
   pointer-events: none;
 }
 
-.carder{
+.carder502{
   justify-content:center;
   align-items: center;
   position:relative;
   z-index: 0;
 }
 
-.buntookbon{
+.buntookbon502{
   position:absolute;
-  width: 400px;
-  height: 400px;
-  top: -600px;
+  width: 350px;
+  height: 350px;
+  top: -500px;
   left: 52.6%;
   transform: translateX(-59%);
   z-index: 0;
 }
 
-.maipodpai1 img{
-  width:250px;
+.maipodpai1502 img{
+  width:200px;
   height:auto;
   position:absolute;
-  top: -590px;
-  left:50.5%;
+  top: -670px;
+  left:52.5%;
   z-index:20;
 }
 
-.maipodpai2 img{
-  width:250px;
+.maipodpai2502 img{
+  width:200px;
   height:auto;
   position:absolute;
-  top: -440px;
-  left:33.5%;
+  top: -340px;
+  left:35.5%;
   z-index:20;
 }
 
-.rod1 img{
-    width:250px;
+.rod1502 img{
+    width:200px;
     height:auto;
     position:absolute;
     top: -720px;
-    left:33.5%;
+    left:35.5%;
     z-index:20;
 }
 
-.rod2 img{
-    width:250px;
+.rod2502 img{
+    width:200px;
     height:auto;
     position:absolute;
-    top: -180px;
-    left:50.5%;
+    top: -125px;
+    left:52.5%;
     z-index:20;
 }
 
-.rod1, .rod2, .maipodpai1, .maipodpai2 {
+.rod1502, .rod2502, .maipodpai1502, .maipodpai2502 {
   pointer-events: visiblePainted;
 }
 
-.block {
+.block502 {
   position: absolute;
-  left:35.7%;
-  bottom:450px;
-  width: 150px;
-  height: 270px;
+  left:37%;
+  bottom:500px;
+  width: 130px;
+  height: 220px;
   background-color: rgb(224, 31, 31);
   margin: 10px;
   opacity: 0.5;
@@ -153,11 +153,11 @@ body {
   pointer-events: none;
 }
 
-.check {
+.check502 {
   position: absolute;
-  width: 140;
+  width: 140px;
   height:auto;
   top: 60px;
-  right: 480px;
+  right: 560px;
   z-index:2;
 }

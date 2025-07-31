@@ -1,72 +1,77 @@
-body {
-  background-image: url("/asset/background/ขนาดใหม่\ \(14\).png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
-  background-size: cover;           /* ขยายให้เต็มจอ */
-  background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
-  background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
-  height: 100vh;                    /* ให้ body สูงเท่าจอ */
-  margin: 0;                        /* ลบช่องว่างรอบหน้าเว็บ */
+body.page-bg52 {
+  background-image: url("../asset3/background/ขนาดใหม่\ \(14\).png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
 }
 
 html, body {
   height: 100%;
-  margin: 0; /* ป้องกันไม่ให้เลื่อน */
+  margin: 0;
   overflow: hidden;
 }
 
-.background {  /* ถ้าช่องว่างมาจาก background */
+.background52 {
   height: 100vh;
   position: relative;
 }
-.btnback {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
-    background-color: #ffffff;       /* สีพื้นหลัง */
-    color: rgb(0, 0, 0);                    /* ตัวหนังสือสี */
-    padding: 15px 30px;              /* ช่องว่างรอบตัวหนังสือ */
-    border-radius: 30px;              /* มุมโค้งมน */
-    text-decoration: none;           /* ลบเส้นขีดใต้ */
-    font-weight: bold;
-    font-size: 16px;
-    gap: 10px;
-    transition: background-color 0.3s ease;  
-}
-.btnback:hover {
-    background-color: #ffdcfa;       
-}
-.picbtnback {
-    position:absolute;
-    
-}
-.btnnext {
-    position: absolute;
-    bottom: 175px;
-    left: 50%;
-    transform:translate(-50%, 50%);
-    display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
-    background-color: #dc0000;       /* สีพื้นหลัง */
-    color: rgb(255, 255, 255);                    /* ตัวหนังสือสี */
-    padding: 25px 50px;              /* ช่องว่างรอบตัวหนังสือ */
-    border-radius: 30px;              /* มุมโค้งมน */
-    text-decoration: none;           /* ลบเส้นขีดใต้ */
-    font-weight: bold;
-    font-size: 25px;
-    transition: background-color 0.3s ease;
-    z-index:2;  
-}
-.btnnext:hover {
-    background-color: #b50000;       
+
+.btnback52 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  gap: 10px;
+  transition: background-color 0.3s ease;
 }
 
-.center {
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
+.btnback52:hover {
+  background-color: #ffdcfa;
 }
-.center h3{
+
+.picbtnback52 {
+  position: absolute;
+}
+
+.btnnext52 {
+  position: absolute;
+  bottom: 175px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: inline-block;
+  background-color: #dc0000;
+  color: rgb(255, 255, 255);
+  padding: 25px 50px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+.btnnext52:hover {
+  background-color: #b50000;
+}
+
+.center52 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.center52 h3 {
   position: absolute;
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -77,67 +82,71 @@ html, body {
   border-radius: 25px;
   padding: 10px 50px;
   font-size: 30px;
-  transform:translate(950px, -820px)
-}
-.center h2{
-    width:800px;
-    text-align: center;
-    color:black;
-    background-color:white;
-    padding: 70px 100px;
-    padding-top: 480px;
-    border-radius: 30px;
-    transform:translate(10px, -50px)
-}
-.center h1{
-    transform: translate(225px, -50px);
-    display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
-    background-color: rgb(255, 247, 254);       /* สีพื้นหลัง */
-    color: #000000;                    /* ตัวหนังสือสี */
-    padding: 20px 200px;              /* ช่องว่างรอบตัวหนังสือ */
-    border-radius: 40px;              /* มุมโค้งมน */
-    text-decoration: none;           /* ลบเส้นขีดใต้ */
-    font-size: 30px;
-    gap: 10px;
-    border: 5px solid pink;
-}
-.center img{
-    height:100px;
-    width: auto;
+  transform: translate(950px, -750px);
 }
 
-
-.gunnock {
-    z-index: 1;
-    position: absolute;
-    height: 200px;
-    width:auto;
-    top: 275px;
-    left: 54%;
+.center52 h2 {
+  width: 1000px;
+  text-align: center;
+  color: black;
+  background-color: white;
+  padding: 70px 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 480px;
+  border-radius: 30px;
+  transform: translate(10px, -50px);
 }
 
-.nono {
-    z-index: 1;
-    position:absolute;
-    height: 300px;
-    width:auto;
-    top: 230px;
-    left: 51%;
+.center52 h1 {
+  transform: translate(225px, -50px);
+  display: inline-block;
+  background-color: rgb(255, 247, 254);
+  color: #000000;
+  padding: 20px 200px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 30px;
+  gap: 10px;
+  border: 5px solid pink;
 }
 
-.bike {
-    position:absolute;
-    height: 400px;
-    width:auto;
-    top: 230px;
-    left: 33%;
-    z-index: 1;
+.center52 img {
+  height: 100px;
+  width: auto;
 }
 
-.block {
+.gunnock52 {
+  z-index: 1;
   position: absolute;
-  left:50%;
-  bottom:250px;
+  height: 200px;
+  width: auto;
+  top: 275px;
+  left: 54%;
+}
+
+.nono52 {
+  z-index: 1;
+  position: absolute;
+  height: 300px;
+  width: auto;
+  top: 230px;
+  left: 51%;
+}
+
+.bike52 {
+  position: absolute;
+  height: 400px;
+  width: auto;
+  top: 230px;
+  left: 33%;
+  z-index: 1;
+}
+
+.block52 {
+  position: absolute;
+  left: 50%;
+  bottom: 250px;
   transform: translateX(-50%);
   width: 900px;
   height: 400px;
@@ -147,44 +156,44 @@ html, body {
   z-index: 0;
 }
 
-.btnred {
-    position: absolute;
-    bottom: 175px;
-    left: 50%;
-    transform:translate(5%, 100%);
-    display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
-    background-color: #dc0000;       /* สีพื้นหลัง */
-    color: rgb(0, 0, 0);                    /* ตัวหนังสือสี */
-    padding: 25px 200px;              /* ช่องว่างรอบตัวหนังสือ */
-    border-radius: 50px;              /* มุมโค้งมน */
-    text-decoration: none;           /* ลบเส้นขีดใต้ */
-    font-weight: bold;
-    font-size: 25px;
-    transition: background-color 0.3s ease;
-    z-index:2;  
+.btnred52 {
+  position: absolute;
+  bottom: 175px;
+  left: 50%;
+  transform: translate(5%, 100%);
+  display: inline-block;
+  background-color: #dc0000;
+  color: rgb(0, 0, 0);
+  padding: 25px 200px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+  transition: background-color 0.3s ease;
+  z-index: 2;
 }
 
-.btngreen {
-    position: absolute;
-    bottom: 175px;
-    left: 50%;
-    transform:translate(-105%, 100%);
-    display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
-    background-color: #3bdc00;       /* สีพื้นหลัง */
-    color: rgb(0, 0, 0);                    /* ตัวหนังสือสี */
-    padding: 25px 200px;              /* ช่องว่างรอบตัวหนังสือ */
-    border-radius: 50px;              /* มุมโค้งมน */
-    text-decoration: none;           /* ลบเส้นขีดใต้ */
-    font-weight: bold;
-    font-size: 25px;
-    transition: background-color 0.3s ease;
-    z-index:2;  
+.btngreen52 {
+  position: absolute;
+  bottom: 175px;
+  left: 50%;
+  transform: translate(-105%, 100%);
+  display: inline-block;
+  background-color: #3bdc00;
+  color: rgb(0, 0, 0);
+  padding: 25px 200px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+  transition: background-color 0.3s ease;
+  z-index: 2;
 }
 
-.btnred:hover {
-    background-color: #b50000;       
+.btnred52:hover {
+  background-color: #b50000;
 }
 
-.btngreen:hover {
-    background-color: #00b51b;       
+.btngreen52:hover {
+  background-color: #00b51b;
 }

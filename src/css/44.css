@@ -1,5 +1,5 @@
-body {
-  background-image: url("/asset/background/image.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
+body.page-bg44 {
+  background-image: url("../asset3/background/image.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
   background-size: cover;           /* ขยายให้เต็มจอ */
   background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
   background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
@@ -7,7 +7,7 @@ body {
   margin: 0;                        /* ลบช่องว่างรอบหน้าเว็บ */
 }
 
-.btnback {
+.btnback44 {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -23,17 +23,17 @@ body {
   z-index: 2;
 }
 
-.btnback:hover {
+.btnback44:hover {
   background-color: #ffdcfa;      
   z-index: 2; 
 }
 
-.btnnext {
+.btnnext44 {
   position: absolute;
   bottom: 20px;
   right: 20px;
   display: inline-block;           
-  background-color: #11eeea;       
+  background-color: #0075bd;       
   color: rgb(255, 255, 255);                   
   padding: 15px 30px;              
   border-radius: 30px;              
@@ -44,12 +44,12 @@ body {
   z-index: 2;
 }
 
-.btnnext:hover {
-  background-color: #10c3c0;  
+.btnnext44:hover {
+  background-color: #044e7b;  
   z-index: 2;     
 }
 
-.center {
+.center44 {
   display: flex;
   justify-content: center;      /* จัดกลางแนวนอน */
   align-items: center;          /* จัดกลางแนวตั้ง */
@@ -58,7 +58,7 @@ body {
   z-index: 1;
 }
 
-.center h2 {
+.center44 h2 {
   transform: translate(100px, 260px); /* เลื่อนลง 180px */ 
   align-items: center;
   font-size: 24px;
@@ -70,22 +70,22 @@ body {
   box-shadow: 0 4px 10px
 }
 
-.center img{
-  width: 200px;
-  height: 200px;
+.center44 img{
+  width: auto;
+  height: 300px;
   z-index: 1;
-  transform: translateY(215px);
+  transform: translate(-100px, 221px);
   
 }
 
-.carder{
+.carder44{
   justify-content:center;
   align-items: center;
   position:relative;
   z-index: 0;
 }
 
-.buntook{
+.buntook44{
   position:absolute;
   width: 450px;
   height: 450px;
@@ -95,7 +95,7 @@ body {
   z-index: 0;
 }
 
-.morsai{
+.morsai44{
   position:absolute;
   width: 300px;
   height: 300px;
@@ -105,21 +105,27 @@ body {
   z-index: 0;
 }
 
-.btneye img{
+.btneye44 img{
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: auto;
+  height: 150px;
   top: 50%;
   left: 50%;
-  transform: translate(100px, -350px);
   z-index: 2;
 }
 
-.wrong{
-  opacity: 0.5;
+.eye44 {
+  transform: translate(170px, -250px);
 }
 
-.show {
+
+
+.wrong44{
+  opacity: 0.5;
+  transform: translate(225px, -250px);
+}
+
+.show44 {
   display: flex;
   justify-content: center;      /* จัดกลางแนวนอน */
   align-items: center;          /* จัดกลางแนวตั้ง */
@@ -129,14 +135,14 @@ body {
   top: -110%
 }
 
-.show img{
+.show44 img{
   width: 700px;
   height: auto;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.show img:hover {
+.show44 img:hover {
   transform: scale(1.02);
 }
 

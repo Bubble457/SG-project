@@ -1,26 +1,28 @@
 import '../../../css/45.css';
 import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
-const character = require('../asset/Misc/halfcharacter.PNG');
-const buntook = require('../asset/Misc/รถบรรทุกสุดหล่อ.png');
-const morsai = require('../asset/Misc/มอไซ.png');
-const eyebutton = require('../asset/icon/eye.png')
-const korb = require('../asset/Misc/เทส.png')
-const kajog = require('../asset/Misc/กระจกรถ.png')
-const wrong = require('../asset/icon/wrong.webp')
-const news = require('../asset/background/news.jpg')
-
+import character from '../../../asset3/Misc/คิดว่าตัวเองดวงดีครึ่ง.png';
+import news from '../../../asset3/background/news.jpg';
 
 const App = () => {
+      useEffect(() => {
+      document.body.className = 'page-bg45';
+  
+      // ล้าง class เมื่อ component นี้ออก (optional แต่ดีมาก)
+      return () => {
+        document.body.className = '';
+      };
+    }, []);
   return (
     <div>
-      <a class="btnnext" href="../html/storyboard_number_46.html" data-discover="true">ต่อไป &gt;&gt;</a>
-      <a class="btnback" href="../html/storyboard_number_44.html" data-discover="true">ย้อนกลับ</a>
-      <div class="center">
+      <Link className="btnnext45" to="/p46" data-discover="true">ต่อไป &gt;&gt;</Link>
+      <Link className="btnback45" to="/p44" data-discover="true">ย้อนกลับ</Link>
+      <div className="center45">
         <h2>ถ้าเรายังปฏิบัติตนเช่นนี้ จะเป็นอย่างไร กดปุ่มเริ่มเพื่อดูเหตุการณ์จริง</h2>
         <img src={character} />
       </div>
-      <a class="show" href="https://www.youtube.com/watch?v=Dodh1_0cZc8" target="_blank">
+      <a className="show45" href="https://www.youtube.com/watch?v=Dodh1_0cZc8" target="_blank" rel="noreferrer">
         <img src={news} />
       </a>
     </div>
