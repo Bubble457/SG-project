@@ -1,25 +1,23 @@
-import '../css/Main.css';
-
-const bulb = {
-  img_src: require('../asests2/Icon/bookbulb.png'),
-  img_size: 50
-};
+import './Main.css';
+import bulb from '../assets2/Icon/bookbulb.png'
 
 const Label3 = ({ text }) => {
   return (
-    <div className='label3'>
+    <div className='c2-label3'>
       <p style={{
-        fontSize: 29
+        fontSize: 29,
+        marginTop: 'auto',
+        marginBottom: 'auto'
       }}
       >
         {text}
       </p>
       <img 
-        src={bulb.img_src}
+        src={bulb}
         style={{
-          width: bulb.img_size,
-          height: bulb.img_size,
-          padding: 20
+          width: 50,
+          height: 50,
+          padding: 10
         }}
       />
     </div>

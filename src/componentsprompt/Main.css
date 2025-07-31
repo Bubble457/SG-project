@@ -1,4 +1,13 @@
-.start-main {
+.c2-bg {
+  background-size:cover;
+  background-repeat: no-repeat;
+  height : 100vh;
+  width: 100%;
+  margin: 0;
+  overflow: hidden
+}
+
+.c2-start {
   position: absolute;
   top: 75%;
   align-self: center;
@@ -12,7 +21,7 @@
   border-radius: 20pc;
 }
 
-.back-main {
+.c2-back {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -27,11 +36,25 @@
   letter-spacing: 1px;
 }
 
-.back-img-main {
+.c2-back img {
   display: block;
 }
 
-.label1-main {
+.c2-next {
+  position: absolute;
+  bottom: 10%;
+  align-self: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: rgb(0, 116, 189);
+  padding: 10px;
+  border-radius: 20pc;
+}
+
+.c2-label1 {
   position: absolute;
   align-self: center;
   text-decoration: none;
@@ -40,15 +63,17 @@
   display: flex;
   align-items: center;
   background-color: #fff;
-  padding: 5px;
+  padding: 2pc;
+  padding-left: 4pc;
+  padding-right: 4pc;
   border-radius: 2pc;
 }
 
-.label1-img-main {
+.c2-label1 img {
   display: block;
 }
 
-.label2-main {
+.c2-label2 {
   position: absolute;
   top: 10%;
   align-self: center;
@@ -57,29 +82,13 @@
   font-weight: 500;
   display: flex;
   align-items: center;
-  padding: 5px;
+  padding: 1%;
   padding-left: 5%;
   padding-right: 5%;
   border-radius: 10pc;
 }
 
-.label2-main {
-  position: absolute;
-  top: 10%;
-  align-self: center;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  padding: 5px;
-  padding-left: 5%;
-  padding-right: 5%;
-  border-radius: 10pc;
-}
-
-.label3-main {
+.c2-label3 {
   position: absolute;
   top: 5%;
   right: 0;
@@ -89,18 +98,19 @@
   font-weight: 500;
   display: flex;
   align-items: center;
+  align-content: center;
   background-color: #d9f8ff;
-  padding: 5px;
+  padding: 1%;
   padding-left: 5%;
   padding-right: 2%;
   border-radius: 10pc 0 0 10pc;
 }
 
-.label3-img-main {
+.c2-label3 img {
   display: block;
 }
 
-.hat1-main {
+.c2-hat1 {
   position: absolute;
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -111,10 +121,11 @@
   border-radius: 2pc 2pc 0pc 0pc;
   padding-left: 20%;
   padding-right: 20%;
+  padding-top: 2%;
   font-size: 15px;
 }
 
-.imgbox1-main {
+.c2-imgbox1 {
   position: absolute;
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -124,12 +135,12 @@
   overflow: hidden;
 }
 
-.imgbox1-img-main {
+.c2-imgbox1 img {
   border-radius: 2pc;
   display: block;
 }
 
-.imgbox2-main {
+.c2-imgbox2 {
   position: absolute;
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -140,6 +151,6 @@
   vertical-align: middle;
 }
 
-.imgbox2-img-main {
+.c2-imgbox2 img {
   display: block;
 }

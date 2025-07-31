@@ -1,3 +1,4 @@
+//หน้าเกม
 import '../../../css/drag_and_drop2.css';
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState, } from 'react';
@@ -8,7 +9,7 @@ import character from '../../../asset3/Misc/คิดว่าตัวเอง
 import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
 import car from '../../../asset3/Misc/รถ.png';
 
-const cars = [
+const cars = [ //กำหนดไอดีไว้เรียกใช้
   { id: "car6", img: morsaibon },
   { id: "car1", img: morsaibon },
   { id: "car2", img: car },
@@ -29,7 +30,7 @@ const App = () => {
   const navigate = useNavigate();
   const [selectedIds, setSelectedIds] = useState([]);
 
-  const handleClick = (carId) => {
+  const handleClick = (carId) => { //ทำให้รู้ตัวว่าโดนกดอยู่รีเปล่า
     if (selectedIds.includes(carId)) {
       // ลบออกถ้าเลือกไว้แล้ว
       setSelectedIds(prev => prev.filter(id => id !== carId));
@@ -45,10 +46,10 @@ const App = () => {
 
   return (
     <div>
-      {selectedIds.length === 3 && (
+      {selectedIds.length === 3 && ( //ถ้าเลือกครบ 3อันแล้วจะแสดงปุ่ม
         <Link className="btnnextdad2" to="/pdad3" state={{ selectedCars: selectedIds}}> ตรวจคำตอบ</Link>
       )}
-      <Link className="btnbackdad2" to="/pdad" data-discover="true">ย้อนกลับ</Link>
+      <Link className="btnbackdad2" to="/pdad" data-discover="true">ย้อนกลับ</Link> 
       <div className="centerdad2">
         <h2>ตามหารถที่เสี่ยงอันตราย</h2>
         <img src={character} />

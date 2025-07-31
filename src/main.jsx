@@ -20,13 +20,18 @@ import Page1 from './components/Lesson/Lesson1/page1.jsx'
 import Page2 from './components/Lesson/Lesson1/page2.jsx'
 import Page3 from './components/Lesson/Lesson1/page3.jsx'
 import Check from './components/Lesson/Lesson1/Check.jsx'
-import Click from './components/Lesson/Lesson1/Click.jsx'
-import Page4 from './components/Lesson/Lesson2/P25.jsx'
+import Click from './components/Lesson/Lesson1/click.jsx'
+import Page4 from './components/Lesson/Lesson2/P25.jsx' 
 import Page5 from './components/Lesson/Lesson2/P26.jsx'
 import Page6 from './components/Lesson/Lesson2/P27.jsx'
 import Page7 from './components/Lesson/Lesson2/P28.jsx'
 import Page8 from './components/Lesson/Lesson2/P29.jsx'
 import News1 from './components/Lesson/Lesson1/News1.jsx'
+import Page9 from './components/Lesson/Lesson2/P30.jsx'
+import Page10 from './components/Lesson/Lesson2/P31.jsx'
+import Page11 from './components/Lesson/Lesson2/P32.jsx'
+import Page12 from './components/Lesson/Lesson2/P41.jsx'
+import Page13 from './components/Lesson/Lesson2/P42.jsx'
 //lesson3
 import DAD from './components/Lesson/Lesson3/drag_and_drop.jsx'
 import DAD2 from './components/Lesson/Lesson3/drag_and_drop2.jsx'
@@ -166,13 +171,41 @@ const router = createBrowserRouter([
     element: <Page7 />
   },
   {
-    path: "/page9",
+    path: "/page8",
     element: <Page8 />
   },
   {
     path: "/news1",
     element: <News1 />
-  }
+  },
+   {
+    path: "/pdad4",
+    element: <DAD4 />
+   },
+   {
+     path: "/pdad3",
+     element: <DAD3 />
+   },
+  {
+    path: "/page9",
+    element: <Page9 />
+  },
+  {
+    path: "/page10",
+    element: <Page10 />
+  },
+  {
+    path: "/page11",
+    element: <Page11 />
+  },
+  {
+    path: "/page12",
+    element: <Page12 />
+  },
+  {
+    path: "/page13",
+    element: <Page13 />
+  },
   // {
   //   path: "/dad",
   //   element: <DAD />
@@ -277,6 +310,114 @@ const router = createBrowserRouter([
   //   path: "/p54",
   //   element: <P54 />
   // },
+   {
+    path: '/pdad2',
+    element: <DAD2 />
+   },
+   {
+    path: '/pdad',
+    element: <DAD />
+   },
+   {
+     path: "/p38",
+     element: <P38 />
+   },
+   {
+     path: "/p39",
+     element: <P39 />
+   },
+   {
+     path: "/p40",
+     element: <P40 />
+   },
+   {
+     path: "/p41",
+     element: <P41 />
+   },
+   {
+     path: "/p42",
+     element: <P42 />
+   },
+   {
+     path: "/p43",
+     element: <P43 />
+   },
+   {
+     path: "/p44",
+     element: <P44 />
+   },
+   {
+     path: "/p45",
+     element: <P45 />
+   },
+   {
+     path: "/p46",
+     element: <P46 />
+   },
+   {
+     path: "/p47_0",
+     element: <P47 />
+   },
+   {
+     path: "/p47_1",
+     element: <P47_1 />
+   },
+   {
+     path: "/p47_2",
+     element: <P47_2 />
+   },
+   {
+     path: "/p47_3",
+     element: <P47_3 />
+   },
+   {
+     path: "/p47_4",
+     element: <P47_4 />
+   },
+   {
+     path: "/p48",
+     element: <P48 />
+   },
+   {
+     path: "/p49",
+     element: <P49 />
+   },
+   {
+     path: "/p50_0",
+     element: <P50 />
+   },
+   {
+     path: "/p50_1",
+     element: <P50_1 />
+   },
+   {
+     path: "/p50_2",
+     element: <P50_2 />
+   },
+   {
+     path: "/p50_3",
+     element: <P50_3 />
+   },
+   {
+     path: "/p50_4",
+     element: <P50_4 />
+   },
+   {
+     path: "/p51",
+     element: <P51 />
+   },
+   {
+     path: "/p52",
+     element: <P52 />
+   },
+   {
+     path: "/p53",
+     element: <P53 />
+   },
+   {
+     path: "/p54",
+     element: <P54 />
+   },
 
 ])
 

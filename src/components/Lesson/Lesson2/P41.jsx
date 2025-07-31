@@ -10,17 +10,15 @@ import Back from '../../../componentsprompt/Back';
 import Start from '../../../componentsprompt/Start';
 import Label1 from '../../../componentsprompt/Label1';
 // import './P25.css';
-import eye from "../../../assets2/Icon/eye.png";
+import practice from "../../../assets2/Icon/practice.png";
 
 const P25 = () => {
   return (
     <div className='content'>
       <img src={bg} className='c2-bg'/>
-      <Start page='page5' />
-      <Label1 title='ร่างกายของเรา' hat='บทที่ 2' img={eye}/>
-      <img src={hero} alt='maskcos' className='maskcos-p1' width='20%' height='60%' />
-      <img src={brain} alt='brain' className='brain-p1' width='13%' height='30%' />
-      <Back page='check' />
+      <Start page='page13' />
+      <Label1 title='ยอดนักกวาดสายตา' hat='แบบฝึกหัด' img={practice}/>
+      <Back page='page11' />
     </div>
   );
 };
