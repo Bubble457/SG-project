@@ -11,8 +11,8 @@ import Intro1 from './components/Lesson/Intro1.jsx'
 import Intro2 from './components/Lesson/Intro2.jsx'
 import Intro3 from './components/Lesson/Intro3.jsx'
 import Intro4 from './components/Lesson/Intro4.jsx'
-import Pretest from './components/Lesson/Pretest.jsx'
-import Pretest1 from './components/Lesson/Pretest1.jsx'
+// import Pretest from './components/Lesson/Pretest.jsx'
+// import Pretest1 from './components/Lesson/Pretest1.jsx'
 import Attitude from './components/Lesson/Attitude.jsx'
 import Mission from './components/Lesson/Mission.jsx'
 import Fovea from './components/Lesson/FoveaLesson.jsx'
@@ -20,12 +20,13 @@ import Page1 from './components/Lesson/Lesson1/page1.jsx'
 import Page2 from './components/Lesson/Lesson1/page2.jsx'
 import Page3 from './components/Lesson/Lesson1/page3.jsx'
 import Check from './components/Lesson/Lesson1/Check.jsx'
-import Click from './components/Lesson/Lesson1/click.jsx'
+import Click from './components/Lesson/Lesson1/Click.jsx'
 import Page4 from './components/Lesson/Lesson2/P25.jsx'
 import Page5 from './components/Lesson/Lesson2/P26.jsx'
 import Page6 from './components/Lesson/Lesson2/P27.jsx'
 import Page7 from './components/Lesson/Lesson2/P28.jsx'
 import Page8 from './components/Lesson/Lesson2/P29.jsx'
+import News1 from './components/Lesson/Lesson1/News1.jsx'
 // import TrafficGame from './components/Lesson/Lesson1/TrafficGame.jsx'
 // import Personality from './components/Personality.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -77,14 +78,14 @@ const router = createBrowserRouter([
     path: "/intro4",
     element: <Intro4 />
   },
-  {
-    path: "/pretest",
-    element: <Pretest />
-  },
-  {
-    path: "/pretest1",
-    element: <Pretest1 />
-  },
+  // {
+  //   path: "/pretest",
+  //   element: <Pretest />
+  // },
+  // {
+  //   path: "/pretest1",
+  //   element: <Pretest1 />
+  // },
   {
     path: "/attitude",
     element: <Attitude />
@@ -137,6 +138,10 @@ const router = createBrowserRouter([
   {
     path: "/page9",
     element: <Page8 />
+  },
+  {
+    path: "/news1",
+    element: <News1 />
   }
   // {
   //   path: "/dad",

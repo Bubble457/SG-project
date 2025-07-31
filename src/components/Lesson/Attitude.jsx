@@ -11,14 +11,14 @@ function attitude() {
   return (
     <div className='bg-attitude'>
         <img src={bg} className='bg-attitude' />
-        <Link to='/pretest1'>
+        <Link to='/intro4'>
             <div className='back-btn'>
             <img src={back} alt='back' className='img-back' />
             <p className='text-back'>ย้อนกลับ</p>
             </div>
         </Link>
         
-        <Link to='/intro4' className='text-line'>
+        <Link to='/question' className='text-line'>
             <div className='back-btn-attitude'>
                 <img src={back} alt='back' className='imgback-attitude' />
                 <p className='text-back-attitude'>ย้อนกลับ</p>

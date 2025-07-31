@@ -15,7 +15,7 @@ import '../../../css/page3.css'
 function Page3() {
   return (
     <div className='bg-3'>
-      <img src={bg} className='bg-p3' />
+      <img src={bg} className='bg-pp3' />
         <div className="button-group">
             <Link to='/page2'>
                 <div className='back-btn'>

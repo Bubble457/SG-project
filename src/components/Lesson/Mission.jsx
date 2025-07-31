@@ -14,7 +14,7 @@ const Mission = () => {
   return (
     <div className='bg-mission'>
         <img src={bg} className='bg-mission' />
-        <div className="nav-container">
+        
             <Link to='/intro4' class="btn" >
                 <div className="nav-tab home">
                     <span >
@@ -24,11 +24,13 @@ const Mission = () => {
                 </div>
             </Link>
             <Link to='/page1' class="btn" >
-                <div className="nav-tab book">
-                    <span>
-                        <img src={book} className='book' width='auto' height='50px'/>
-                    </span>
-                    <span className="book-text">ทบทวน</span>
+                <div className="nav-container">
+                    <div className="nav-tab book">
+                        <span>
+                            <img src={book} className='book' width='auto' height='50px'/>
+                        </span>
+                        <span className="book-text">ทบทวน</span>
+                    </div>
                 </div>
             </Link>
             <Link to='/page2' class="btn" >
@@ -46,7 +48,7 @@ const Mission = () => {
             <img src={eyee} className='eyee' width='auto' height='280px'/>
             <img src={warning} className='warning' width='auto' height='280px'/>
             <p className='text-mission'>ไปให้ถึงเส้นชัย</p>
-        </div>
+        
     </div>
   );
 };

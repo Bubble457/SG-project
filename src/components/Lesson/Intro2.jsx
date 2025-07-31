@@ -21,25 +21,24 @@ function Intro2() {
                 </div>
             </Link>
             <div className='brain-a'></div>
-            <img src={ brainImg } className='img-brain-a' width='auto' height='150px' />
-            <img src={ characterImg } width='300px' height='auto' className='img-character2' />
+            <img src={ brainImg } className='img-brain-a' width='auto' height='18%' />
+            <img src={ characterImg } width='20%' height='42.6%' className='img-character2' />
             <div className='box-container-a'>
                 <p className='box-container-texta'>ความคิด</p>
             </div>
             <img src={ pinkBrain } className='box-brain' />
             <div className='box-text'>
-                <p className='box-text-a'>การเริ่มต้นจากตัวเราเองเรียนรู้เกี่ยวกับ</p>
-                <p className='box-text-a'>  วิธีมีเเนวคิดที่ถูกต้องเเละเหมาะสมสำหรับในสถานการณ์ต่าง ๆ ที่ต้องเผชิญ 
+                <p className='box-text-a'>การเริ่มต้นจากตัวเราเองเรียนรู้เกี่ยวกับวิธีมีเเนวคิดที่ถูกต้องเเละเหมาะสมสำหรับในสถานการณ์ต่าง ๆ ที่ต้องเผชิญ 
                 </p>
             </div>
             <img src={bot1} className='bot1' />
             <p className='box-text-a1a'>นำไปสู่บทเรียน : เริ่มต้นจากตนเอง </p>
-            <Link to='/intro3'>
+            <Link to='/intro3' className='no-underline'>
                 <div className='next-btn'>
                     <p className='next-i2'>ต่อไป</p>
+                <img src={ nextImg } className='next-next-3'/>
                 </div>
-                <img src={nextImg} className='next-next-2' />
-            </Link>
+            </Link> 
         </div>
     </div>
   )

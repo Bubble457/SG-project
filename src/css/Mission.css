@@ -12,6 +12,8 @@
   justify-content: center;
   background-color: #b7e1ff;
   padding: 10px;
+  position: absolute;
+  top: 0px;
 }
 
 .nav-tab {

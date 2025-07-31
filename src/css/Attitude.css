@@ -41,8 +41,7 @@
   flex-direction: column;
   position: absolute;
   top: 82%;
-  left: 780px;
-  transform: translate(-50%, -50%);
+  left: 690px;
   z-index: 3;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
@@ -72,6 +71,7 @@
   position: absolute;
   top: 330px;
   left: 510px;
+  
 }
 
 .title-attitude {

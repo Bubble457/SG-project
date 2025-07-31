@@ -33,7 +33,7 @@ function Intro4() {
             <p className='box-text-h1h'>นำไปสู่บทเรียน : สิ่งเเวดล้อม  </p>
             <img src={ pinkHouse } className='box-body-h' />
             <img src={bot3} className='bot3' />
-            <Link to='/pretest' className='no-underline'>
+            <Link to='/attitude' className='no-underline'>
                 <div className='next-btn'>
                     <p className='next-i4'>ต่อไป</p>
                     <img src={ nextImg } className='next-next-h'/>

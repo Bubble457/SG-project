@@ -1,37 +1,77 @@
-.scene-container {
-  width: 100vw;
+/* 🎮 หน้าสตาร์ท */
+.start-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  font-family: 'Kanit', sans-serif;
+  background: linear-gradient(135deg, #8ec5fc, #e0c3fc);
+  font-family: 'Prompt', sans-serif;
 }
 
-.score {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 24px;
-  font-weight: bold;
+.start-card {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+}
+
+.start-card h1 {
+  color: #2a2a2a;
+  margin-bottom: 15px;
+}
+
+.start-card p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.start-btn {
+  background: #4CAF50;
   color: white;
-  text-shadow: 1px 1px 3px black;
-  z-index: 2;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.marker {
-  position: absolute;
-  font-size: 36px;
-  transform: translate(-50%, -50%);
-  z-index: 3;
+.start-btn:hover {
+  background: #43a047;
+  transform: scale(1.05);
 }
 
-.correct {
-  color: #00ff00;
+/* เกม */
+.game-container {
+  text-align: center;
+  padding: 20px;
 }
 
-.wrong {
-  color: #ff4444;
+.image-box img {
+  width: 500px;
+  max-width: 90%;
+  border: 3px solid #ddd;
+  border-radius: 10px;
+}
+
+.feedback {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.explanation button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.explanation button:hover {
+  background: #1976D2;
 }
