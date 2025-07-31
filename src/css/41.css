@@ -19,8 +19,8 @@ body.page-bg41 {
 
 .btnback41 {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 3%;
+  left: 3%;
   display: inline-block;           
   background-color: #ffffff;       
   color: rgb(0, 0, 0);                   
@@ -40,8 +40,8 @@ body.page-bg41 {
 
 .btnnext41 {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 3%;
+  right: 3%;
   display: inline-block;           
   background-color: #0075bd;       
   color: rgb(255, 255, 255);                   
@@ -69,7 +69,7 @@ body.page-bg41 {
 }
 
 .center41 h2 {
-  transform: translate(120px, 180px); /* เลื่อนลง 180px */ 
+  transform: translate(10%, 240%); /* เลื่อนลง 180px */ 
   align-items: center;
   font-size: 24px;
   color: #333;
@@ -89,7 +89,7 @@ body.page-bg41 {
 }
 
 .center41 h1 {
-  transform: translateY(230px); /* เลื่อนลง 180px */ 
+  transform: translateY(400%); /* เลื่อนลง 180px */ 
   font-size: 50px;
   color: #333;
   z-index: 1;

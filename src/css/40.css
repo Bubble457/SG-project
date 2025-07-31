@@ -9,8 +9,8 @@ body.page-bg40 {
 
 .btnback40 {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 3%;
+  left: 3%;
   display: inline-block;           
   background-color: #ffffff;       
   color: rgb(0, 0, 0);                   
@@ -30,8 +30,8 @@ body.page-bg40 {
 
 .btnnext40 {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 3%;
+  right: 3%;
   display: inline-block;           
   background-color: #0075bd;       
   color: rgb(255, 255, 255);                   
@@ -59,7 +59,7 @@ body.page-bg40 {
 }
 
 .center40 h2 {
-  transform: translate(100px, 260px); /* เลื่อนลง 180px */ 
+  transform: translate(10%, 240%); /* เลื่อนลง 180px */ 
   align-items: center;
   font-size: 24px;
   color: #333;
@@ -74,7 +74,7 @@ body.page-bg40 {
   width: auto;
   height: 300px;
   z-index: 1;
-  transform: translate(-100px, 221px);
+  transform: translate(-25%, 75%);
   
 }
 
