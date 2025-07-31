@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Catch Game</title>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #121212;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+    }
+    
+    .game-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .color-display {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      margin: 20px auto;
+      border: 10px solid white;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .timer {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+    
+    .score {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00ffaa;
+    }
+    
+    .instructions {
+      position: absolute;
+      bottom: 20px;
+      text-align: center;
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    video {
+      display: none;
+    }
+    
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.3;
+    }
+    
+    .hand-status {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.2rem;
+      color: white;
+      background: rgba(0,0,0,0.5);
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <video class="input_video" autoplay muted playsinline></video>
+    <canvas class="output_canvas"></canvas>
+    
+    <div class="hand-status" id="hand-status">Hand: Closed</div>
+    <div class="timer" id="timer">เวลา: 00.30 วินาที</div>
+    <div class="score" id="score">คะแนน: 0</div>
+    <div class="color-display" id="color-display"></div>
+    <div class="instructions">
+      เปิดมือเพื่อสุ่มสี<br>
+      หุบมือเพื่อหยุดสีที่ต้องการ
+    </div>
+  </div>
+
+  <script>
+    // Game state
+    const gameState = {
+      score: 0,
+      timeLeft: 30,
+      isRunning: false,
+      currentColor: null,
+      isHandOpen: false,
+      colorChangeInterval: null,
+      timerId: null,
+      colors: [
+        '#FF5733', '#33FF57', '#3357FF', '#F3FF33', 
+        '#FF33F3', '#33FFF3', '#FF8C33', '#8C33FF',
+        '#33FF8C', '#FF338C', '#8CFF33', '#338CFF'
+      ]
+    };
+    
+    // DOM Elements
+    const videoElement = document.querySelector('.input_video');
+    const canvasElement = document.querySelector('.output_canvas');
+    const canvasCtx = canvasElement.getContext('2d');
+    const scoreElement = document.getElementById('score');
+    const timerElement = document.getElementById('timer');
+    const colorDisplay = document.getElementById('color-display');
+    const handStatusElement = document.getElementById('hand-status');
+    
+    // Initialize MediaPipe Hands
+    const hands = new self.Hands({
+      locateFile: (file) => {
+        return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
+      }
+    });
+    
+    hands.setOptions({
+      maxNumHands: 1,
+      modelComplexity: 1,
+      minDetectionConfidence: 0.5,
+      minTrackingConfidence: 0.5
+    });
+    
+    // Initialize camera
+    const camera = new self.Camera(videoElement, {
+      onFrame: async () => {
+        await hands.send({ image: videoElement });
+      },
+      width: 1280,
+      height: 720
+    });
+    
+    camera.start();
+    
+    // Handle hand detection results
+    hands.onResults((results) => {
+      canvasCtx.save();
+      canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+      canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
+      
+      if (results.multiHandLandmarks) {
+        for (const landmarks of results.multiHandLandmarks) {
+          // Check if hand is open (fingers extended)
+          const isOpen = checkHandOpen(landmarks);
+          
+          if (isOpen !== gameState.isHandOpen) {
+            gameState.isHandOpen = isOpen;
+            handStatusElement.textContent = `Hand: ${isOpen ? 'Open' : 'Closed'}`;
+            
+            if (isOpen) {
+              // Start changing colors when hand opens
+              startColorChange();
+            } else {
+              // Stop changing colors when hand closes
+              stopColorChange();
+              // Check if the color matches some condition (for scoring)
+              // For now just increment score when hand closes
+              gameState.score++;
+              scoreElement.textContent = `คะแนน: ${gameState.score}`;
+            }
+          }
+        }
+      }
+      
+      canvasCtx.restore();
+    });
+    
+    // Check if hand is open
+    function checkHandOpen(landmarks) {
+      // Get finger tips and their corresponding base joints
+      const fingerTips = [8, 12, 16, 20]; // Index, Middle, Ring, Pinky
+      const fingerBases = [6, 10, 14, 18];
+      
+      let openFingers = 0;
+      
+      for (let i = 0; i < fingerTips.length; i++) {
+        const tip = landmarks[fingerTips[i]];
+        const base = landmarks[fingerBases[i]];
+        
+        // Finger is considered extended if tip is above base (y coordinate is smaller)
+        if (tip.y < base.y) {
+          openFingers++;
+        }
+      }
+      
+      // Consider hand open if at least 3 fingers are extended
+      return openFingers >= 3;
+    }
+    
+    // Start changing colors randomly
+    function startColorChange() {
+      if (gameState.colorChangeInterval) return;
+      
+      gameState.colorChangeInterval = setInterval(() => {
+        const randomColor = gameState.colors[Math.floor(Math.random() * gameState.colors.length)];
+        gameState.currentColor = randomColor;
+        colorDisplay.style.backgroundColor = randomColor;
+        colorDisplay.textContent = randomColor;
+      }, 100);
+    }
+    
+    // Stop changing colors
+    function stopColorChange() {
+      if (gameState.colorChangeInterval) {
+        clearInterval(gameState.colorChangeInterval);
+        gameState.colorChangeInterval = null;
+      }
+    }
+    
+    // Update timer
+    function updateTimer() {
+      if (gameState.timeLeft > 0) {
+        gameState.timeLeft--;
+        const seconds = gameState.timeLeft.toString().padStart(2, '0');
+        timerElement.textContent = `เวลา: 00.${seconds} วินาที`;
+      } else {
+        endGame();
+      }
+    }
+    
+    // Start the game
+    function startGame() {
+      if (gameState.isRunning) return;
+      
+      gameState.isRunning = true;
+      gameState.score = 0;
+      gameState.timeLeft = 30;
+      scoreElement.textContent = `คะแนน: ${gameState.score}`;
+      timerElement.textContent = `เวลา: 00.30 วินาที`;
+      gameState.timerId = setInterval(updateTimer, 1000);
+    }
+    
+    // End the game
+    function endGame() {
+      gameState.isRunning = false;
+      clearInterval(gameState.timerId);
+      clearInterval(gameState.colorChangeInterval);
+      alert(`Game Over! Your score: ${gameState.score}`);
+    }
+    
+    // Initialize game
+    window.addEventListener('load', () => {
+      canvasElement.width = window.innerWidth;
+      canvasElement.height = window.innerHeight;
+      startGame();
+    });
+  </script>
+</body>
+</html>
