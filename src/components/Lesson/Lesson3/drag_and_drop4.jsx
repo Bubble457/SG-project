@@ -1,3 +1,4 @@
+// หน้าประกาศคะแนน ยังไม่เสร็จ
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
