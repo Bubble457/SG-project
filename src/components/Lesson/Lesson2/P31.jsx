@@ -19,7 +19,6 @@ const Image = () => {
             background: '#ffffff8a',
             border: 'solid #ffffff00',
             display: 'flex',
-            justifyContent: 'center',
             alignItems: 'center' 
         }}>
             <img src={image} style={{

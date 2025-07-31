@@ -173,8 +173,6 @@ const router = createBrowserRouter([
     path: "/page8",
     element: <Page8 />
   },
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
    {
     path: "/pdad4",
     element: <DAD4 />
@@ -183,9 +181,6 @@ const router = createBrowserRouter([
      path: "/pdad3",
      element: <DAD3 />
    },
-=======
-=======
->>>>>>> Stashed changes
   {
     path: "/page9",
     element: <Page9 />
@@ -210,7 +205,6 @@ const router = createBrowserRouter([
   //   path: "/dad",
   //   element: <DAD />
   // },
->>>>>>> Stashed changes
    {
     path: '/pdad2',
     element: <DAD2 />
