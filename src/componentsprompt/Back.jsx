@@ -1,19 +1,16 @@
-import '../css/Main.css';
-
-const img = {
-    img_src: "../asests2/Misc/back.png",
-    img_size: 40
-};
+import './Main.css';
+import back from "../assets2/Misc/back.png";
+import { Link } from 'react-router-dom';
 
 const Back = ({ page }) => {
 return (
-    <a href={`/back/${page}`} className="back">
+    <Link to={`/${page}`} className="c2-back">
     <img 
-        src={img.img_src}
+        src={back}
         alt="back.png"
         style={{
-        width: img.img_size,
-        height: img.img_size,
+        width: 40,
+        height: 40,
         verticalAlign: 'middle'
         }}
     />
@@ -25,7 +22,7 @@ return (
     >
         ย้อนกลับ
     </span>
-    </a>
+    </Link>
     );
 };
 

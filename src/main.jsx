@@ -21,11 +21,16 @@ import Page2 from './components/Lesson/Lesson1/page2.jsx'
 import Page3 from './components/Lesson/Lesson1/page3.jsx'
 import Check from './components/Lesson/Lesson1/Check.jsx'
 import Click from './components/Lesson/Lesson1/click.jsx'
-import Page4 from './components/Lesson/Lesson2/P25.jsx'
+import Page4 from './components/Lesson/Lesson2/P25.jsx' 
 import Page5 from './components/Lesson/Lesson2/P26.jsx'
 import Page6 from './components/Lesson/Lesson2/P27.jsx'
 import Page7 from './components/Lesson/Lesson2/P28.jsx'
 import Page8 from './components/Lesson/Lesson2/P29.jsx'
+import Page9 from './components/Lesson/Lesson2/P30.jsx'
+import Page10 from './components/Lesson/Lesson2/P31.jsx'
+import Page11 from './components/Lesson/Lesson2/P32.jsx'
+import Page12 from './components/Lesson/Lesson2/P41.jsx'
+import Page13 from './components/Lesson/Lesson2/P42.jsx'
 //lesson3
 import DAD from './components/Lesson/Lesson3/drag_and_drop.jsx'
 import DAD2 from './components/Lesson/Lesson3/drag_and_drop2.jsx'
@@ -165,9 +170,10 @@ const router = createBrowserRouter([
     element: <Page7 />
   },
   {
-    path: "/page9",
+    path: "/page8",
     element: <Page8 />
   },
+<<<<<<< Updated upstream
    {
     path: "/pdad4",
     element: <DAD4 />
@@ -176,6 +182,32 @@ const router = createBrowserRouter([
      path: "/pdad3",
      element: <DAD3 />
    },
+=======
+  {
+    path: "/page9",
+    element: <Page9 />
+  },
+  {
+    path: "/page10",
+    element: <Page10 />
+  },
+  {
+    path: "/page11",
+    element: <Page11 />
+  },
+  {
+    path: "/page12",
+    element: <Page12 />
+  },
+  {
+    path: "/page13",
+    element: <Page13 />
+  },
+  // {
+  //   path: "/dad",
+  //   element: <DAD />
+  // },
+>>>>>>> Stashed changes
    {
     path: '/pdad2',
     element: <DAD2 />

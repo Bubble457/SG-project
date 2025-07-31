@@ -1,106 +1,34 @@
 import React from 'react';
+import '../../../css/PageControl.css';
+import bg from '../../../assets2/Background/9.png';
+import Label2 from '../../../componentsprompt/Label2';
+import Back from '../../../componentsprompt/Back';
+import Next from '../../../componentsprompt/Next';
 
-import '../../../css/P29.css';
-
-const back = {
-  img_src: "../../../Assets/Misc/back.png",
-  img_size: 50
-};
-
-const practice = {
-  img_src: "../../../Assets/Icon/practice.png",
-  img_size: 100
-};
-
-const Fback = () => {
-  return (
-    <a href="/page/28" className="back">
-      <img 
-        src={back.img_src}
-        alt="back.png"
-        style={{
-          width: back.img_size,
-          height: back.img_size,
-          verticalAlign: 'middle'
-        }}
-      />
-      <span 
-        style={{
-          margin: 8,
-          fontSize: 20
-        }}
-      >
-        ย้อนกลับ
-      </span>
-    </a>
+const Video = () => {
+    return (
+        <div style={{
+            position: 'absolute',
+            alignSelf: 'center',
+            width: '80%',
+            height: '60%'
+        }}>
+            <iframe width='100%' height='100%' src='https://youtube.com/embed/IGQmdoK_ZfY'></iframe>
+        </div>
     );
 };
 
-const Next = () => {
-  return (
-    <a href="./P26.jsx" className="next">
-      <span
-        style={{
-          marginLeft: 30,
-          marginRight: 30,
-          marginTop: 5,
-          marginBottom: 5,
-          fontSize: 30
-        }}
-      >
-        ต่อไป &gt;&gt;
-      </span>
-    </a>
-  );
+
+const P29 = () => {
+    return (
+        <div className='content'>
+            <img src={bg} className='c2-bg'/>
+            <Video />
+            <Label2 text="คนเสือขาวโยนลูกบอลไปกี่รอบ?" bg='#ffffff'/>
+            <Next page='page9' />
+            <Back page='page7' />
+        </div>
+    );
 };
 
-const Label = () => {
-  return (
-    <div className='label'>
-      <div
-        className='hat'
-        style={{
-          top: -46,
-          left: 60+practice.img_size
-        }}
-      >
-        <p>แบบฝึกหัด</p>
-      </div>
-      <img 
-        src={practice.img_src}
-        alt="practice.png"
-        style={{
-          width: practice.img_size,
-          height: practice.img_size,
-          verticalAlign: 'middle',
-          padding: 40
-        }}
-      />
-      <p style={{
-        paddingRight: 80,
-        fontWeight: 600,
-        fontSize: 30
-      }}
-      >
-        ยอดนักกวาดสายตา
-      </p>
-    </div>
-  );
-};
-
-
-
-
-
-const P28 = () => {
-  return (
-    <div className='content'>
-      <Next />
-      <Label />
-
-      <Fback />
-    </div>
-  );
-};
-
-export default P28;
+export default P29;

@@ -1,9 +1,9 @@
 import './Main.css';
 import { Link } from 'react-router-dom';
 
-const Start = ({ page }) => {
+const Next = ({ page, style={} }) => {
   return (
-    <Link to={`/${page}`} className="c2-start">
+    <Link to={`/${page}`} style={style} className="c2-next">
       <span
         style={{
           marginLeft: 30,
@@ -13,10 +13,10 @@ const Start = ({ page }) => {
           fontSize: 30
         }}
       >
-        เริ่ม
+        ต่อไป &gt;&gt;
       </span>
     </Link>
   );
-};
+}
 
-export default Start;
+export default Next;
