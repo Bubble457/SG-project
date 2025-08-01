@@ -1,8 +1,9 @@
-import '../css/Main.css';
+import './Main.css';
+import { Link } from 'react-router-dom';
 
 const Start = ({ page }) => {
   return (
-    <a href={`/page/${page}`} className="start">
+    <Link to={`/${page}`} className="c2-start">
       <span
         style={{
           marginLeft: 30,
@@ -14,7 +15,7 @@ const Start = ({ page }) => {
       >
         เริ่ม
       </span>
-    </a>
+    </Link>
   );
 };
 

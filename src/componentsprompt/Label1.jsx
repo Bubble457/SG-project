@@ -1,27 +1,28 @@
-import '../css/Main.css';
+import './Main.css';
 
 const Label1 = ({ title, hat, img }) => {
   return (
-    <div className='label1'>
+    <div className='c2-label1'>
       <div
-        className='hat1'
+        className='c2-hat1'
         style={{
-          top: -46,
-          left: 60+img.img_size
+          top: '-21%',
+          right: '10%'
         }}
       >
         <p>{hat}</p>
       </div>
       <img 
-        src={img.img_src}
+        src={img}
         style={{
-          width: img.img_size,
-          height: img.img_size,
+          width: 100,
+          height: 100,
           verticalAlign: 'middle',
-          padding: 40
+          margin: 20
         }}
       />
       <p style={{
+        paddingLeft: 20,
         paddingRight: 80,
         fontWeight: 600,
         fontSize: 30

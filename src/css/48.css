@@ -1,5 +1,5 @@
-body {
-  background-image: url("/asset/background/1st.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
+body.page-bg48 {
+  background-image: url("../asset3/background/1st.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
   background-size: cover;           /* ขยายให้เต็มจอ */
   background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
   background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
@@ -7,7 +7,7 @@ body {
   margin: 0;                        /* ลบช่องว่างรอบหน้าเว็บ */
 }
 
-.btnback {
+.btnback48 {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -23,22 +23,22 @@ body {
     transition: background-color 0.3s ease;  
 }
 
-.btnback:hover {
+.btnback48:hover {
     background-color: #ffdcfa;       
 }
-.picbtnback {
+.picbtnback48 {
     position:absolute;
     
 }
 
 
-.btnnext {
+.btnnext48 {
     position: absolute;
     bottom: 175px;
     left: 50%;
     transform:translate(-50%, 50%);
     display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
-    background-color: #3354ad;       /* สีพื้นหลัง */
+    background-color: #0075bd;       /* สีพื้นหลัง */
     color: rgb(255, 255, 255);                    /* ตัวหนังสือสี */
     padding: 25px 50px;              /* ช่องว่างรอบตัวหนังสือ */
     border-radius: 40px;              /* มุมโค้งมน */
@@ -48,17 +48,17 @@ body {
     transition: background-color 0.3s ease;  
 }
 
-.btnnext:hover {
-    background-color: #2a4ba7;       
+.btnnext48:hover {
+    background-color: #044e7b;       
 }
 
-.center {
+.center48 {
     position:fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.center h3{
+.center48 h3{
   position: absolute;
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -72,12 +72,12 @@ body {
   transform:translate(175px, -55px)
 }
 
-.center img{
+.center48 img{
     height:100px;
     width: auto;
 }
 
-.caution {
+.caution48 {
     display: inline-flex;
     color:black;
     background-color: white;

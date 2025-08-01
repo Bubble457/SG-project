@@ -1,40 +1,38 @@
+// เกมลาก
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import "../../../css/drag_and_drop.css";
 
-const character = require('../asset/Misc/halfcharacter.PNG');
-const buntook = require('../asset/Misc/รถบรรทุกสุดหล่อ.png');
-const morsai = require('../asset/Misc/มอไซ.png');
-const eyebutton = require('../asset/icon/eye.png')
-const korb = require('../asset/Misc/เทส.png')
-const kajog = require('../asset/Misc/กระจกรถ.png')
-const wrong = require('../asset/icon/wrong.webp')
-const news = require('../asset/background/news.jpg')
-const check = require('../asset/icon/ถูก.png')
-const arrow = require('../asset/Misc/ลูกษร.png')
-const number1 = require('../asset/Misc/1.png')
-const number2 = require('../asset/Misc/2.png')
-const number3 = require('../asset/Misc/3.png')
-const number4 = require('../asset/Misc/4.png')
-const buntookbon = require('../asset/Misc/รถบรรทุก.png')
-const term = require('../asset/Misc/เติม.png')
-const muang = require('../asset/icon/ม่วง.png')
-const eye = require('../asset/Misc/eye.png')
-const book = require('../asset/Misc/11.png')
-const mouse = require('../asset/Misc/เมาส์.png')
-const car = require('../asset/Misc/รถ.png')
+import character from '../../../asset3/Misc/คิดว่าตัวเองดวงดีครึ่ง.png';
+import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
+import car from '../../../asset3/Misc/รถ.png';
 
 
 function App() {
-  const boxWidth = 250;
-  const boxHeight = 250;
+  const [message, setMessage] = useState("ลากรถไปยังจุดที่ปลอดภัย");
+  const [showNextButton, setShowNextButton] = useState(false);
+  const handleDrop = (boxId, holeId, holeColor) => {
+    if (boxId === holeId) {
+      setMessage("วางถูกแล้ว! เยี่ยมมาก!");
+
+      if (holeColor === "green" || holeColor === "#90ee90") {
+        setShowNextButton(true); // แสดงปุ่มถัดไปเมื่อเจอรูเขียว
+      }
+    } else {
+      setMessage("ยังไม่ถูกต้องนะครับ คนขับอาจจะมองไม่เห็นด้านหลังได้");
+    }
+  };
+
+  const boxWidth = 200;
+  const boxHeight = 200;
   const snapZone = [
-    { id: 1, x: 570, y: 734, width: 120, height: 230 },
-    { id: 2, x: 710, y: 734, width: 120, height: 230 },
-    { id: 3, x: 840, y: 507, width: 120, height: 230 }
+    { id: 1, x: 570, y: 734, width: 130, height: 220 },
+    { id: 2, x: 710, y: 734, width: 130, height: 220 },
+    { id: 3, x: 840, y: 430, width: 130, height: 220 }
   ];
   const snapThreshold = 50;
 
-  const [position, setPosition] = useState({ x: 515, y: 425 });
+  const [position, setPosition] = useState({ x: 545, y: 525 });
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [snapped, setSnapped] = useState(false);
@@ -94,44 +92,47 @@ function App() {
       });
       setSnapped(true);
       setActiveZoneId(closestZone.id);
+      handleDrop(1, closestZone.id, closestZone.id === 1 ? "green" : "red");
     }
   };
 
   return (
     <div
-      className="container"
+      className="containerdad"
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
     >
-      <a class="btnnext" href="../html/storyboard_number_51.html" data-discover="true">ต่อไป &gt;&gt;</a>
-      <a class="btnback" href="../html/storyboard_number_49.html" data-discover="true">ย้อนกลับ</a>
-      <div class="center">
-        <h2>ลากรถไปยังจุดที่ปลอดภัย</h2>
+      {showNextButton && (
+        <Link className="btnnextdad" to="/pdad2" data-discover="true">ต่อไป &gt;&gt;</Link>
+      )}
+      <Link className="btnbackdad" to="/p50_0" data-discover="true">ย้อนกลับ</Link>
+      <div className="centerdad">
+        <h2>{message}</h2>
         <img src={character} />
       </div>
-      <div class="carder">
-        <div class="maipodpai1">
+      <div className="carderdad">
+        <div className="maipodpai1dad">
             <img src={car} />
         </div>
-        <div className='rod1'>
+        <div className='rod1dad'>
           <img src={car} />
         </div>
-          <div className='rod2'>
+          <div className='rod2dad'>
           <img src={car} />
         </div>
-        <img class="buntookbon" src={buntookbon} />
+        <img className="buntookbondad" src={buntookbon} />
       </div>
       {/* snapZone */}
       {snapZone.map(zone => (
         <div
           key={zone.id}
-          className="target-hole"
+          className="target-holedad"
           style={{
             left: zone.x,
             top: zone.y,
             width: zone.width,
             height: zone.height,
-            borderRadius: '10px',
+            borderRadius: '50px',
             position: 'absolute',
             backgroundColor: activeZoneId === zone.id
               ? (zone.id === 1 ? '#90ee90' : '#ff6666')  // ✅ เขียวเมื่อ id=1, แดงเมื่อ id=2/3
@@ -144,7 +145,7 @@ function App() {
 
       {/* draggable box */}
       <div
-        className="draggable-box"
+        className="draggable-boxdad"
         onMouseDown={handleMouseDown}
         style={{
           left: position.x,

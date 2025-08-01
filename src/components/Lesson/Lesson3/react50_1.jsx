@@ -1,54 +1,47 @@
 import '../../../css/50_1.css';
+import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
-const character = require('../asset/Misc/halfcharacter.PNG');
-const buntook = require('../asset/Misc/รถบรรทุกสุดหล่อ.png');
-const morsai = require('../asset/Misc/มอไซ.png');
-const eyebutton = require('../asset/icon/eye.png')
-const korb = require('../asset/Misc/เทส.png')
-const kajog = require('../asset/Misc/กระจกรถ.png')
-const wrong = require('../asset/icon/wrong.webp')
-const news = require('../asset/background/news.jpg')
-const check = require('../asset/icon/ถูก.png')
-const arrow = require('../asset/Misc/ลูกษร.png')
-const number1 = require('../asset/Misc/1.png')
-const number2 = require('../asset/Misc/2.png')
-const number3 = require('../asset/Misc/3.png')
-const number4 = require('../asset/Misc/4.png')
-const buntookbon = require('../asset/Misc/รถบรรทุก.png')
-const term = require('../asset/Misc/เติม.png')
-const muang = require('../asset/icon/ม่วง.png')
-const eye = require('../asset/Misc/eye.png')
-const book = require('../asset/Misc/11.png')
-const mouse = require('../asset/Misc/เมาส์.png')
-const car = require('../asset/Misc/รถ.png')
+import character from '../../../asset3/Misc/คิดว่าตัวเองดวงดีครึ่ง.png';
+import check from '../../../asset3/icon/ถูก.png';
+import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
+import car from '../../../asset3/Misc/รถ.png';
 
 const App = () => {
+      useEffect(() => {
+      document.body.className = 'page-bg501';
+  
+      // ล้าง class เมื่อ component นี้ออก (optional แต่ดีมาก)
+      return () => {
+        document.body.className = '';
+      };
+    }, []);
   return (
     <div>
-      <a class="btnnext" href="../html/storyboard_number_51.html" data-discover="true">ต่อไป &gt;&gt;</a>
-      <a class="btnback" href="../html/storyboard_number_49.html" data-discover="true">ย้อนกลับ</a>
-      <img className='check' src={check} />
-      <div class="center">
+      <Link className="btnnext501" to="/pdad" data-discover="true">ต่อไป &gt;&gt;</Link>
+      <Link className="btnback501" to="/p49" data-discover="true">ย้อนกลับ</Link>
+      <img className='check501' src={check} />
+      <div className="center501">
         <h2>ถูกต้องแล้วคะ</h2>
-        <img className='character' src={character} />
+        <img className='character501' src={character} />
       </div>
-      <div className='block'></div>
-      <div class="carder">
-        <a class="maipodpai1" href="#" data-discover="true">
+      <div className='block501'></div>
+      <div className="carder501">
+        <Link className="maipodpai1501" to="/p50_3" data-discover="true">
             <img src={car} />
-        </a>
-        <a class="maipodpai2" href="storyboard_number_4.html" data-discover="true">
+        </Link>
+        <Link className="maipodpai2501" to="/p50_1" data-discover="true">
             <img src={car} />
-        </a>
-        <a className='rod1' href="storyboard_number_4.html" data-discover="true">
+        </Link>
+        <Link className='rod1501' to="/p50_2" data-discover="true">
           <img src={car} />
-        </a>
-          <a className='rod2' href="storyboard_number_4.html" data-discover="true">
+        </Link>
+        <Link className='rod2501' to="/p50_4" data-discover="true">
           <img src={car} />
-        </a>
-        <img class="buntookbon" src={buntookbon} />
+        </Link>
+        <img className="buntookbon501" src={buntookbon} />
       </div>
-      </div>
+    </div>
   );
 };
 

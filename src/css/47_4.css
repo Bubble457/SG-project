@@ -1,5 +1,5 @@
-body {
-  background-image: url("/asset/background/เสานำ.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
+body.page-bg474 {
+  background-image: url("../asset3/background/เสานำ.png"); /* เปลี่ยนลิงก์ภาพตามต้องการ */
   background-size: cover;           /* ขยายให้เต็มจอ */
   background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
   background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
@@ -8,7 +8,7 @@ body {
   overflow: hidden;
 }
 
-.btnback {
+.btnback474 {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -24,17 +24,17 @@ body {
   z-index: 2;
 }
 
-.btnback:hover {
+.btnback474:hover {
   background-color: #ffdcfa;      
   z-index: 2; 
 }
 
-.btnnext {
+.btnnext474 {
   position: absolute;
   bottom: 20px;
   right: 20px;
   display: inline-block;           
-  background-color: #11eeea;       
+  background-color: #0075bd;       
   color: rgb(255, 255, 255);                   
   padding: 15px 30px;              
   border-radius: 30px;              
@@ -45,12 +45,12 @@ body {
   z-index: 2;
 }
 
-.btnnext:hover {
-  background-color: #10c3c0;  
+.btnnext474:hover {
+  background-color: #044e7b;  
   z-index: 2;     
 }
 
-.center {
+.center474 {
   display: flex;
   justify-content: center;      /* จัดกลางแนวนอน */
   align-items: center;          /* จัดกลางแนวตั้ง */
@@ -59,8 +59,8 @@ body {
   z-index: 1;
 }
 
-.center h2 {
-  transform: translate(500px, -50px); /* เลื่อนลง 180px */ 
+.center474 h2 {
+  transform: translate(700px, -50px); /* เลื่อนลง 180px */ 
   align-items: center;
   font-size: 24px;
   color: #333;
@@ -72,7 +72,7 @@ body {
   text-align: center;
 }
 
-.center h2::after {
+.center474 h2::after {
   content: "";
   position: absolute;
   bottom: -50px;
@@ -84,22 +84,22 @@ body {
   border-top: 60px solid #ffffff;        /* ความสูงของติ่ง */
 }
 
-.center img{
-  width: 180px;
-  height: 180px;
+.center474 img{
+  width: auto;
+  height: 400px;
   z-index: 1;
-  transform: translate(420px, 215px);
+  transform: translate(120px, 350px);
   
 }
 
-.carder{
+.carder474{
   justify-content:center;
   align-items: center;
   position:relative;
   z-index: 0;
 }
 
-.buntookbon{
+.buntookbon474{
   position:absolute;
   width: 450px;
   height: 450px;
@@ -109,7 +109,7 @@ body {
   z-index: 2;
 }
 
-.morsai{
+.morsai474{
   position:absolute;
   width: 250px;
   height: 250px;
@@ -119,7 +119,7 @@ body {
   z-index: 0;
 }
 
-.btneye img{
+.btneye474 img{
   position: absolute;
   width: 200px;
   height: 200px;
@@ -129,11 +129,11 @@ body {
   z-index: 2;
 }
 
-.wrong{
+.wrong474{
   opacity: 0.5;
 }
 
-.show {
+.show474 {
   display: flex;
   justify-content: center;      /* จัดกลางแนวนอน */
   align-items: center;          /* จัดกลางแนวตั้ง */
@@ -143,19 +143,19 @@ body {
   top: -110%
 }
 
-.show img{
+.show474 img{
   width: 700px;
   height: auto;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.show img:hover {
+.show474 img:hover {
   transform: scale(1.02);
 }
 
 
-.bottom-triangle {
+.bottom-triangle474 {
   position:absolute;
   left:29.5%;
   bottom:100px;
@@ -170,30 +170,30 @@ body {
   z-index:0;
 }
 
-.left-triangle {
+.left-triangle474 {
   position:absolute;
   left: 19.8%;
   bottom: 233px;
   width: 0;
   height: 0;
-  border-bottom: 380px solid red;     /* ฐาน */
-  border-left: 190px solid transparent; /* ด้านตั้ง */
+  border-top: 380px solid red;     /* ฐาน */
+  border-right: 190px solid transparent; /* ด้านตั้ง */
   opacity:0.5;
 }
 
-.right-triangle {
+.right-triangle474 {
   position:absolute;
   left: 40.1%;
   bottom: 233px;
   width: 0;
   height: 0;
-  border-bottom: 380px solid rgb(0, 0, 0);     /* ฐาน */
-  border-right: 190px solid transparent; /* ด้านตั้ง */
+  border-top: 380px solid rgb(0, 0, 0);     /* ฐาน */
+  border-left: 190px solid transparent; /* ด้านตั้ง */
   opacity: 0.5;
   z-index: 0;
 }
 
-.top-square {
+.top-square474 {
   position: absolute;
   left:30.5%;
   bottom:625px;
@@ -204,7 +204,7 @@ body {
   opacity: 0.5;
 }
 
-.number1 {
+.number1474 {
   position: absolute;
   left:33.3%;
   bottom:700px;
@@ -215,7 +215,7 @@ body {
   border: 3px solid white;    
 }
 
-.number2 {
+.number2474 {
   position:absolute;
   left: 42%;
   bottom: 380px;
@@ -226,7 +226,7 @@ body {
   border: 3px solid white;    
 }
 
-.number3 {
+.number3474 {
   position:absolute;
   left:33.3%;
   bottom:50px;
@@ -237,7 +237,7 @@ body {
   border: 3px solid white;    
 }
 
-.number4 {
+.number4474 {
   position:absolute;
   left: 24.5%;
   bottom: 380px;
@@ -248,7 +248,7 @@ body {
   border: 3px solid white;    
 }
 
-.text img{
+.text474 img{
   width: 400px;
   position:absolute;
   top:100px;

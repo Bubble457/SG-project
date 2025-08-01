@@ -1,40 +1,33 @@
 import '../../../css/48.css';
+import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
-const character = require('../asset/Misc/halfcharacter.PNG');
-const buntook = require('../asset/Misc/รถบรรทุกสุดหล่อ.png');
-const morsai = require('../asset/Misc/มอไซ.png');
-const eyebutton = require('../asset/icon/eye.png')
-const korb = require('../asset/Misc/เทส.png')
-const kajog = require('../asset/Misc/กระจกรถ.png')
-const wrong = require('../asset/icon/wrong.webp')
-const news = require('../asset/background/news.jpg')
-const check = require('../asset/icon/ถูก.png')
-const arrow = require('../asset/Misc/ลูกษร.png')
-const number1 = require('../asset/Misc/1.png')
-const number2 = require('../asset/Misc/2.png')
-const number3 = require('../asset/Misc/3.png')
-const number4 = require('../asset/Misc/4.png')
-const buntookbon = require('../asset/Misc/รถบรรทุก.png')
-const term = require('../asset/Misc/เติม.png')
-const muang = require('../asset/icon/ม่วง.png')
-
+import muang from'../../../asset3/icon/ม่วง.png';
 
 const App = () => {
+      useEffect(() => {
+      document.body.className = 'page-bg48';
+  
+      // ล้าง class เมื่อ component นี้ออก (optional แต่ดีมาก)
+      return () => {
+        document.body.className = '';
+      };
+    }, []);
   return (
     <div>
-    <div class="background">
-        <div class="buttongroup">
-            <a class="btnnext" href="/html/storyboard_number_49.html" data-discover="true">ต่อไป &gt;&gt;</a>
-            <a class="btnback" href="/html/storyboard_number_47.html" data-discover="true">ย้อนกลับ</a>
+      <div className="background48">
+        <div className="buttongroup48">
+          <Link className="btnnext48" to="/p49" data-discover="true">ต่อไป &gt;&gt;</Link>
+          <Link className="btnback48" to="/p47_4" data-discover="true">ย้อนกลับ</Link>
         </div>
-        <div class="center">
-            <h3>แบบฝึกหัด</h3>
-            <div class="caution">
-                <img src={muang} />
-                <h1>ร่วมด้วยช่วยระบุ</h1>
-            </div>
+        <div className="center48">
+          <h3>แบบฝึกหัด</h3>
+          <div className="caution48">
+            <img src={muang} />
+            <h1>ร่วมด้วยช่วยระบุ</h1>
+          </div>
         </div>
-    </div>
+      </div>
     </div>
   );
 };

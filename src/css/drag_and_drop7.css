@@ -1,0 +1,92 @@
+body.page-bgdad7 {
+  background-image: url('../asset3/background/final.png'); /* เปลี่ยนลิงก์ภาพตามต้องการ */
+  background-size: cover;           /* ขยายให้เต็มจอ */
+  background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
+  background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
+  height: 100vh;                    /* ให้ body สูงเท่าจอ */
+  margin: 0;                        /* ลบช่องว่างรอบหน้าเว็บ */
+}
+
+.btnbackdad7 {
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
+    background-color: #ffffff;       /* สีพื้นหลัง */
+    color: rgb(0, 0, 0);                    /* ตัวหนังสือสี */
+    padding: 15px 30px;              /* ช่องว่างรอบตัวหนังสือ */
+    border-radius: 30px;              /* มุมโค้งมน */
+    text-decoration: none;           /* ลบเส้นขีดใต้ */
+    font-weight: bold;
+    font-size: 16px;
+    gap: 10px;
+    transition: background-color 0.3s ease;  
+}
+
+.btnbackdad7:hover {
+    background-color: #ffdcfa;       
+}
+.picbtnbackdad7 {
+    position:absolute;
+    
+}
+
+
+.btnnextdad7 {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform:translate(-50%, 50%);
+    display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
+    background-color: #dc0000;       /* สีพื้นหลัง */
+    color: rgb(255, 255, 255);                    /* ตัวหนังสือสี */
+    padding: 25px 50px;              /* ช่องว่างรอบตัวหนังสือ */
+    border-radius: 30px;              /* มุมโค้งมน */
+    text-decoration: none;           /* ลบเส้นขีดใต้ */
+    font-weight: bold;
+    font-size: 25px;
+    transition: background-color 0.3s ease;  
+}
+
+.btnnextdad7:hover {
+    background-color: #b50000;       
+}
+
+.centerdad7 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* ระยะห่างระหว่างบรรทัด */
+}
+
+.kengdad7 {
+  font-size: 70px;
+  color: black;
+  background-color: white;
+  padding: 10px 70px;
+  border-radius: 80px;
+}
+
+.scoredad7 {
+  display: flex;               /* ใช้ flex เพื่อควบคุมทิศทาง */
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 50px;
+  color: black;
+  background-color: #f7f2e8;
+  padding: 175px 300px;
+
+  border-radius: 30px;
+}
+
+.accuratedad7 {
+  font-size: 30px;
+  color: white;
+  background-color: #355d8b;
+  padding: 15px 30px;
+  border-radius: 20px;
+}

@@ -1,113 +1,55 @@
 import React from 'react';
+import '../../../css/PageControl.css';
+import bg from '../../../assets2/Background/2.png';
+import Label2 from '../../../componentsprompt/Label2';
+import Label3 from '../../../componentsprompt/Label3';
+import ImgBox1 from '../../../componentsprompt/ImgBox1';
+import Back from '../../../componentsprompt/Back';
+import Start from '../../../componentsprompt/Start';
+import Label1 from '../../../componentsprompt/Label1';
+import gamer from "../../../assets2/Misc/gamer.png";
+import { Link } from 'react-router-dom';
+import a from '../../../assets2/Misc/a.png';
+import b from '../../../assets2/Misc/b.png';
 
-import '../../../css/P26.css';
-
-const back = {
-  img_src: "../../../assets/Misc/back.png",
-  img_size: 50
-};
-
-const number = {
-  img_src: "../../../assets/Misc/1.png",
-  img_size: 40
-};
-
-const character = {
-  img_src: "../../../assets/Misc/character.PNG",
-};
-
-const jpimg = {
-  img_src: "../../../assets/Misc/run.png"
-};
-
-const Fback = () => {
-  return (
-    <a href="/page/25" className="back">
-      <img 
-        src={back.img_src}
-        alt="back.png"
-        style={{
-          width: back.img_size,
-          height: back.img_size,
-          verticalAlign: 'middle'
-        }}
-      />
-      <span 
-        style={{
-          margin: 8,
-          fontSize: 20
-        }}
-      >
-        ย้อนกลับ
-      </span>
-    </a>
+const L1Label = () => {
+    return (
+        <Link to='/page6' id='p26_l1'>
+            <img src={a} style={{
+                position: 'absolute',
+                display: 'block',
+                width: 250,
+                left: -150
+            }}/>
+            <p>สุนัข</p>
+        </Link>
     );
 };
 
-const Title = () => {
-  return (
-    <div className='title'>
-      <p>uhhhhhhhhh</p>
-      <div className='number'>
-        <img 
-          src={number.img_src}
-          style={{
-            width: number.img_size,
-            height: number.img_size,
-          }}
-        />
-      </div>
-    </div>
-  );
-};
-
-const BlackCover = () => { // black clover no way
-  return (
-    <div className='BlackCover'>
-      <img 
-        className='character' 
-        src={character.img_src}
-      />
-      <div className='dialogTr'></div>
-      <div className='dialogSq'></div>
-      <div className='imgSq'>
-        <img 
-          className='jpimg'
-          src=''
-        />
-
-      </div>
-
-    </div>
+const L2Label = () => {
+    return (
+        <Link to='/page6' id='p26_l2'>
+            <img src={b} style={{
+                position: 'absolute',
+                display: 'block',
+                width: 250,
+                left: -150
+            }}/>
+            <p>คนเล่นเกม</p>
+        </Link>
     );
-};
-
-const Next = () => {
-  return (
-    <a href="/page/27" className="next">
-      <span
-        style={{
-          marginLeft: 30,
-          marginRight: 30,
-          marginTop: 5,
-          marginBottom: 5,
-          fontSize: 30
-        }}
-      >
-        ต่อไป &gt;&gt;
-      </span>
-    </a>
-  );
 };
 
 const P26 = () => {
   return (
     <div className='content'>
-      <Title />
-      <BlackCover />
-      <Next />
-
-      <Fback />
+      <img src={bg} className='c2-bg'/>
+      <Label2 text="จากภาพเห็นอะไรก่อน?"/>
+      <Label3 text="คำถามชวนคิด" />
+      <L1Label />
+      <L2Label />
+      <ImgBox1 img={gamer} x={'50%'} y={'30%'} width={'40%'} height={'50%'} />
+      <Back page='page4' />
     </div>
   );
 };
