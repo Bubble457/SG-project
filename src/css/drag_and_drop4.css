@@ -21,12 +21,12 @@ body.page-bg500 {
   font-weight: bold;
   font-size: 16px;
   transition: background-color 0.3s ease;  
-  z-index: 2;
+  z-index: 250;
 }
 
 .btnbackdad4:hover {
-  background-color: #ffdcfa;      
-  z-index: 2; 
+  background-color: #ffdcfa;    
+  z-index: 250;  
 }
 
 .btnnextdad4 {
@@ -42,12 +42,63 @@ body.page-bg500 {
   font-weight: bold;
   font-size: 16px;
   transition: background-color 0.3s ease;  
-  z-index: 2;
+  z-index: 250;
 }
 
 .btnnextdad4:hover {
-  background-color: #044e7b;  
-  z-index: 2;     
+  background-color: #044e7b;      
+  z-index: 250; 
+}
+
+.btnnextpassdad4 {
+  position: absolute;
+  top :50%;
+  left: 50%;
+  transform: translate(-50%, 60%);
+  display: inline-block;           
+  background-color: #0075bd;       
+  color: rgb(255, 255, 255);                   
+  padding: 20px 60px;              
+  border-radius: 60px;              
+  text-decoration: none;           
+  font-weight: bold;
+  font-size: 24px;
+  transition: background-color 0.3s ease;  
+  z-index: 250;
+}
+
+.btnansdad4 {
+  position: absolute;
+  top :50%;
+  left: 50%;
+  transform: translate(-100%, 60%);
+  display: inline-block;           
+  background-color: #fbff27;       
+  color: rgb(0, 0, 0);                   
+  padding: 20px 60px;              
+  border-radius: 60px;              
+  text-decoration: none;           
+  font-weight: bold;
+  font-size: 24px;
+  transition: background-color 0.3s ease;  
+  z-index: 250;
+}
+
+.notbtnfaildad4{
+  position: absolute;
+  top :50%;
+  left: 50%;
+  transform: translate(0%,60%);
+  display: inline-block;           
+  background-color: #fbff27;       
+  color: rgb(0, 0, 0);                   
+  padding: 20px 60px;              
+  border-radius: 60px;              
+  text-decoration: none;           
+  font-weight: bold;
+  font-size: 24px;
+  transition: background-color 0.3s ease;  
+  z-index: 250;
 }
 
 .centerdad4 {
@@ -56,20 +107,68 @@ body.page-bg500 {
   align-items: center;          /* จัดกลางแนวตั้ง */
   height: 100vh;                /* สูงเท่าจอ */
   position: relative;
-  z-index: 1;
 }
 
-.centerdad4 h2 {
-  transform: translate(0px, -400px); /* เลื่อนลง 180px */ 
+.centerfaildad4 {
+  display: flex;
+  justify-content: center;      /* จัดกลางแนวนอน */
+  align-items: center;          /* จัดกลางแนวตั้ง */
+  height: 100vh;                /* สูงเท่าจอ */
+  position: relative;
+}
+
+.centerdad4 h2 { 
+  transform: translate(61%, -51%);
   align-items: center;
   font-size: 30px;
-  color: #333;
+  color: #ffffff;
+  z-index: 1;
+  background-color:rgb(34, 193, 84);
+  padding: 50px 150px;
+  border-radius: 30px;
+  z-index: 210;
+}
+
+.centerfaildad4 h2 { 
+  transform: translate(61%, -51%);
+  align-items: center;
+  font-size: 30px;
+  color: #ffffff;
+  z-index: 1;
+  background-color:rgb(193, 34, 34);
+  padding: 50px 150px;
+  border-radius: 30px;
+  z-index: 210;
+}
+
+.centerdad4 h3 { /* เลื่อนลง 180px */ 
+  transform: translateX(-41%);
+  align-items: center;
+  font-size: 30px;
+  color: #000000;
   z-index: 1;
   background-color:rgb(255, 255, 255);
-  padding: 40px 70px;
-  border-radius: 1pc 1pc 3pc 3pc;
+  padding: 130px 140px;
+  padding-top: 160px;
+  border-radius: 30px;
   box-shadow: 0 4px 10px black;
+  z-index: 200;
 }
+
+.centerfaildad4 h3 { /* เลื่อนลง 180px */ 
+  transform: translateX(-41%);
+  align-items: center;
+  font-size: 30px;
+  color: #000000;
+  z-index: 1;
+  background-color:rgb(255, 255, 255);
+  padding: 130px 140px;
+  padding-top: 160px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px black;
+  z-index: 200;
+}
+
 
 .centerdad4 img{
   width: auto;
@@ -279,4 +378,15 @@ body.page-bg500 {
   background-color: red;
   margin: 10px;
   opacity: 0.5;
+}
+
+.overlaydad4 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* สีดำโปร่ง */
+  z-index: 100; /* ต้องมากกว่าพื้นหลัง แต่ไม่มากกว่าสิ่งที่จะแสดง */
+  pointer-events: none;
 }

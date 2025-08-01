@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import '../../../css/drag_and_drop3.css'
+import '../../../css/drag_and_drop4.css'
 
 import morsaibon from '../../../asset3/Misc/morsaibon.png';
 import character from '../../../asset3/Misc/คิดว่าตัวเองดวงดีครึ่ง.png';
@@ -11,7 +11,7 @@ import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
 import car from '../../../asset3/Misc/รถ.png';
 
 
-const PageDad3 = () => {
+const PageDad4 = () => {
   useEffect(() => {
     document.body.className = 'page-bg500';
 
@@ -20,21 +20,27 @@ const PageDad3 = () => {
     };
   }, []);
   const location = useLocation();
-  const { score, selectedCars } = location.state || {};  // ใช้ || {} กัน null
-  const correctAnswers = ['car1', 'car3', 'car4'];
-  const correctCount = selectedCars.filter(car => correctAnswers.includes(car)).length;
+  const { correctCount } = location.state || {};  // ใช้ || {} กัน null
   return (
     
     <div>
-      
-      <div className="centerdad4">
       {correctCount === 3 && (
-        <Link className='btnnextdad4' to="/p51">ต่อไป {'>>'}</Link>
+        <>
+          <Link className='btnnextpassdad4' to='#'>ต่อไป</Link>
+          <div className='centerdad4'>
+            <h2>ผ่าน</h2>
+            <h3>คะแนน: 3/3</h3>
+          </div>
+        </>
       )}
-      {correctCount < 3 && (
-        <Link className="btnbackdad4" to="/pdad5" data-discover="true">เฉลย</Link>
-      )}
-      </div>
+          <div className='centerfaildad4'>
+            <h2>ไม่ผ่าน</h2>
+            <h3>คะแนน: 3/3</h3>
+          </div>
+          <Link className='btnansdad4' to='#'>เฉลย</Link>
+          <h4 className='notbtnfaildad4' to='#'>ต่อไป</h4>
+
+      <div className='overlaydad4'></div>
       <div className='top-squaredad4'></div>
       <div className='left-triangledad4'></div>
       <div className='right-triangledad4'></div>
@@ -59,9 +65,12 @@ const PageDad3 = () => {
             <img src={car} />
           </div>
           <img className="buntookbondad4" src={buntookbon} />
+          <div className='popupdad4'>
+            
+          </div>
       </div>
     </div>
   );
 };
 
-export default PageDad3;
+export default PageDad4;
