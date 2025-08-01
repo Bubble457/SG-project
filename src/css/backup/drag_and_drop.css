@@ -101,9 +101,9 @@ body.page-bg500 {
 }
 
 .car6dad2 img{
-  position: absolute;
   width:250px;
   height:auto;
+  position:absolute;
   top: -620px;
   left:51%;
   z-index:20;
@@ -123,9 +123,9 @@ body.page-bg500 {
 }
 
 .car1dad2 img{
-  position: absolute;
   width:250px;
   height:auto;
+  position:absolute;
   top: -460px;
   left:34%;
   z-index:20;
@@ -146,9 +146,9 @@ body.page-bg500 {
 }
 
 .car4dad2 img{
-  position:absolute;
   width:250px;
   height:auto;
+  position:absolute;
   top: -120px;
   left:42.2%;
   z-index:20;
@@ -168,9 +168,9 @@ body.page-bg500 {
 }
 
 .car5dad2 img{
-    position: absolute;
     width:200px;
     height:auto;
+    position:absolute;
     top: -150px;
     left:35.5%;
     z-index:20;
@@ -190,9 +190,9 @@ body.page-bg500 {
 }
 
 .car2dad2 img{
-    position:absolute;
     width:200px;
     height:auto;
+    position:relative;
     top: -720px;
     left:35.5%;
     z-index:20;
@@ -212,9 +212,9 @@ body.page-bg500 {
 }
 
 .car3dad2 img{
-    position:absolute;
     width:200px;
     height:auto;
+    position:absolute;
     top: -400px;
     left:52.5%;
     z-index:20;

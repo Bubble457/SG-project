@@ -8,7 +8,7 @@ body.page-bg500 {
   overflow: hidden;
 }
 
-.btnbackdad4 {
+.btnbackdad5 {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -21,15 +21,15 @@ body.page-bg500 {
   font-weight: bold;
   font-size: 16px;
   transition: background-color 0.3s ease;  
-  z-index: 250;
+  z-index: 2;
 }
 
-.btnbackdad4:hover {
-  background-color: #ffdcfa;    
-  z-index: 250;  
+.btnbackdad5:hover {
+  background-color: #ffdcfa;      
+  z-index: 2; 
 }
 
-.btnnextdad4 {
+.btnnextdad5 {
   position: absolute;
   bottom: 20px;
   right: 20px;
@@ -42,135 +42,61 @@ body.page-bg500 {
   font-weight: bold;
   font-size: 16px;
   transition: background-color 0.3s ease;  
-  z-index: 250;
+  z-index: 2;
 }
 
-.btnnextdad4:hover {
-  background-color: #044e7b;      
-  z-index: 250; 
+.btnnextdad5:hover {
+  background-color: #044e7b;  
+  z-index: 2;     
 }
 
-.btnnextpassdad4 {
-  position: absolute;
-  top :50%;
-  left: 50%;
-  transform: translate(-50%, 60%);
-  display: inline-block;           
-  background-color: #0075bd;       
-  color: rgb(255, 255, 255);                   
-  padding: 20px 60px;              
-  border-radius: 60px;              
-  text-decoration: none;           
-  font-weight: bold;
-  font-size: 24px;
-  transition: background-color 0.3s ease;  
-  z-index: 250;
-}
-
-.btnansdad4 {
-  position: absolute;
-  top :50%;
-  left: 50%;
-  transform: translate(-100%, 60%);
-  display: inline-block;           
-  background-color: #fbff27;       
-  color: rgb(0, 0, 0);                   
-  padding: 20px 60px;              
-  border-radius: 60px;              
-  text-decoration: none;           
-  font-weight: bold;
-  font-size: 24px;
-  transition: background-color 0.3s ease;  
-  z-index: 250;
-}
-
-.notbtnfaildad4{
-  position: absolute;
-  top :50%;
-  left: 50%;
-  transform: translate(15%,75%);
-  display: inline-block;           
-  background-color: #869398;       
-  color: rgb(255, 255, 255);                   
-  padding: 20px 60px;              
-  border-radius: 60px;              
-  text-decoration: none;           
-  font-weight: bold;
-  font-size: 24px;
-  transition: background-color 0.3s ease;  
-  z-index: 250;
-}
-
-.centerdad4 {
+.centerdad5 {
   display: flex;
   justify-content: center;      /* จัดกลางแนวนอน */
   align-items: center;          /* จัดกลางแนวตั้ง */
   height: 100vh;                /* สูงเท่าจอ */
   position: relative;
-}
-
-.centerfaildad4 {
-  display: flex;
-  justify-content: center;      /* จัดกลางแนวนอน */
-  align-items: center;          /* จัดกลางแนวตั้ง */
-  height: 100vh;                /* สูงเท่าจอ */
-  position: relative;
-}
-
-.centerdad4 h2 { 
-  transform: translate(61%, -51%);
-  align-items: center;
-  font-size: 30px;
-  color: #ffffff;
   z-index: 1;
-  background-color:rgb(34, 193, 84);
-  padding: 50px 150px;
-  border-radius: 30px;
-  z-index: 210;
 }
 
-.centerfaildad4 h2 { 
-  transform: translate(61%, -51%);
+.centerdad5 h1 { 
+  transform: translateX(-60%);
   align-items: center;
   font-size: 30px;
-  color: #ffffff;
-  z-index: 1;
-  background-color:rgb(193, 34, 34);
-  padding: 50px 150px;
-  border-radius: 30px;
-  z-index: 210;
-}
-
-.centerdad4 h3 { /* เลื่อนลง 180px */ 
-  transform: translateX(-41%);
-  align-items: center;
-  font-size: 30px;
-  color: #000000;
+  color: #333;
   z-index: 1;
   background-color:rgb(255, 255, 255);
-  padding: 130px 140px;
-  padding-top: 160px;
-  border-radius: 30px;
+  padding: 20px 60px;
+  border-radius: 60px;
   box-shadow: 0 4px 10px black;
-  z-index: 200;
 }
 
-.centerfaildad4 h3 { /* เลื่อนลง 180px */ 
-  transform: translateX(-41%);
+.centerdad5 h2 { 
+  transform: translate(155%, 450%);
   align-items: center;
   font-size: 30px;
-  color: #000000;
+  color: #333;
   z-index: 1;
   background-color:rgb(255, 255, 255);
-  padding: 130px 140px;
-  padding-top: 160px;
-  border-radius: 30px;
+  padding: 20px 60px;
+  border-radius: 60px;
   box-shadow: 0 4px 10px black;
-  z-index: 200;
+}
+
+.centerdad5 h3 { 
+  transform: translateX(60%);
+  align-items: center;
+  font-size: 30px;
+  color: #333;
+  z-index: 1;
+  background-color:rgb(255, 255, 255);
+  padding: 20px 60px;
+  border-radius: 60px;
+  box-shadow: 0 4px 10px black;
 }
 
 
-.centerdad4 img{
+.centerdad5 img{
   width: auto;
   height: 250px;
   z-index: 1;
@@ -178,18 +104,17 @@ body.page-bg500 {
   
 }
 
-.centerdad4, .centerdad4 * {
+.centerdad5, .centerdad5 * {
   pointer-events: none;
 }
 
-.carderdad4{
+.carderdad5{
   justify-content:center;
   align-items: center;
   position:relative;
-  z-index: 0;
 }
 
-.buntookbondad4{
+.buntookbondad5{
   position:absolute;
   width: 350px;
   height: 350px;
@@ -199,17 +124,16 @@ body.page-bg500 {
   z-index: 0;
 }
 
-.car6dad4 img{
+.car6dad5 img{
   width:250px;
   height:auto;
   position:absolute;
   top: -620px;
   left:51%;
   z-index:20;
-  cursor: pointer;
 }
 
-.car6dad4.active::after {
+.car6dad5.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -221,17 +145,16 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car1dad4 img{
+.car1dad5 img{
   width:250px;
   height:auto;
   position:absolute;
   top: -460px;
   left:34%;
   z-index:20;
-  cursor: pointer;
 }
 
-.car1dad4.active::after {
+.car1dad5.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -243,17 +166,16 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car4dad4 img{
+.car4dad5 img{
   width:250px;
   height:auto;
   position:absolute;
   top: -120px;
   left:42.2%;
   z-index:20;
-  cursor: pointer;
 }
 
-.car4dad4.active::after {
+.car4dad5.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -265,17 +187,16 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car5dad4 img{
+.car5dad5 img{
     width:200px;
     height:auto;
     position:absolute;
     top: -150px;
     left:35.5%;
     z-index:20;
-    cursor: pointer;
 }
 
-.car5dad4.active::after {
+.car5dad5.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -287,17 +208,16 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car2dad4 img{
+.car2dad5 img{
     width:200px;
     height:auto;
     position:relative;
     top: -720px;
     left:35.5%;
     z-index:20;
-    cursor: pointer;
 }
 
-.car2dad4.active::after {
+.car2dad5.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -309,18 +229,16 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car3dad4 img{
+.car3dad5 img{
     width:200px;
     height:auto;
     position:absolute;
     top: -400px;
     left:52.5%;
-    z-index:20;
-    cursor: pointer;
-    
+    z-index:20;    
 }
 
-.car3dad4.active::after {
+.car3dad5.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -332,7 +250,7 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.bottom-triangledad4 {
+.bottom-triangledad5 {
   position:absolute;
   left:44.5%;
   bottom:7%;
@@ -347,7 +265,7 @@ body.page-bg500 {
   z-index:0;
 }
 
-.left-triangledad4 {
+.left-triangledad5 {
   position:absolute;
   left: 38.2%;
   bottom: 12%;
@@ -358,7 +276,7 @@ body.page-bg500 {
   opacity:0.5;
 }
 
-.right-triangledad4 {
+.right-triangledad5 {
   position:absolute;
   right: 38.2%;
   bottom: 12%;
@@ -369,7 +287,7 @@ body.page-bg500 {
   opacity: 0.5;
 }
 
-.top-squaredad4 {
+.top-squaredad5 {
   position: absolute;
   left:46.5%;
   bottom:55%;
@@ -380,13 +298,44 @@ body.page-bg500 {
   opacity: 0.5;
 }
 
-.overlaydad4 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* สีดำโปร่ง */
-  z-index: 100; /* ต้องมากกว่าพื้นหลัง แต่ไม่มากกว่าสิ่งที่จะแสดง */
-  pointer-events: none;
+.border1dad5 {
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-185%, -35%);
+  width: 100px;
+  height: 150px;
+  background-color: #00ff88;
+  border-radius: 40px;
+  margin: 10px;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.border2dad5 {
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-60%, 190%);
+  width: 100px;
+  height: 150px;
+  background-color: #00ff88;
+  border-radius: 40px;
+  margin: 10px;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.border3dad5{ 
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(55%, 5%);
+  width: 120px;
+  height: 220px;
+  background-color: #00ff88;
+  border-radius: 40px;
+  margin: 10px;
+  opacity: 0.5;
+  z-index: 1;
 }
