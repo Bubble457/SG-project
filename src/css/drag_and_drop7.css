@@ -9,17 +9,17 @@ body.page-bgdad7 {
 
 .btnbackdad7 {
     position: absolute;
-    top: 3%;
-    left: 3%;
+    bottom: 20%;
+    left: 50%;
+    transform:translate(-100%, 50%);
     display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
     background-color: #ffffff;       /* สีพื้นหลัง */
     color: rgb(0, 0, 0);                    /* ตัวหนังสือสี */
-    padding: 15px 30px;              /* ช่องว่างรอบตัวหนังสือ */
-    border-radius: 30px;              /* มุมโค้งมน */
+    padding: 15px 50px;              /* ช่องว่างรอบตัวหนังสือ */
+    border-radius: 60px;              /* มุมโค้งมน */
     text-decoration: none;           /* ลบเส้นขีดใต้ */
     font-weight: bold;
-    font-size: 16px;
-    gap: 10px;
+    font-size: 25px;
     transition: background-color 0.3s ease;  
 }
 
@@ -31,16 +31,21 @@ body.page-bgdad7 {
     
 }
 
+.btnreturndad7 {
+  position:absolute;
+  top: 5%;
+  right: 5%;
+}
 
 .btnnextdad7 {
     position: absolute;
     bottom: 20%;
     left: 50%;
-    transform:translate(-50%, 50%);
+    transform:translate(50%, 50%);
     display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
-    background-color: #dc0000;       /* สีพื้นหลัง */
+    background-color: #0075bd;       /* สีพื้นหลัง */
     color: rgb(255, 255, 255);                    /* ตัวหนังสือสี */
-    padding: 25px 50px;              /* ช่องว่างรอบตัวหนังสือ */
+    padding: 15px 50px;              /* ช่องว่างรอบตัวหนังสือ */
     border-radius: 30px;              /* มุมโค้งมน */
     text-decoration: none;           /* ลบเส้นขีดใต้ */
     font-weight: bold;
@@ -49,7 +54,7 @@ body.page-bgdad7 {
 }
 
 .btnnextdad7:hover {
-    background-color: #b50000;       
+    background-color: #005c95;       
 }
 
 .centerdad7 {
@@ -63,30 +68,63 @@ body.page-bgdad7 {
   gap: 20px; /* ระยะห่างระหว่างบรรทัด */
 }
 
+.centerdad7 h3{
+  background-color: #f4abba;
+  color: white;
+  padding: 10px 100px;
+  border-radius: 30px;
+  transform: translateY(-150%);
+}
+
 .kengdad7 {
   font-size: 70px;
   color: black;
   background-color: white;
   padding: 10px 70px;
   border-radius: 80px;
+  transform: translate(-30%, -50%);
 }
 
 .scoredad7 {
-  display: flex;               /* ใช้ flex เพื่อควบคุมทิศทาง */
-  justify-content: flex-start;
-  text-align: left;
-  font-size: 50px;
-  color: black;
-  background-color: #f7f2e8;
-  padding: 175px 300px;
-
-  border-radius: 30px;
+  font-size: 60px;   
+  transform: translate(-50%, -50%);         /* ถ้าต้องการให้กล่องยังสูง */
 }
 
+
 .accuratedad7 {
-  font-size: 30px;
-  color: white;
-  background-color: #355d8b;
-  padding: 15px 30px;
-  border-radius: 20px;
+  font-size: 40px;
+  transform: translateX(-45%);
+}
+
+.blockwhdad7 {
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  width: 800px;
+  height: 500px;
+  background-color: #f7f2e8;
+  margin: 10px;
+  border-radius: 50px;
+}
+
+.blockbldad7 {
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  width: 830px;
+  height: 530px;
+  background-color: rgb(124, 201, 226);
+  margin: 10px;
+  border-radius: 50px;
+  z-index: -1;
+}
+
+.characterdad7 {
+  position:absolute;
+  top: 25%;
+  left: 50%;
+  width: auto;
+  height:400px;
 }

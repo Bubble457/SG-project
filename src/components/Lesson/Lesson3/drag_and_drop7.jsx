@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import React, { useEffect } from 'react';
 
 import character from '../../../asset3/Misc/hero.png';
+import btn from '../../../asset3/icon/ปุ่มสำเร็จรูป.png'
 
 const App = () => {
 
@@ -17,10 +18,15 @@ const App = () => {
 
   return (
     <div>
-      <img src={character} alt="..." style={{ transform: 'scaleX(-1)' }} />
+      <div className='blockwhdad7'></div>
+      <div className='blockbldad7'></div>
+      <img className='characterdad7' src={character} alt="..." style={{ transform: 'scaleX(-1)' }} />
       <div>
-        <Link to="#" className="btnnext38" >เริ่ม</Link>
-        <Link className="btnbackdad7" to="#" >ย้อนกลับ</Link>
+        <Link to="/p53" className="btnnextdad7" >ต่อไป &gt;&gt;</Link>
+        <Link to="#" className='btnbackdad7'>กลับไปหน้าหลัก</Link>
+        <Link to="#" className='btnreturndad7'>
+          <img src={btn} />
+        </Link>
       </div>
       <div className="centerdad7">
         <h3>สรุปคะแนน</h3>

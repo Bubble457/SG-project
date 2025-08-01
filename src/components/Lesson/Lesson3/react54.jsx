@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 import btnpurple from '../../../asset3/icon/รายงาน.png';
 import btnyellow from '../../../asset3/icon/ทบทวน.png';
 import btngreen from '../../../asset3/icon/หน้าหลัก.png';
-import graph from '../../../asset3/Misc/กราฟ.png';
+import graph from '../../../asset3/Misc/graph2.png';
 import profile from '../../../asset3/icon/สำเนาๆๆๆๆๆๆ (2).png';
 import siang from '../../../asset3/icon/เขียว.png';
 import ta from '../../../asset3/icon/eye.png';
