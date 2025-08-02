@@ -103,7 +103,7 @@ function App() {
       onMouseUp={handleMouseUp}
     >
       {showNextButton && (
-        <Link className="btnnextdad" to="/pdad2" data-discover="true">ต่อไป &gt;&gt;</Link>
+        <Link className="btnnextdad" to="/pdad" data-discover="true">ต่อไป &gt;&gt;</Link>
       )}
       <Link className="btnbackdad" to="/p50_0" data-discover="true">ย้อนกลับ</Link>
       <div className="centerdad">

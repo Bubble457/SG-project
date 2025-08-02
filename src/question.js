@@ -2,11 +2,11 @@ export const questions = [
   {
     text: "หลักจากเลิกจากงานกีฬาสีของโรงเรียน พี่ต้นน้ำ ชั้น ม.3 กำลังจะกลับบ้าน แต่มีฝนตก ฟ้าร้อง คิดว่าทำไมนักเรียนคนนี้จึงตัดสินใจขับรถฝ่าสายฝนกลับบ้าน",
     choices: [
-      { text: "คิดว่าไม่ถึงทำให้มองไม่เห็น", type: "Impulsivity", className: "choice-1" },
-      { text: "มีความชำนาญกว่าผู้อื่น ๆ", type: "Impulsivity", className: "choice-2" },
-      { text: "ฝนคงไม่หยุดตกง่ายๆ", type: "Impulsivity", className: "choice-3" },
-      { text: "อยากรีบกลับบ้าน", type: "Impulsivity", className: "choice-4" },
-      { text: "เจอประจำแต่ก็ไม่เป็นไร ไม่รู้สึกอะไร", type: "Impulsivity", className: "choice-5" }
+      { text: "คิดว่ายังสามารถมองเห็นได้อยู่", type: "Impulsivity", className: "choice-1" },
+      { text: "มีความชำนาญกว่าผู้อื่น", type: "Anti-Authority", className: "choice-2" },
+      { text: "ฝนคงไม่หยุดตกง่าย ๆ", type: "Resignation", className: "choice-3" },
+      { text: "อยากรีบกลับบ้าน", type: "Invulnerability", className: "choice-4" },
+      { text: "เจอประจำแต่ก็ไม่เป็นไร ไม่รู้สึกอะไร", type: "Macho", className: "choice-5" }
     ]
   },
 ];

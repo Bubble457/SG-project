@@ -23,16 +23,6 @@ const Mission = () => {
                     <span className="home-text">หน้าหลัก</span>
                 </div>
             </Link>
-            <Link to='/page1' class="btn" >
-                <div className="nav-container">
-                    <div className="nav-tab book">
-                        <span>
-                            <img src={book} className='book' width='auto' height='50px'/>
-                        </span>
-                        <span className="book-text">ทบทวน</span>
-                    </div>
-                </div>
-            </Link>
             <Link to='/page2' class="btn" >
                 <div className="nav-tab report">
                     <span>

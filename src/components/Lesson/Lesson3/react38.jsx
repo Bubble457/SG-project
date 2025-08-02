@@ -22,7 +22,7 @@ const App = () => {
     <div>
       <div>
         <Link to="/p39" className="btnnext38" >เริ่ม</Link>
-        <Link className="btnback38" to="#" >ย้อนกลับ</Link>
+        <Link className="btnback38" to="/page13" >ย้อนกลับ</Link>
       </div>
       <div className="center38">
         <h3>บทที่ 3</h3>

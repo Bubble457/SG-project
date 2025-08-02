@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';  
 import '../css/Question.css';
 import { questions } from '../question';
 import Result from '../components/Result';
@@ -7,12 +8,8 @@ import like from '../assets/like.png'
 import rain from '../assets/rain.png'
 import run from '../assets/run.png'
 import annoy from '../assets/annoying.png'
-import bg from '../assets/pretest.png'
-import choice1 from '../assets/chioce1.png'
-import choice2 from '../assets/chioce2.png'
-import choice3 from '../assets/chioce3.png'
-import choice4 from '../assets/chioce4.png'
-import choice5 from '../assets/chioce5.png'
+import slot from '../assets/Impulsivity.png'
+
 
 function Question() {
   const [current, setCurrent] = useState(0);
@@ -49,6 +46,7 @@ function Question() {
 
   return (
     <div className='question-container'>
+      
       <div className='box-pretest'>
         <p className='text-pretest'>แบบทดสอบทัศนคติ</p>
       </div>
@@ -83,6 +81,20 @@ function Question() {
         ))}
       </div>
 
+      <div className='blackblack'></div>
+
+      <img src={slot} className='slot-question' />
+
+      <div className='start-box'>
+        <p className=''>จากคำถาม ให้นักเรียนเรียงสถานการณ์ที่คิดว่ามีการใช้เหตุผลจากน้อยที่สุดไปหามากที่สุด</p>
+      </div>
+      <Link to='/question1'>
+        <div className='googo'>
+        ไปเริ่มกันเลย!
+      </div>
+      </Link>
+      
+
       <img src={ eye } width='200px' height='auto' className='eye' />
 
       <img src={ like } width='150px' height='auto' className='like' />
@@ -93,15 +105,15 @@ function Question() {
 
       <img src={ annoy } width='200px' height='auto' className='annoy' />
       
-      <div className='circle1'>1</div>
+      <div className='circle1'>A</div>
 
-      <div className='circle2'>2</div>
+      <div className='circle2'>B</div>
 
-      <div className='circle3'>3</div>
+      <div className='circle3'>C</div>
 
-      <div className='circle4'>4</div>
+      <div className='circle4'>D</div>
 
-      <div className='circle5'>5</div>
+      <div className='circle5'>E</div>
 
       <div className='label-red-q'>น้อยที่สุด</div>
 

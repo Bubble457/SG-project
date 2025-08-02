@@ -1,32 +1,33 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { Form, Alert, Button } from 'react-bootstrap'
-import { useUserAuth } from '../context/UserAuthContext.jsx'
-import '../css/Login.css'
-import login from '../assets/log in.png'
-
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Form, Alert, Button } from 'react-bootstrap';
+import { useUserAuth } from '../context/UserAuthContext.jsx';
+import '../css/Login.css';
+import login from '../assets/log in.png';
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // ✅ เพิ่ม state สำหรับโชว์/ซ่อนรหัสผ่าน
+  const [error, setError] = useState("");
+  const { logIn } = useUserAuth();
+  const navigate = useNavigate();
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
-    const { logIn } = useUserAuth();
-  
-    let navigate = useNavigate();
-
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      setError("");
-      try {
-        await logIn(email, password);
-        navigate("/intro");
-      } catch(err) {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      await logIn(email, password);
+      navigate("/intro");
+    } catch (err) {
+      if (err.code === "auth/invalid-credential") {
+        setError("อีเมลหรือรหัสผ่านไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง");
+      } else {
         setError(err.message);
-        console.log(err);
       }
-    };
-
+      console.log(err);
+    }
+  };
 
   return (
     <div className='body-login'>
@@ -42,40 +43,48 @@ function Login() {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
+
             <p className='text-password'>รหัสผ่าน</p>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            {/* <Form.Group className='mb-3' controlId='formBasicEmail'>
-              <Form.Control
-                type='email'
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Form.Group>
-            <p className='text'>รหัสผ่าน</p>
-            <Form.Group className='mb-3' controlId='formBasicPassword'>
-              <Form.Control
-                type='password'
+            <div style={{ position: 'relative' }}>
+              <input
+                type={showPassword ? 'text' : 'password'}
+                value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
+                style={{ paddingRight: '40px' }}
               />
-            </Form.Group> */}
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                style={{
+                  position: 'absolute',
+                  right: '10px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                {showPassword ? '🙈' : '👁️'}
+              </button>
+            </div>
+
             <div className='submit-btn'>
               <Button variant='primary' type='submit'>
-                  เข้าสู่ระบบ
+                เข้าสู่ระบบ
               </Button>
             </div>
           </Form>
+
           <br />
-          <div className='text-register'>ยังไม่มีบัญชี
-            <Link to='/register'>ลงทะเบียน</Link>
+          <div className='text-register'>
+            ยังไม่มีบัญชี? <Link to='/register'>ลงทะเบียน</Link>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;

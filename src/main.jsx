@@ -6,6 +6,12 @@ import Register from './components/Register.jsx'
 import ProtectedRoute from './auth/ProtectedRoute.jsx'
 import Result from './components/Result.jsx';
 import Question from './components/Question.jsx'
+import Question1 from './components/Question1.jsx'
+import Impulsivity from './components/Lesson/Impulsivity.jsx'
+import AntiAuthority from './components/Lesson/AntiAuthority.jsx'
+import Resignation from './components/Lesson/Resignation.jsx'
+import Macho from './components/Lesson/Macho.jsx'
+import Invulnerability from './components/Lesson/Invulnerability.jsx'
 import Intro from './components/Lesson/Intro.jsx'
 import Intro1 from './components/Lesson/Intro1.jsx'
 import Intro2 from './components/Lesson/Intro2.jsx'
@@ -20,8 +26,12 @@ import Page1 from './components/Lesson/Lesson1/page1.jsx'
 import Page2 from './components/Lesson/Lesson1/page2.jsx'
 import Page3 from './components/Lesson/Lesson1/page3.jsx'
 import Check from './components/Lesson/Lesson1/Check.jsx'
-import Click from './components/Lesson/Lesson1/click.jsx'
-import Page4 from './components/Lesson/Lesson2/P25.jsx' 
+import Check1 from './components/Lesson/Lesson1/Check1.jsx'
+import Check2 from './components/Lesson/Lesson1/Check2.jsx'
+import Check3 from './components/Lesson/Lesson1/Check3.jsx'
+import Check4 from './components/Lesson/Lesson1/Check4.jsx'
+import Click from './components/Lesson/Lesson1/Click.jsx'
+import Page4 from './components/Lesson/Lesson2/P25.jsx'
 import Page5 from './components/Lesson/Lesson2/P26.jsx'
 import Page6 from './components/Lesson/Lesson2/P27.jsx'
 import Page7 from './components/Lesson/Lesson2/P28.jsx'
@@ -34,7 +44,7 @@ import Page12 from './components/Lesson/Lesson2/P41.jsx'
 import Page13 from './components/Lesson/Lesson2/P42.jsx'
 //lesson3
 import DAD from './components/Lesson/Lesson3/drag_and_drop.jsx'
-import DAD2 from './components/Lesson/Lesson3/drag_and_drop2.jsx'
+// import DAD2 from './components/Lesson/Lesson3/drag_and_drop2.jsx'
 import DAD3 from './components/Lesson/Lesson3/drag_and_drop3.jsx'
 import DAD4 from './components/Lesson/Lesson3/drag_and_drop4.jsx'
 import P38 from './components/Lesson/Lesson3/react38.jsx'
@@ -94,6 +104,10 @@ const router = createBrowserRouter([
     element: <Question />
   },
   {
+    path: "/question1",
+    element: <Question1 />
+  },
+  {
     path: "/intro",
     element: <Intro />
   },
@@ -126,6 +140,26 @@ const router = createBrowserRouter([
     element: <Attitude />
   },
   {
+    path: "/impulsivity",
+    element: <Impulsivity />
+  },
+  {
+    path: "/antiAuthority",
+    element: <AntiAuthority />
+  },
+  {
+    path: "/resignation",
+    element: <Resignation />
+  },
+  {
+    path: "/macho",
+    element: <Macho />
+  },
+  {
+    path: "/invulnerability",
+    element: <Invulnerability />
+  },
+  {
     path: "/mission",
     element: <Mission />
   },
@@ -144,6 +178,22 @@ const router = createBrowserRouter([
   {
     path: "/check",
     element: <Check/>
+  },
+  {
+    path: "/check1",
+    element: <Check1/>
+  },
+  {
+    path: "/check2",
+    element: <Check2/>
+  },
+  {
+    path: "/check3",
+    element: <Check3/>
+  },
+  {
+    path: "/check4",
+    element: <Check4/>
   },
   {
     path: "/click",
@@ -310,10 +360,10 @@ const router = createBrowserRouter([
   //   path: "/p54",
   //   element: <P54 />
   // },
-   {
-    path: '/pdad2',
-    element: <DAD2 />
-   },
+  //  {
+  //   path: '/pdad2',
+  //   element: <DAD2 />
+  //  },
    {
     path: '/pdad',
     element: <DAD />

@@ -1,4 +1,13 @@
-
+.bg-personality{
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height : 100vh;
+  width: 100vw;
+  padding: 0%;
+  margin: 0%;
+  overflow: hidden;
+}
 .card-per {
   position: absolute;
   bottom: 50px;
@@ -119,4 +128,58 @@
   position: absolute;
   bottom: 50px;
   right: 80px;
+}
+.trait-box {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  width: 300px;
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+  font-family: 'Prompt', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.trait-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.trait-name {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.trait-title .en {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff6b00;
+}
+
+.trait-title .th {
+  font-size: 18px;
+  color: #ff6b00;
+}
+
+.trait-levels {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.trait-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.trait-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
 }

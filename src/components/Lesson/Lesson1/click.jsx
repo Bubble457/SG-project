@@ -1,4 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import next from '../../../assets/next.png';
 import '../../../css/Click.css';
 
 const hazardData = [
@@ -101,7 +103,7 @@ const HazardClickGame = () => {
       <div className="video-wrapper" onClick={handleClick}>
         <video
           ref={videoRef}
-          src="/public/Test.mp4"
+          src="/public/click.mp4"
           controls={false}
           onEnded={handleEnd}
           className="video-element"
@@ -126,6 +128,12 @@ const HazardClickGame = () => {
           ))}
           <div ref={logEndRef} />
         </div>
+        <Link to='/news1' className='no-underline'>
+          <div className='next-btn'>
+              <p className='next-i4'>ต่อไป</p>
+              <img src={ next } className='next-next-h'/>
+          </div>
+      </Link> 
       </div>
     </div>
   );

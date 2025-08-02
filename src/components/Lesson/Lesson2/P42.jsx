@@ -28,7 +28,7 @@ const P28 = () => {
   <div className='content'>
     <img src={bg} className='c2-bg'/>
     <Back page='page12' />
-    <P42Next page='page14' />
+    <P42Next page='p38' />
   </div>
   );
 };

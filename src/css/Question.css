@@ -8,7 +8,7 @@
   width: 100%;
   text-align: left;
   padding: 1rem;
-
+  
 }
 
 .box-pretest{
@@ -343,4 +343,64 @@
   font-size: 30px;
   font-weight: 900;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.slot-question{
+  max-width: 20%;
+  position: absolute;
+  bottom: 20%;
+  left: 43%;
+  z-index: 100;
+}
+
+.blackblack{
+  background-color: rgba(0, 0, 0, 0.7);
+  height : 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+}
+
+.start-box{
+  background-color: #ffffff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 20%;
+  border-radius: 2.5rem;
+  padding: 1% 2% 0%;
+  position: absolute;
+  top: 20%;
+  left: 26%;
+  margin: 0%;
+  z-index: 100000;
+}
+.start-box::before {
+  content: '';
+  position: absolute;
+  top: 85%; 
+  left: 45%;
+  transform: translateX(-5%);
+  border-left: 10.5rem solid transparent;
+  border-right: 0.1rem solid transparent;
+  border-top: 3.2rem solid #ffffff;
+  z-index: -10;
+}
+.googo{
+  background-color: #00bf63;
+  color: #ffffff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 1% 2% ;
+  max-width: 15%;
+  display: flex;
+  justify-content: center;
+  border-radius: 2.5rem;
+  position: absolute;
+  right: 41%;
+  bottom: 5%;
+  z-index: 100;
 }

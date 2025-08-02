@@ -1,14 +1,16 @@
-import React from 'react';
-import Personality from './Personality';
-import '../css/Register.css';
-import { Link } from 'react-router-dom';   
-import bg from '../assets/personality.png';
+// components/Result.jsx
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Result({ answers, questions }) {
+  const navigate = useNavigate();
+
   const scores = {
     "Impulsivity": 0,
     "Anti-Authority": 0,
-    "Resignation": 0
+    "Resignation": 0,
+    "Invulnerability": 0,
+    "Macho": 0,
   };
 
   answers.forEach((rankedIndexes, qIndex) => {
@@ -19,17 +21,22 @@ function Result({ answers, questions }) {
   });
 
   const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
-  const [topType, topScore] = sorted[0];
+  const [topType] = sorted[0];
 
-  return (
-    <div>
-      <img src={bg} className='bg-result'/>
-      
-      <div className="result-box">
-        <Personality type={topType} />
-      </div>
-    </div>  
-  );
+  useEffect(() => {
+    if (topType) {
+      const traitRouteMap = {
+        "Impulsivity": "/impulsivity",
+        "Anti-Authority": "/antiAuthority",
+        "Resignation": "/resignation",
+        "Invulnerability": "/invulnerability",
+        "Macho": "/macho",
+      };
+      navigate(traitRouteMap[topType]);
+    }
+  }, [topType, navigate]);
+
+  return null;
 }
 
 export default Result;

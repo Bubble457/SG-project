@@ -20,7 +20,7 @@ const P25 = () => {
       <Label1 title='ร่างกายของเรา' hat='บทที่ 2' img={eye}/>
       <img src={hero} alt='maskcos' className='maskcos-p1' width='20%' height='60%' />
       <img src={brain} alt='brain' className='brain-p1' width='13%' height='30%' />
-      <Back page='check' />
+      <Back page='page3' />
     </div>
   );
 };

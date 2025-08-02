@@ -19,7 +19,7 @@ function News1() {
                 <p className='text-back'>ย้อนกลับ</p>
                 </div>
             </Link>
-            <Link to='/page3' className='no-underline'>
+            <Link to='/page5' className='no-underline'>
                 <div className='next-btn'>
                     <p className='next-i4'>ต่อไป</p>
                     <img src={ next } className='next-next-h'/>

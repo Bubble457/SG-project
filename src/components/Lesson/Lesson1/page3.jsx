@@ -26,7 +26,7 @@ function Page3() {
         </div>
         <img src={hero} alt="superpower" style={{ width: 'auto', height: '30%' }} className="hero-3" />
 
-        <Link to='/check' className='no-underline'>
+        <Link to='/click' className='no-underline'>
             <div className='next-btn'>
                 <p className='next-i4'>ต่อไป</p>
                 <img src={ next } className='next-next-h'/>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>จับป้ายจราจร</title>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #ffffff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+    }
+    
+    .game-area {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+    
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      z-index: 1000;
+    }
+    
+    button {
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      border: none;
+      border-radius: 50px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .falling-object {
+      position: absolute;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      transition: transform 0.2s;
+      overflow: hidden;
+    }
+    
+    .falling-object img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    
+    .catcher {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 3px dashed rgba(255, 204, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      pointer-events: none;
+      z-index: 100;
+      transition: transform 0.2s;
+      backdrop-filter: blur(5px);
+    }
+    
+    .game-over {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s;
+    }
+    
+    .game-over.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    
+    .game-over-content {
+      background: linear-gradient(135deg, #ffffff);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transform: scale(0.8);
+      animation: popIn 0.5s forwards;
+      max-width: 90%;
+    }
+    
+    @keyframes popIn {
+      to { transform: scale(1); }
+    }
+    
+    .game-over h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #ff5555;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .game-over p {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #ffcc00;
+    }
+    
+    .next-page {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+    
+    .next-page.active {
+      display: flex;
+    }
+    
+    .next-page-content {
+      background: linear-gradient(135deg, #ffffff);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    .next-page a {
+      display: inline-block;
+      padding: 15px 30px;
+      background: linear-gradient(to right, #56ab2f, #a8e063);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: transform 0.3s;
+    }
+    
+    .hand-landmark {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 0, 0, 0.5);
+      transform: translate(-50%, -50%);
+      z-index: 90;
+    }
+    
+    .hand-connection {
+      position: absolute;
+      height: 2px;
+      background: rgba(0, 255, 0, 0.4);
+      transform-origin: 0 0;
+      z-index: 89;
+    }
+    
+    .timer-display {
+      position: absolute;
+      top: 2%;
+      left: 2%;
+      color:black;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 70px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    
+    .score-display {
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 70px;
+      color:black;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    
+    .target-display {
+      position: absolute;
+      bottom: 2%;
+      right: 1%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.5);
+      padding: 1%;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      z-index: 10;
+      backdrop-filter: blur(5px);
+    }
+    
+    .target-sign {
+      width: 200px;
+      height: 200px;
+      border-radius: 8px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 2px solid #ffcc00;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+     
+    .target-label {
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+
+    .target-image {
+        width: 100%;
+    }
+
+    .input-video {
+      transform: scaleX(-1);
+    }
+
+    .box {
+      background-color:#b7e1ff;
+      position: absolute;
+      top:0%;
+      padding: 3% 100%;
+    }
+  </style>
+</head>
+<body><div class="timer-display">Time: <span id="timer">30</span> วินาที</div>
+    <div class="score-display">Score: <span id="score">0</span></div>
+    
+    <div class="target-display" id="target-display">
+      <div class="target-sign" id="target-sign">
+        <img class="target-image" id="target-image" src="" alt="Target Sign">
+      </div>
+    </div>
+  <div class="box"></div>
+  
+  <div class="game-area">
+    <video class="input_video" autoplay muted playsinline style="display: none;"></video>
+    <canvas class="output_canvas"></canvas>
+    <div class="catcher">👆</div>
+    <div class="game-over" id="game-over">
+      <div class="game-over-content">
+        <h2>Game Over!</h2>
+        <p>Your Score: <span id="final-score">0</span></p>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="next-page" id="next-page">
+    <div class="next-page-content">
+      <h2>Great Job!</h2>
+      <p>You scored <span id="next-page-score">0</span> points!</p>
+      <a href="#" id="next-link">Continue to Next Level</a>
+    </div>
+  </div>
+  
+  <div class="controls">
+    <button id="start-btn">Start Game</button>
+    <button id="reset-btn">Reset</button>
+  </div>
+
+  <script>
+    // Game state
+    const gameState = {
+      score: 0,
+      timeLeft: 30,
+      isRunning: false,
+      objects: [],
+      catcherPosition: { x: 0, y: 0 },
+      lastObjectTime: 0,
+      objectInterval: 500,
+      timerId: null,
+      currentTarget: null
+    };
+    
+    // DOM Elements
+    const videoElement = document.querySelector('.input_video');
+    const canvasElement = document.querySelector('.output_canvas');
+    const canvasCtx = canvasElement.getContext('2d');
+    const scoreElement = document.getElementById('score');
+    const timerElement = document.getElementById('timer');
+    const startBtn = document.getElementById('start-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const gameOverScreen = document.getElementById('game-over');
+    const finalScoreElement = document.getElementById('final-score');
+    const catcherElement = document.querySelector('.catcher');
+    const targetDisplay = document.getElementById('target-display');
+    const targetImage = document.getElementById('target-image');
+    const nextPage = document.getElementById('next-page');
+    const nextPageScore = document.getElementById('next-page-score');
+    const nextLink = document.getElementById('next-link');
+    
+    // Traffic sign types
+    const objectTypes = [
+      { 
+        id: 'dont',
+        name: 'ห้าม', 
+        image: './assets/dont.png',
+        points: 1, 
+        color: '#ff6b6b', 
+        size: 180
+      },
+      { 
+        id: 'dontright',
+        name: 'ห้ามเลี่ยวขวา', 
+        image: './assets/dontleawright.png',
+        points: 1, 
+        color: '#ffa502', 
+        size: 180 
+      },
+      { 
+        id: 'dontturn',
+        name: 'ห้ามกลับรถ', 
+        image: './assets/dontUturn.png',
+        points: 1, 
+        color: '#6a89cc', 
+        size: 180 
+      },
+      { 
+        id: 'hampai',
+        name: 'ห้ามตรงไป', 
+        image: './assets/hampai.png',
+        points: 1, 
+        color: '#e55039', 
+        size: 180
+      },
+      { 
+        id: 'jakkayan',
+        name: 'ทางจักรยาน', 
+        image: './assets/jakkayan.png',
+        points: 1, 
+        color: '#e55039', 
+        size: 180
+      },
+      { 
+        id: 'jrajon',
+        name: 'ไฟจราจร', 
+        image: './assets/jrajon.png',
+        points: 1, 
+        color: '#e55039', 
+        size: 180
+      },
+      { 
+        id: 'kon',
+        name: 'คนข้ามถนน', 
+        image: './assets/kon.png',
+        points: 1, 
+        color: '#e55039', 
+        size: 180
+      },
+      { 
+        id: 'kon2',
+        name: 'คนข้ามถนน', 
+        image: './assets/kon2.png',
+        points: 1, 
+        color: '#e55039', 
+        size: 180
+      },
+      { 
+        id: 'leawleft',
+        name: 'เลี้ยวซ้าย', 
+        image: './assets/leawleft.png',
+        points: 1, 
+        color: '#e55039', 
+        size: 180
+      },
+      { 
+        id: 'wong',
+        name: 'วงเวียน', 
+        image: './assets/wong.png',
+        points: 1, 
+        color: '#e55039', 
+        size: 180
+      },
+      { 
+        id: 'paikrab',
+        name: 'ถนนสองทาง', 
+        image: './assets/paikrab.png',
+        points: 1, 
+        color: '#e55039', 
+        size: 180
+      },
+      { 
+        id: 'rod',
+        name: 'ถนนอันตราย', 
+        image: './assets/rod.png',
+        points: 1, 
+        color: '#e55039', 
+        size: 180
+      },
+      { 
+        id: 'tang',
+        name: 'สะพานแคบ', 
+        image: './assets/tang.png',
+        points: 1, 
+        color: '#e55039', 
+        size: 180
+      },
+      
+    ];
+    // Function to check if a new object would overlap with existing ones
+    function wouldOverlap(newX, newY, newSize) {
+      for (const obj of gameState.objects) {
+        const existingLeft = obj.x;
+        const existingRight = obj.x + obj.type.size;
+        const existingTop = obj.y;
+        const existingBottom = obj.y + obj.type.size;
+        
+        const newLeft = newX;
+        const newRight = newX + newSize;
+        const newTop = newY;
+        const newBottom = newY + newSize;
+        
+        if (newLeft < existingRight && 
+            newRight > existingLeft && 
+            newTop < existingBottom && 
+            newBottom > existingTop) {
+          return true;
+        }
+      }
+      return false;
+    }
+    // objectTypes.length
+    // Set random target sign
+    function setRandomTarget() {
+      const randomIndex = Math.floor(Math.random() * objectTypes.length);
+      gameState.currentTarget = objectTypes[randomIndex];
+      targetImage.src = gameState.currentTarget.image;
+      targetImage.alt = gameState.currentTarget.name;
+      targetDisplay.style.display = 'flex';
+    }
+    
+    // Initialize MediaPipe Hands
+    const hands = new self.Hands({
+      locateFile: (file) => {
+        return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
+      }
+    });
+    
+    hands.setOptions({
+      maxNumHands: 1,
+      modelComplexity: 1,
+      minDetectionConfidence: 0.5,
+      minTrackingConfidence: 0.5
+    });
+    
+    // Initialize camera
+    const camera = new self.Camera(videoElement, {
+      onFrame: async () => {
+        if (gameState.isRunning) {
+          await hands.send({ image: videoElement });
+        }
+      },
+      maxWidth: '100%',
+      height: 480
+    });
+    
+    // Start camera when page loads
+    camera.start();
+    
+    // Handle hand detection results with custom drawing
+    hands.onResults((results) => {
+      canvasCtx.save();
+      canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+      canvasCtx.translate(canvasElement.width, 0);
+      canvasCtx.scale(-1, 1);
+      canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
+      
+      // Remove any existing custom landmarks
+      document.querySelectorAll('.hand-landmark, .hand-connection').forEach(el => el.remove());
+      
+      if (results.multiHandLandmarks) {
+        for (const landmarks of results.multiHandLandmarks) {
+          // Draw custom landmarks
+          for (const landmark of landmarks) {
+            const x = (1-landmark.x) * window.innerWidth;
+            const y = landmark.y * window.innerHeight;
+            
+            const landmarkEl = document.createElement('div');
+            landmarkEl.className = 'hand-landmark';
+            landmarkEl.style.left = `${x}px`;
+            landmarkEl.style.top = `${y}px`;
+            document.body.appendChild(landmarkEl);
+          }
+          
+          // Draw custom connections
+          const connections = self.HAND_CONNECTIONS;
+          for (const [i, j] of connections) {
+            const start = landmarks[i];
+            const end = landmarks[j];
+            
+            if (start && end) {
+              const x1 = (1-start.x) * window.innerWidth;
+              const y1 = start.y * window.innerHeight;
+              const x2 = (1-end.x) * window.innerWidth;
+              const y2 = end.y * window.innerHeight;
+              
+              const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+              const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+              
+              const connectionEl = document.createElement('div');
+              connectionEl.className = 'hand-connection';
+              connectionEl.style.left = `${x1}px`;
+              connectionEl.style.top = `${y1}px`;
+              connectionEl.style.width = `${length}px`;
+              connectionEl.style.transform = `rotate(${angle}deg)`;
+              document.body.appendChild(connectionEl);
+            }
+          }
+          
+          // Get index finger tip (landmark 8)
+          const indexFingerTip = landmarks[8];
+          const middleFingerTip = landmarks[12];
+          const ringFingerTip = landmarks[16];
+          const pinkyFingerTip = landmarks[20];
+
+          const indexFingerBase = landmarks[5];
+          const middleFingerBase = landmarks[9];
+          const ringFingerBase = landmarks[13];
+          const pinkyFingerBase = landmarks[17];
+
+          const thumbFingerBase = landmarks[1];
+          const palmBase = landmarks[0];
+          
+          // Update catcher position to be above the finger tip
+          gameState.catcherPosition = {
+            x: (1-(pinkyFingerBase.x+thumbFingerBase.x)/2) * window.innerWidth*0.9,
+            y: (pinkyFingerBase.y+palmBase.y)/2 * window.innerHeight*0.9,
+            
+            width: (thumbFingerBase.x - pinkyFingerBase.x) * window.innerWidth*1.2,
+            height: (palmBase.y - pinkyFingerBase.y) * window.innerHeight*1.2
+          };
+          
+          // Position catcher (60px size)
+          if (indexFingerTip.y>indexFingerBase.y && middleFingerTip.y>middleFingerBase.y && ringFingerTip.y>ringFingerBase.y && pinkyFingerTip.y>pinkyFingerBase.y) {
+            catcherElement.style.display = 'none';
+            catcherElement.style.left = `${gameState.catcherPosition.x - 30}px`;
+            catcherElement.style.top = `${gameState.catcherPosition.y - 50}px`;
+            if (gameState.catcherPosition.width>gameState.catcherPosition.height) {
+              gameState.catcherPosition.height=gameState.catcherPosition.width;
+            } else {
+              gameState.catcherPosition.width=gameState.catcherPosition.height;
+            }
+            catcherElement.style.width = `${gameState.catcherPosition.width}px`;
+            catcherElement.style.height = `${gameState.catcherPosition.height}px`;
+            console.log("x: "+gameState.catcherPosition.x+" y: "+gameState.catcherPosition.y+" size: "+gameState.catcherPosition.width+" x "+gameState.catcherPosition.height);
+          } else {
+            gameState.catcherPosition = {x:0,y:0,width:0,height:0}
+            catcherElement.style.display = 'none';
+          }
+        }
+      }
+      
+      canvasCtx.restore();
+    });
+    
+    // Create a new falling object with non-overlapping position
+    function createFallingObject() {
+      const type = objectTypes[Math.floor(Math.random() * objectTypes.length)];
+      const maxAttempts = 30;
+      let attempts = 0;
+      let x, y;
+      
+      do {
+        x = Math.random() * (window.innerWidth - type.size);
+        y = -type.size;
+        attempts++;
+        
+        if (attempts >= maxAttempts) {
+          break;
+        }
+      } while (wouldOverlap(x, y, type.size));
+      
+      const object = {
+        type: type,
+        x: x,
+        y: y,
+        speed: 4.8,
+        element: document.createElement('div'),
+        caught: false
+      };
+      // +(Math.random() * 3)
+      
+      object.element.className = 'falling-object';
+      object.element.style.width = `${type.size}px`;
+      object.element.style.height = `${type.size}px`;
+      object.element.style.left = `${object.x}px`;
+      object.element.style.top = `${object.y}px`;
+      
+      const img = document.createElement('img');
+      img.src = type.image;
+      img.alt = type.name;
+      object.element.appendChild(img);
+      
+      document.querySelector('.game-area').appendChild(object.element);
+      gameState.objects.push(object);
+    }
+
+    // Update falling objects
+    function updateFallingObjects(width=100, height=100) {
+      for (let i = gameState.objects.length - 1; i >= 0; i--) {
+        const obj = gameState.objects[i];
+        
+        if (obj.caught) {
+          obj.element.style.transform = `translateY(${obj.y}px) scale(${1 - (Date.now() - obj.caughtTime) / 500})`;
+          
+          if (Date.now() - obj.caughtTime > 500) {
+            obj.element.remove();
+            gameState.objects.splice(i, 1);
+          }
+          continue;
+        }
+        
+        obj.y += obj.speed;
+        obj.element.style.top = `${obj.y}px`;
+        
+        
+        const catcherRect = {
+          x: gameState.catcherPosition.x - 30,
+          y: gameState.catcherPosition.y - 50,
+          width: gameState.catcherPosition.width,
+          height: gameState.catcherPosition.height
+        };
+        
+        const objRect = {
+          x: obj.x,
+          y: obj.y,
+          width: obj.type.size,
+          height: obj.type.size
+        };
+        
+        if (isColliding(catcherRect, objRect)) {
+          obj.caught = true;
+          obj.caughtTime = Date.now();
+          
+          if (obj.type.id === gameState.currentTarget.id) {
+            gameState.score += obj.type.points;
+            scoreElement.textContent = gameState.score;
+            setRandomTarget();
+          }
+        }
+        
+        if (obj.y > window.innerHeight) {
+          obj.element.remove();
+          gameState.objects.splice(i, 1);
+        }
+      }
+    }
+    
+    // Update timer
+    function updateTimer() {
+      if (gameState.timeLeft > 0) {
+        gameState.timeLeft--;
+        timerElement.textContent = gameState.timeLeft;
+      } else {
+        endGame();
+      }
+    }
+    
+    // Collision detection
+    function isColliding(rect1, rect2) {
+      return rect1.x < rect2.x + rect2.width &&
+             rect1.x + rect1.width > rect2.x &&
+             rect1.y < rect2.y + rect2.height &&
+             rect1.y + rect1.height > rect2.y;
+    }
+    
+    // Game loop
+    function gameLoop() {
+      if (!gameState.isRunning) return;
+      
+      updateFallingObjects();
+      
+      const now = Date.now();
+      if (now - gameState.lastObjectTime > gameState.objectInterval) {
+        createFallingObject();
+        gameState.lastObjectTime = now;
+      }
+      
+      requestAnimationFrame(gameLoop);
+    }
+    
+    // Start the game
+    function startGame() {
+      if (gameState.isRunning) return;
+      
+      resetGame();
+      gameState.isRunning = true;
+      startBtn.textContent = "Pause";
+      setRandomTarget();
+      gameState.timerId = setInterval(updateTimer, 1000);
+      gameLoop();
+    }
+    
+    // Pause the game
+    function pauseGame() {
+      gameState.isRunning = false;
+      startBtn.textContent = "Resume";
+      clearInterval(gameState.timerId);
+    }
+    
+    // End the game
+    function endGame() {
+      gameState.isRunning = false;
+      clearInterval(gameState.timerId);
+      finalScoreElement.textContent = gameState.score;
+      gameOverScreen.classList.add('active');
+      
+      // Show next page after delay
+      //setTimeout(() => {
+      //  gameOverScreen.classList.remove('active');
+      //  nextPageScore.textContent = gameState.score;
+      //  nextPage.classList.add('active');
+      //}, 2000);
+    }
+    
+    // Reset the game
+    function resetGame() {
+      gameState.objects.forEach(obj => obj.element.remove());
+      gameState.objects = [];
+      gameState.score = 0;
+      gameState.timeLeft = 30;
+      scoreElement.textContent = gameState.score;
+      timerElement.textContent = gameState.timeLeft;
+      
+      if (gameState.timerId) {
+        clearInterval(gameState.timerId);
+      }
+      
+      gameOverScreen.classList.remove('active');
+      nextPage.classList.remove('active');
+    }
+    
+    // Event listeners
+    startBtn.addEventListener('click', () => {
+      if (gameState.isRunning) {
+        pauseGame();
+      } else {
+        startGame();
+      }
+    });
+    
+    resetBtn.addEventListener('click', resetGame);
+    
+    // Set your next page link
+    nextLink.href = "#"; // Change to your actual next page
+    
+    // Initialize canvas size
+    videoElement.onloadedmetadata = () => {
+      canvasElement.width = videoElement.videoWidth;
+      canvasElement.height = videoElement.videoHeight;
+    };
+    
+    // Set initial catcher position
+    window.addEventListener('load', () => {
+      catcherElement.style.left = `${window.innerWidth/2 - 30}px`;
+      catcherElement.style.top = `${window.innerHeight/2 - 30}px`;
+    });
+  </script>
+</body>
+</html>
