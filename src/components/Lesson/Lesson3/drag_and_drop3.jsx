@@ -12,7 +12,7 @@ import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
 import car from '../../../asset3/Misc/รถ.png';
 
 
-const PageDad4 = () => {
+const PageDad3 = () => {
   useEffect(() => {
     document.body.className = 'page-bg500';
 
@@ -27,7 +27,7 @@ const PageDad4 = () => {
   return (
     
     <div>
-      <Link className='btnnextdad3' to='/pdad4'>ถัดไป{'>>'}</Link>
+      <Link className='btnnextdad3' to='/pdad4' state={{correctCount}} >ถัดไป{'>>'}</Link>
       <Link className="btnbackdad3" to="/pdad2" data-discover="true">ย้อนกลับ</Link>
       <div className="centerdad3">
         <h2 style={{ color: correctCount >= 3 ? 'green' : 'red' }}>
@@ -63,4 +63,4 @@ const PageDad4 = () => {
   );
 };
 
-export default PageDad4;
+export default PageDad3;

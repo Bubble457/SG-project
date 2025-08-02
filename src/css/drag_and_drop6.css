@@ -8,7 +8,7 @@ body.page-bg500 {
   overflow: hidden;
 }
 
-.btnbackdad4 {
+.btnbackdad6 {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -24,12 +24,12 @@ body.page-bg500 {
   z-index: 250;
 }
 
-.btnbackdad4:hover {
+.btnbackdad6:hover {
   background-color: #ffdcfa;    
   z-index: 250;  
 }
 
-.btnnextdad4 {
+.btnnextdad6 {
   position: absolute;
   bottom: 20px;
   right: 20px;
@@ -45,12 +45,12 @@ body.page-bg500 {
   z-index: 250;
 }
 
-.btnnextdad4:hover {
+.btnnextdad6:hover {
   background-color: #044e7b;      
   z-index: 250; 
 }
 
-.btnnextpassdad4 {
+.btnnextpassdad6 {
   position: absolute;
   top :50%;
   left: 50%;
@@ -67,7 +67,7 @@ body.page-bg500 {
   z-index: 250;
 }
 
-.btnansdad4 {
+.btnansdad6 {
   position: absolute;
   top :50%;
   left: 50%;
@@ -84,13 +84,13 @@ body.page-bg500 {
   z-index: 250;
 }
 
-.notbtnfaildad4{
+.notbtnfaildad6{
   position: absolute;
   top :50%;
   left: 50%;
   transform: translate(15%,75%);
   display: inline-block;           
-  background-color: #869398;       
+  background-color: #0075bd;       
   color: rgb(255, 255, 255);                   
   padding: 20px 60px;              
   border-radius: 60px;              
@@ -101,7 +101,7 @@ body.page-bg500 {
   z-index: 250;
 }
 
-.centerdad4 {
+.centerdad6 {
   display: flex;
   justify-content: center;      /* จัดกลางแนวนอน */
   align-items: center;          /* จัดกลางแนวตั้ง */
@@ -109,7 +109,7 @@ body.page-bg500 {
   position: relative;
 }
 
-.centerfaildad4 {
+.centerfaildad6 {
   display: flex;
   justify-content: center;      /* จัดกลางแนวนอน */
   align-items: center;          /* จัดกลางแนวตั้ง */
@@ -117,7 +117,7 @@ body.page-bg500 {
   position: relative;
 }
 
-.centerdad4 h2 { 
+.centerdad6 h2 { 
   transform: translate(61%, -51%);
   align-items: center;
   font-size: 30px;
@@ -129,7 +129,7 @@ body.page-bg500 {
   z-index: 210;
 }
 
-.centerfaildad4 h2 { 
+.centerfaildad6 h2 { 
   transform: translate(61%, -51%);
   align-items: center;
   font-size: 30px;
@@ -141,7 +141,7 @@ body.page-bg500 {
   z-index: 210;
 }
 
-.centerdad4 h3 { /* เลื่อนลง 180px */ 
+.centerdad6 h3 { /* เลื่อนลง 180px */ 
   transform: translateX(-41%);
   align-items: center;
   font-size: 30px;
@@ -155,7 +155,7 @@ body.page-bg500 {
   z-index: 200;
 }
 
-.centerfaildad4 h3 { /* เลื่อนลง 180px */ 
+.centerfaildad6 h3 { /* เลื่อนลง 180px */ 
   transform: translateX(-41%);
   align-items: center;
   font-size: 30px;
@@ -170,7 +170,7 @@ body.page-bg500 {
 }
 
 
-.centerdad4 img{
+.centerdad6 img{
   width: auto;
   height: 250px;
   z-index: 1;
@@ -178,18 +178,18 @@ body.page-bg500 {
   
 }
 
-.centerdad4, .centerdad4 * {
+.centerdad6, .centerdad6 * {
   pointer-events: none;
 }
 
-.carderdad4{
+.carderdad6{
   justify-content:center;
   align-items: center;
   position:relative;
   z-index: 0;
 }
 
-.buntookbondad4{
+.buntookbondad6{
   position:absolute;
   width: 350px;
   height: 350px;
@@ -199,7 +199,7 @@ body.page-bg500 {
   z-index: 0;
 }
 
-.car6dad4 img{
+.car6dad6 img{
   width:250px;
   height:auto;
   position:absolute;
@@ -209,7 +209,7 @@ body.page-bg500 {
   cursor: pointer;
 }
 
-.car6dad4.active::after {
+.car6dad6.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -221,7 +221,7 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car1dad4 img{
+.car1dad6 img{
   width:250px;
   height:auto;
   position:absolute;
@@ -231,7 +231,7 @@ body.page-bg500 {
   cursor: pointer;
 }
 
-.car1dad4.active::after {
+.car1dad6.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -243,7 +243,7 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car4dad4 img{
+.car4dad6 img{
   width:250px;
   height:auto;
   position:absolute;
@@ -253,7 +253,7 @@ body.page-bg500 {
   cursor: pointer;
 }
 
-.car4dad4.active::after {
+.car4dad6.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -265,7 +265,7 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car5dad4 img{
+.car5dad6 img{
     width:200px;
     height:auto;
     position:absolute;
@@ -275,7 +275,7 @@ body.page-bg500 {
     cursor: pointer;
 }
 
-.car5dad4.active::after {
+.car5dad6.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -287,7 +287,7 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car2dad4 img{
+.car2dad6 img{
     width:200px;
     height:auto;
     position:relative;
@@ -297,7 +297,7 @@ body.page-bg500 {
     cursor: pointer;
 }
 
-.car2dad4.active::after {
+.car2dad6.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -309,7 +309,7 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.car3dad4 img{
+.car3dad6 img{
     width:200px;
     height:auto;
     position:absolute;
@@ -320,7 +320,7 @@ body.page-bg500 {
     
 }
 
-.car3dad4.active::after {
+.car3dad6.active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -332,7 +332,7 @@ body.page-bg500 {
   pointer-events: none;
 }
 
-.bottom-triangledad4 {
+.bottom-triangledad6 {
   position:absolute;
   left:44.5%;
   bottom:7%;
@@ -347,7 +347,7 @@ body.page-bg500 {
   z-index:0;
 }
 
-.left-triangledad4 {
+.left-triangledad6 {
   position:absolute;
   left: 38.2%;
   bottom: 12%;
@@ -358,7 +358,7 @@ body.page-bg500 {
   opacity:0.5;
 }
 
-.right-triangledad4 {
+.right-triangledad6 {
   position:absolute;
   right: 38.2%;
   bottom: 12%;
@@ -369,7 +369,7 @@ body.page-bg500 {
   opacity: 0.5;
 }
 
-.top-squaredad4 {
+.top-squaredad6 {
   position: absolute;
   left:46.5%;
   bottom:55%;
@@ -380,7 +380,7 @@ body.page-bg500 {
   opacity: 0.5;
 }
 
-.overlaydad4 {
+.overlaydad6 {
   position: fixed;
   top: 0;
   left: 0;

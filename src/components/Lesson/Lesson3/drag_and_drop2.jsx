@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import React, { useEffect, useState, } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import morsaibon from '../../../asset3/Misc/morsaibon.png';
+import morsaibon from '../../../asset3/Misc/morsaibon2.png';
 import character from '../../../asset3/Misc/คิดว่าตัวเองดวงดีครึ่ง.png';
 import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
-import car from '../../../asset3/Misc/รถ.png';
+import car from '../../../asset3/Misc/รถ2.png';
 
 const cars = [ //กำหนดไอดีไว้เรียกใช้
   { id: "car6", img: morsaibon },
@@ -63,7 +63,13 @@ const App = () => {
               className={`${id}dad2 ${isSelected ? "active" : ""}`}
               onClick={() => handleClick(id)}
             >
-              <img src={img} />
+                <img
+                  src={img}
+                  style={{
+                    backgroundColor: isSelected ? 'rgba(101, 101, 101, 0.5)' : 'transparent',
+                    borderRadius: '50px', // เพิ่มความโค้งถ้าชอบ
+                  }}
+                />
             </div>
           );
         })}

@@ -1,0 +1,130 @@
+body.page-bgdad7 {
+  background-image: url('../asset3/background/final.png'); /* เปลี่ยนลิงก์ภาพตามต้องการ */
+  background-size: cover;           /* ขยายให้เต็มจอ */
+  background-repeat: no-repeat;     /* ไม่ให้รูปซ้ำ */
+  background-position: center;      /* จัดตำแหน่งให้อยู่กลาง */
+  height: 100vh;                    /* ให้ body สูงเท่าจอ */
+  margin: 0;                        /* ลบช่องว่างรอบหน้าเว็บ */
+}
+
+.btnbackdad7 {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform:translate(-100%, 50%);
+    display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
+    background-color: #ffffff;       /* สีพื้นหลัง */
+    color: rgb(0, 0, 0);                    /* ตัวหนังสือสี */
+    padding: 15px 50px;              /* ช่องว่างรอบตัวหนังสือ */
+    border-radius: 60px;              /* มุมโค้งมน */
+    text-decoration: none;           /* ลบเส้นขีดใต้ */
+    font-weight: bold;
+    font-size: 25px;
+    transition: background-color 0.3s ease;  
+}
+
+.btnbackdad7:hover {
+    background-color: #ffdcfa;       
+}
+.picbtnbackdad7 {
+    position:absolute;
+    
+}
+
+.btnreturndad7 {
+  position:absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.btnnextdad7 {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform:translate(50%, 50%);
+    display: inline-block;           /* ให้เป็นบล็อกเล็กๆ */
+    background-color: #0075bd;       /* สีพื้นหลัง */
+    color: rgb(255, 255, 255);                    /* ตัวหนังสือสี */
+    padding: 15px 50px;              /* ช่องว่างรอบตัวหนังสือ */
+    border-radius: 30px;              /* มุมโค้งมน */
+    text-decoration: none;           /* ลบเส้นขีดใต้ */
+    font-weight: bold;
+    font-size: 25px;
+    transition: background-color 0.3s ease;  
+}
+
+.btnnextdad7:hover {
+    background-color: #005c95;       
+}
+
+.centerdad7 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* ระยะห่างระหว่างบรรทัด */
+}
+
+.centerdad7 h3{
+  background-color: #f4abba;
+  color: white;
+  padding: 10px 100px;
+  border-radius: 30px;
+  transform: translateY(-150%);
+}
+
+.kengdad7 {
+  font-size: 70px;
+  color: black;
+  background-color: white;
+  padding: 10px 70px;
+  border-radius: 80px;
+  transform: translate(-30%, -50%);
+}
+
+.scoredad7 {
+  font-size: 60px;   
+  transform: translate(-50%, -50%);         /* ถ้าต้องการให้กล่องยังสูง */
+}
+
+
+.accuratedad7 {
+  font-size: 40px;
+  transform: translateX(-45%);
+}
+
+.blockwhdad7 {
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  width: 800px;
+  height: 500px;
+  background-color: #f7f2e8;
+  margin: 10px;
+  border-radius: 50px;
+}
+
+.blockbldad7 {
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  width: 830px;
+  height: 530px;
+  background-color: rgb(124, 201, 226);
+  margin: 10px;
+  border-radius: 50px;
+  z-index: -1;
+}
+
+.characterdad7 {
+  position:absolute;
+  top: 25%;
+  left: 50%;
+  width: auto;
+  height:400px;
+}
