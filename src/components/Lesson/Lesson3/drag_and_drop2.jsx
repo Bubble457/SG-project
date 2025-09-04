@@ -8,6 +8,7 @@ import morsaibon from '../../../asset3/Misc/morsaibon2.png';
 import character from '../../../asset3/Misc/คิดว่าตัวเองดวงดีครึ่ง.png';
 import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
 import car from '../../../asset3/Misc/รถ2.png';
+import backbtn from '../../../assets/back1.png';
 
 const cars = [ //กำหนดไอดีไว้เรียกใช้
   { id: "car6", img: morsaibon },
@@ -49,7 +50,12 @@ const App = () => {
       {selectedIds.length === 3 && ( //ถ้าเลือกครบ 3อันแล้วจะแสดงปุ่ม
         <Link className="btnnextdad2" to="/pdad3" state={{ selectedCars: selectedIds}}> ตรวจคำตอบ</Link>
       )}
-      <Link className="btnbackdad2" to="/pdad" data-discover="true">ย้อนกลับ</Link> 
+            <Link to='/pdad'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link> 
       <div className="centerdad2">
         <h2>ตามหารถที่เสี่ยงอันตราย</h2>
         <img src={character} />

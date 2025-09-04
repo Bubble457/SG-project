@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 
 import character from '../../../asset3/Misc/คิดว่าตัวเองดวงดีครึ่ง.png';
 import news from '../../../asset3/background/news.jpg';
+import backbtn from '../../../assets/back1.png';
 
 const App = () => {
       useEffect(() => {
@@ -17,7 +18,12 @@ const App = () => {
   return (
     <div>
       <Link className="btnnext45" to="/p46" data-discover="true">ต่อไป &gt;&gt;</Link>
-      <Link className="btnback45" to="/p44" data-discover="true">ย้อนกลับ</Link>
+            <Link to='/p44'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link>
       <div className="center45">
         <h2>ถ้าเรายังปฏิบัติตนเช่นนี้ จะเป็นอย่างไร กดปุ่มเริ่มเพื่อดูเหตุการณ์จริง</h2>
         <img src={character} />

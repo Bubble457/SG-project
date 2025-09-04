@@ -10,6 +10,7 @@ import profile from '../../../asset3/icon/สำเนาๆๆๆๆๆๆ (2).
 import siang from '../../../asset3/icon/เขียว.png';
 import ta from '../../../asset3/icon/eye.png';
 import caution from '../../../asset3/icon/caution.png';
+import backbtn from '../../../assets/back1.png';
 
 const App = () => {
       useEffect(() => {

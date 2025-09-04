@@ -6,6 +6,7 @@ import character from '../../../asset3/Misc/คิดว่าตัวเอง
 import check from '../../../asset3/icon/ถูก.png';
 import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
 import car from '../../../asset3/Misc/รถ.png';
+import backbtn from '../../../assets/back1.png';
 
 const App = () => {
       useEffect(() => {
@@ -19,7 +20,12 @@ const App = () => {
   return (
     <div>
       <Link className="btnnext501" to="/pdad" data-discover="true">ต่อไป &gt;&gt;</Link>
-      <Link className="btnback501" to="/p49" data-discover="true">ย้อนกลับ</Link>
+            <Link to='/p49'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link>
       <img className='check501' src={check} />
       <div className="center501">
         <h2>ถูกต้องแล้วคะ</h2>

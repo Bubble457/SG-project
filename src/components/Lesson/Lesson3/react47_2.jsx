@@ -9,7 +9,7 @@ import number3 from '../../../asset3/Misc/3.png';
 import number4 from '../../../asset3/Misc/4.png';
 import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
 import term from '../../../asset3/Misc/เสี่ยง2.png';
-
+import backbtn from '../../../assets/back1.png';
 
 
 const App = () => {
@@ -55,7 +55,12 @@ const App = () => {
             แบบฝึกหัด &gt;&gt;
         </Link>
       )}
-      <Link className="btnback472" to="/p47_1" data-discover="true">ย้อนกลับ</Link>
+            <Link to='/p46'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link>
       <div className="center472">
         <h2>
           ความสูงของตัวรถ ทำให้บดบัง

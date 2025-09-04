@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import character from '../../../asset3/Misc/คิดว่าตัวเองดวงดีครึ่ง.png';
 import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
 import car from '../../../asset3/Misc/รถ.png';
+import backbtn from '../../../assets/back1.png';
 
 const App = () => {
       useEffect(() => {
@@ -17,7 +18,12 @@ const App = () => {
     }, []);
   return (
     <div>
-      <Link className="btnback500" to="/p49" data-discover="true">ย้อนกลับ</Link>
+            <Link to='/p49'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link>
       <div className="center500">
         <h2>ตามหารถที่เสี่ยงอันตราย</h2>
         <img src={character} />

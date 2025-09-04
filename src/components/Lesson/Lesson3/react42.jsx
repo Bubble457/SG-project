@@ -6,6 +6,7 @@ import character from '../../../asset3/Misc/คิดว่าตัวเอง
 import buntook from '../../../asset3/Misc/รถบรรทุกสุดหล่อ.png';
 import morsai from '../../../asset3/Misc/มอไซ.png';
 import eyebutton from '../../../asset3/icon/ตาไฟนอล.png';
+import backbtn from '../../../assets/back1.png';
 
 
 const App = () => {
@@ -22,7 +23,12 @@ const App = () => {
       <Link className="btneye42" to="/p43" data-discover="true">
         <img src={eyebutton} alt="ปุ่มรูปตา"/>
       </Link>
-      <Link className="btnback42" to="/p41" data-discover="true">ย้อนกลับ</Link>
+            <Link to='/p41'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link>
       <div className="center42">
         <h2>กดรูปตาเพื่อดูในมุมมองของคนขับรถบรรทุก</h2>
         <img src={character} />

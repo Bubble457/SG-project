@@ -7,6 +7,7 @@ import buntook from '../../../asset3/Misc/รถบรรทุกสุดห�
 import morsai from '../../../asset3/Misc/มอไซ.png';
 import check from '../../../asset3/icon/ถูก.png';
 import arrow from '../../../asset3/Misc/ลูกษร.png';
+import backbtn from '../../../assets/back1.png';
 
 const App = () => {
       useEffect(() => {
@@ -20,7 +21,12 @@ const App = () => {
   return (
     <div>
       <Link className="btnnext46" to="/p47_0" data-discover="true">ต่อไป &gt;&gt;</Link>
-      <Link className="btnback46" to="/p45" data-discover="true">ย้อนกลับ</Link>
+            <Link to='/p45'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link>
       <div className="center46">
         <h1>วิธีที่ถูกต้อง</h1>
         <h2>เราควรรักษาระยะห่างจากรถคันด้านหน้า</h2>

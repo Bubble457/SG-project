@@ -10,6 +10,7 @@ import morsaibon from '../../../asset3/Misc/morsaibon.png';
 import character from '../../../asset3/Misc/คิดว่าตัวเองดวงดีครึ่ง.png';
 import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
 import car from '../../../asset3/Misc/รถ.png';
+import backbtn from '../../../assets/back1.png';
 
 
 const PageDad3 = () => {
@@ -28,7 +29,12 @@ const PageDad3 = () => {
     
     <div>
       <Link className='btnnextdad3' to='/pdad4' state={{correctCount}} >ถัดไป{'>>'}</Link>
-      <Link className="btnbackdad3" to="/pdad2" data-discover="true">ย้อนกลับ</Link>
+            <Link to='/pdad2'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link>
       <div className="centerdad3">
         <h2 style={{ color: correctCount >= 3 ? 'green' : 'red' }}>
             {correctCount >= 3 ? "ผ่าน " : "ไม่ผ่าน "} คะแนนของคุณ: {correctCount} / 3

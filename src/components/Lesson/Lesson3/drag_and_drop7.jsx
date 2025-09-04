@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 
 import character from '../../../asset3/Misc/hero.png';
 import btn from '../../../asset3/icon/ปุ่มสำเร็จรูป.png'
+import backbtn from '../../../assets/back1.png';
 
 const App = () => {
 

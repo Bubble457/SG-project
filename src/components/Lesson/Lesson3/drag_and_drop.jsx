@@ -6,6 +6,7 @@ import "../../../css/drag_and_drop.css";
 import character from '../../../asset3/Misc/คิดว่าตัวเองดวงดีครึ่ง.png';
 import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
 import car from '../../../asset3/Misc/รถ.png';
+import backbtn from '../../../assets/back1.png';
 
 
 function App() {
@@ -103,9 +104,14 @@ function App() {
       onMouseUp={handleMouseUp}
     >
       {showNextButton && (
-        <Link className="btnnextdad" to="/pdad" data-discover="true">ต่อไป &gt;&gt;</Link>
+        <Link className="btnnextdad" to="/pdad2" data-discover="true">ต่อไป &gt;&gt;</Link>
       )}
-      <Link className="btnbackdad" to="/p50_0" data-discover="true">ย้อนกลับ</Link>
+            <Link to='/p50_0'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link>
       <div className="centerdad">
         <h2>{message}</h2>
         <img src={character} />

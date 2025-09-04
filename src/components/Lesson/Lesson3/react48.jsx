@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import React, { useEffect } from 'react';
 
 import muang from'../../../asset3/icon/ม่วง.png';
+import backbtn from '../../../assets/back1.png';
 
 const App = () => {
       useEffect(() => {
@@ -18,7 +19,12 @@ const App = () => {
       <div className="background48">
         <div className="buttongroup48">
           <Link className="btnnext48" to="/p49" data-discover="true">ต่อไป &gt;&gt;</Link>
-          <Link className="btnback48" to="/p47_4" data-discover="true">ย้อนกลับ</Link>
+            <Link to='/p47_0'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link>
         </div>
         <div className="center48">
           <h3>แบบฝึกหัด</h3>

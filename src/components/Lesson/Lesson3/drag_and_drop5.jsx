@@ -10,6 +10,7 @@ import morsaibon from '../../../asset3/Misc/morsaibon.png';
 import character from '../../../asset3/Misc/คิดว่าตัวเองดวงดีครึ่ง.png';
 import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
 import car from '../../../asset3/Misc/รถ.png';
+import backbtn from '../../../assets/back1.png';
 
 
 const PageDad5 = () => {

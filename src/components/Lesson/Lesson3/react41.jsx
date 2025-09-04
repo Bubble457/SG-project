@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 
 import buntook from '../../../asset3/Misc/รถบรรทุกสุดหล่อ.png';
 import morsai from '../../../asset3/Misc/มอไซ.png';
+import backbtn from '../../../assets/back1.png';
 
 
 
@@ -19,7 +20,12 @@ const App = () => {
   return (
     <div>
       <Link className="btnnext41" to="/p42" data-discover="true">ต่อไป &gt;&gt;</Link>
-      <Link className="btnback41" to="/p40" data-discover="true">ย้อนกลับ</Link>
+            <Link to='/p40'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link>
       <div className="center41">
         <h1>
           <span style={{ color: 'rgb(255, 255, 255)' }}>แต่จะ</span>

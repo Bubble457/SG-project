@@ -6,6 +6,7 @@ import character from '../../../asset3/Misc/คิดว่าตัวเอง
 import wrong from '../../../asset3/icon/ผิด2.png';
 import buntookbon from '../../../asset3/Misc/รถบรรทุก.png';
 import car from '../../../asset3/Misc/รถ.png';
+import backbtn from '../../../assets/back1.png';
 
 
 const App = () => {
@@ -19,7 +20,12 @@ const App = () => {
     }, []);
   return (
     <div>
-      <Link className="btnback503" to="/p49" data-discover="true">ย้อนกลับ</Link>
+            <Link to='/p49'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link>
       <img className='check503' src={wrong} />
       <div className="center503">
         <h2>ยังไม่ถูกต้อง ลองอีกทีนะคะ</h2>

@@ -6,6 +6,7 @@ import btnpurple from '../../../asset3/icon/รายงาน.png';
 import btnyellow from '../../../asset3/icon/ทบทวน.png';
 import btngreen from '../../../asset3/icon/หน้าหลัก.png';
 import object from '../../../asset3/Misc/อ็อปเจคๆๆ.png';
+import backbtn from '../../../assets/back1.png';
 
 const App = () => {
       useEffect(() => {

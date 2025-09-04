@@ -8,6 +8,7 @@ import number3 from '../../../asset3/Misc/3.png';
 import eye from '../../../asset3/Misc/eye.png';
 import book from '../../../asset3/Misc/11.png';
 import mouse from '../../../asset3/Misc/เมาส์.png';
+import backbtn from '../../../assets/back1.png';
 
 const App = () => {
       useEffect(() => {
@@ -23,7 +24,12 @@ const App = () => {
       <div className="background49">
         <div className="buttongroup49">
           <Link className="btnnext49" to="/p50_0" data-discover="true">เริ่ม</Link>
-          <Link className="btnback49" to="/p48" data-discover="true">ย้อนกลับ</Link>
+            <Link to='/p48'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link>
         </div>
         <div className="number49">
           <img className="number149" src={number1} />

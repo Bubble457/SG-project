@@ -7,6 +7,7 @@ import buntook from '../../../asset3/Misc/รถบรรทุกสุดห�
 import morsai from '../../../asset3/Misc/มอไซ.png';
 import eyebutton from '../../../asset3/icon/ตาไฟนอล.png';
 import wrong from '../../../asset3/icon/wrong.webp';
+import backbtn from '../../../assets/back1.png';
 
 const App = () => {
       useEffect(() => {
@@ -24,7 +25,12 @@ const App = () => {
         <img className="wrong44" src={wrong} alt="กากบาท" />
       </div>
       <Link className="btnnext44" to="/p45" data-discover="true">ต่อไป {'>>'}</Link>
-      <Link className="btnback44" to="/p43" data-discover="true">ย้อนกลับ</Link>
+            <Link to='/p43'>
+                <div className='back-btn'>
+                <img src={backbtn} alt='back' className='img-back' />
+                <p className='text-back'>ย้อนกลับ</p>
+                </div>
+            </Link>
       <div className="center44">
         <h2>
             <span style={{ color: 'rgba(0, 0, 0, 1)' }}>ที่เรามองไม่เห็น เพราะรถมอเตอร์ไซต์จอดอยู่ใน</span>
